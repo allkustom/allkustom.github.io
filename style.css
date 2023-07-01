@@ -1,312 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
 
 *{
-    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    /* transition: 0.2s linear; */
-    scroll-behavior: smooth;
 }
+
 body{
-    background-color: rgb(236, 236, 236);
+    font-family: sans-serif;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
+.intro{
+    height: 100vh;
+}
+
+.intro video{
+    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.6s;
-    padding: 20px 20px 20px 40px;
-    background-color: #141414;
-    z-index: 100000;
+    object-fit: cover;
 }
 
-/* header.sticky{
-    padding: 5px 20px 5px 40px;
-    background-color: white;
-} */
-
-header .logo{
-    position: relative;
-    font-weight: 700;
-    color: white;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;
-}
-
-header.sticky .logo{
-    color: #141414;
-}
-
-header ul{
-    position: relative;
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-}
-
-head ul li{
-    position: relative;
-    list-style: none;
-}
-
-header ul li a{
-    position: relative;
-    margin: 0 15px;
-    color: white;
-    font-size: 15px;
-    letter-spacing: 3px;
-    transition: 0.5s;
-}
-header ul li a:hover{
-    color: grey;
-    font-size: 20px;
-}
-
-header.sticky ul li a{
-    color: #141414;
-}
-
-.banner{
-    position: relative;
-    width: 100%;
-    height: 8vh;
-    /* margin-top: 5%; */
-    background-color: #141414;
-    background-size: cover;
-} 
-
-.line1{
-    width: 80%;
-    height: 3px;
-    margin: 0 10%;
-    background-color: white;
-}
-
-.line2{
-    width: 80%;
-    height: 3px;
-    margin: 5% 10% 0% 10%;
-    
-    background-color: #141414;
-}
-
-#topBox{
-    scroll-margin-top: 12vh;
-    padding: 8% 0  11% 0;
-    /* margin-bottom: 5%; */
-    background-color: #202020;
-}
-
-
-#representative{
-    width: 80%;
-    margin: 0 10%;
-    text-align: center;
-    background-color: #ececec;
-    color: #141414;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    z-index: 100;
-}
-
-#representative.sticky{
-    position: fixed;
-}
-
-#graphicBox{
-    scroll-margin-top: 12vh;
-    margin: 10% 0 5% 0;    
-}
-
-#graphic{
-    width: 80%;
-    margin: 0% 10% 0 10%;
-    text-align: center;
-    background-color: #202020;
-    /* margin-top: 10%; */
-    color: white;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    z-index: 101;
-}
-
-#codeBox{
-    scroll-margin-top: 12vh;
-    margin: 10% 0 5% 0;    
-}
-
-#code{
-    width: 80%;
-    margin: 0% 10% 0 10%;
-    text-align: center;
-    background-color: #202020;
-    /* margin-top: 10%; */
-    color: white;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    z-index: 101;
-}
-
-#physicalBox{
-    scroll-margin-top: 12vh;
-    margin: 10% 0 5% 0;    
-}
-
-#physical{
-    width: 80%;
-    margin: 0% 10% 0 10%;
-    text-align: center;
-    background-color: #202020;
-    /* margin-top: 10%; */
-    color: white;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    z-index: 101;
-}
-
-
-
-
-.box-container{
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(33%, 1fr)); */
-    grid-template-columns: repeat(3,1fr);
-    margin: 2%  10% 2% 10%;
-    /* gap: 3%; */
-}
-
-
-.box-container .box{
-    /* box-shadow: 0 5px 10px rgba(0,0,0,.2); */
-    /* border-radius: 5px; */
-    background: #fff;
-    text-align: center;
-    padding-bottom: 2%;
-    /* padding:30px 20px; */
-}
-
-.box-container .box .overlay{
+.intro h1{
     position: absolute;
-    /* top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    background-color: white;
-    cursor: pointer;
-}
-
-.box-container .overlay .content{
-    position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    color:  black;
+    opacity: 0;
+}
+
+section{
+    height: 100vh;
+    color: black
+}
+
+section h1{
+    padding-top: 300px;
     text-align: center;
-}
-
-.box-container .box:hover .overlay{
-    /* box-shadow: 0 10px 15px rgba(0,0,0,.3);
-    transform: scale(1.03); */
-    opacity: 0.8;
-}
-
-/* .box-container .box .btn:hover{
-    letter-spacing: 1px;
-} */
-
-
-.box-container .box img{
-    transition: 0.2s;
-    width: 100%;
-}
-
- .box-container .box h3{
-    color:#444;
-    font-size: 22px;
-    padding:10px 0;
-}
-
-.box-container .box p{
-    color:#777;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 10px;
-}
-
- /* .box-container .box .btn{
-    margin-top: 10px;
-    display: inline-block;
-    background:#333;
-    color:#fff;
-    font-size: 17px;
-    border-radius: 5px;
-    padding: 8px 25px;
-}
- */
-
-
-@media (max-width:700px){
-   .box-container{
-    grid-template-columns: repeat(2,1fr);
-    }
-    header .logo{
-        font-size: 10px;
-        /* text-align: center; */
-        margin-left: -5%;
-
-    }
-    header ul li a{
-        position: relative;
-        font-size: 8px;
-        margin: 0 3px;
-        letter-spacing: 1px;
-    }
-    header ul li a:hover{
-        font-size: 10px;
-    }
-    #representative{
-        font-size: 15px;
-    }
-    #graphic{
-        font-size: 15px;
-    }
-    #code{
-        font-size: 15px;
-    }
-    #physical{
-        font-size: 15px;
-    }
-    .line1{
-        margin: 10% 10% 0 10%;
-    }
-
-    .line2{
-        margin: 20% 10% 0% 10%;
-    }    
-
-
-
+    font-size: 80px;
 }
