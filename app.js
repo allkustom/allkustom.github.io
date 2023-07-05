@@ -12,8 +12,13 @@ const text = intro.querySelector('h1');
 const section = document.querySelector('section');
 const end = section.querySelector('h1');
 
+const section1 = document.querySelector('.section1');
+const line1Div = document.querySelector('.line1');
+const line1 = line1Div.querySelector('.horizontal-line1');
+
 let videoDuration;
 let mediaOffset;
+let line1Offset;
 
 //SCROLL MAGIC
 const controller = new ScrollMagic.Controller();
@@ -23,16 +28,18 @@ const controller = new ScrollMagic.Controller();
     //Targeting Media Query 
     let query = window.matchMedia("(max-width: 700px)");
     if (query.matches) {
-        //if the page is wider than narrower than 700px
+        //if the page is narrower than 700px
         console.log('under 700px');
         videoDuration = 100;
         mediaOffset = 0;
+        line1Offset = 200;
     }
     else {
         //if the page is wider than 700px
         console.log('over 700px');
         videoDuration = 3000;
         mediaOffset = 2000;
+        line1Offset = 500;
     }
 
     //SCENES
@@ -44,7 +51,7 @@ const controller = new ScrollMagic.Controller();
         triggerHook: 0
     })
         //Scroll Magic trigger indicators
-        .addIndicators()
+        // .addIndicators()
         .setPin(intro)
         .addTo(controller);
 
@@ -70,39 +77,52 @@ const controller = new ScrollMagic.Controller();
     //Text Animation
     const textAni0 = TweenMax.fromTo(text, 1, {opacity: 0}, {opacity: 0});
 
-    let scene1 = new ScrollMagic.Scene({
+    let mainTextOff = new ScrollMagic.Scene({
         duration: 10,
         offset: -1,
         triggerElement: intro,
         triggerHook: 0
     })
-    .addIndicators()
+    // .addIndicators()
     .setTween(textAni0)
     .addTo(controller);
 
     const textAni1 = TweenMax.fromTo(text, 1, {opacity: 0}, {opacity: 1});
 
-    let scene2 = new ScrollMagic.Scene({
+    let mainTextStart = new ScrollMagic.Scene({
         duration: 1000,
         offset: mediaOffset+10,
         triggerElement: intro,
         triggerHook: 0
     })
-    .addIndicators()
+    // .addIndicators()
     .setTween(textAni1)
     .addTo(controller);
 
     const textAni2 = TweenMax.fromTo(text, 1, {opacity: 1}, {opacity: 0});
     // const textAni2 = TweenMax.fromTo(text, 3, {opacity: 1, left: "50%"}, {opacity: 0, left: "120%"});
 
-    let scene3 = new ScrollMagic.Scene({
+    let mainTestEnd = new ScrollMagic.Scene({
         duration: 1000,
         offset: mediaOffset+1010,
         triggerElement: intro,
         triggerHook: 0
     })
-    .addIndicators()
+    // .addIndicators()
     .setTween(textAni2)
+    .addTo(controller);
+
+    //horizontal-line1 Animation
+    // const line1Ani = TweenMax.fromTo(line1, 1, {left: "-100%"}, {left: "0%"});
+    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '0% 0% 0% -100%'}, {height: '4%', margin: '0% 0% 0% -0%'});
+    let line1Start = new ScrollMagic.Scene({
+        duration: line1Offset + 100,
+        offset: -line1Offset,
+        triggerElement: section1,
+        triggerHook: 0
+    })
+    .addIndicators()
+    .setTween(line1Ani)
     .addTo(controller);
 
 

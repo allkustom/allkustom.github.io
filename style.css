@@ -17,6 +17,7 @@ p1{
 
 p2{
     font-size: 20px;
+    color: #505050;
 }
 
 br{
@@ -97,17 +98,27 @@ br{
 
 .line1{
     grid-area: line1;
+    display: flex;
+    align-items: center;
+    /* justify-content: left; */
+
 }
 
+    .line1 .horizontal-line1{
+        height: 0%;
+        width: 90%;
+        background-color: #080808;
+        margin: 0% 0% 0% -100%;
+    }
 
 .text1{
     grid-area: text1;
 }
 
-.text1 h1{
-    font-size: 80px;
-    margin-bottom: -10px;
-}
+    .text1 h1{
+        font-size: 80px;
+        margin-bottom: -10px;
+    }
 
 .image1{
     grid-area: image1;
