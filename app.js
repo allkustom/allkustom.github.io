@@ -163,7 +163,7 @@ const controller = new ScrollMagic.Controller();
         const p2Ani = TweenMax.fromTo(p2, 1, {opacity: 0}, {opacity: 1});
         let p2Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+100,
+            offset: line1Offset+200,
             triggerElement: section1,
             triggerHook: 0
         })
@@ -175,7 +175,7 @@ const controller = new ScrollMagic.Controller();
         const p3Ani = TweenMax.fromTo(p3, 1, {opacity: 0}, {opacity: 1});
         let p3Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+150,
+            offset: line1Offset+50,
             triggerElement: section1,
             triggerHook: 0
         })
@@ -187,7 +187,7 @@ const controller = new ScrollMagic.Controller();
         const p4Ani = TweenMax.fromTo(p4, 1, {opacity: 0}, {opacity: 1});
         let p4Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+200,
+            offset: line1Offset+250,
             triggerElement: section1,
             triggerHook: 0
         })
