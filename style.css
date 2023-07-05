@@ -11,13 +11,29 @@
     scroll-behavior: smooth;
 }
 
+
 p1{
     font-size: 20px;
+    color: #080808;
+    opacity: 0;
 }
 
 p2{
     font-size: 20px;
     color: #505050;
+    opacity: 0;
+}
+
+p3{
+    font-size: 20px;
+    color: #080808;
+    opacity: 0;
+}
+
+p4{
+    font-size: 20px;
+    color: #505050;
+    opacity: 0;
 }
 
 br{
@@ -60,6 +76,7 @@ br{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    gap: 1%;
     grid-template-areas:
     "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
     "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
@@ -106,7 +123,7 @@ br{
 
     .line1 .horizontal-line1{
         height: 0%;
-        width: 90%;
+        width: 100%;
         background-color: #080808;
         margin: 0% 0% 0% -100%;
     }
@@ -118,6 +135,7 @@ br{
     .text1 h1{
         font-size: 80px;
         margin-bottom: -10px;
+        opacity: 0;
     }
 
 .image1{
@@ -144,9 +162,13 @@ section img{
 }
 
 @media (max-width: 700px){
+    .intro{
+        padding: 0;
+    }
+
     .intro h1{
-        font-size: 30px;
-        top: 65%;
+        font-size: 40px;
+        top: 80%;
     }
     .intro video{
         height: 0%;
@@ -156,9 +178,12 @@ section img{
     }
     
     .intro img{
-        width: 100%;
+        width: 80%;
         opacity: 1;
     }
+    .section1{
+        height: 50vh;
+    }    
     
     .text1 h1{
         font-size: 30px;
@@ -173,6 +198,12 @@ section img{
         font-size: 14px;
     }
 
+    .text1 p3{
+        font-size: 14px;
+    }
 
+    .text1 p4{
+        font-size: 14px;
+    }
 
 }
