@@ -1,21 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
 
 *{
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family: sans-serif;
+p1{
+    font-size: 20px;
+}
+
+p2{
+    font-size: 20px;
+}
+
+br{
+    display: block;
+    margin-bottom: 50%;
 }
 
 .intro{
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .intro video{
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     object-fit: cover;
     opacity: 1;
 }
@@ -36,10 +53,80 @@ body{
     opacity: 0;
 }
 
+.section1{
+    height: 100vh;
+    /* background-color: #808080; */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+    "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
+    "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
+    "line1 text1 text1 empty2 image1 image1 image1  sidebar2"
+    "sidebar3 text1 text1 empty2 image1 image1 image1  sidebar2"
+    "sidebar3 text1 text1 empty2 image1 image1 image1  sidebar2"
+    "sidebar3 empty3 empty3 empty3 empty3 empty3 empty3 sidebar2"
+    ;
+}
+
+.sidebar1{
+    grid-area: sidebar1;
+    /* background-color: black; */
+}
+
+.sidebar2{
+    grid-area: sidebar2;
+    /* background-color: black; */
+}
+
+.sidebar3{
+    grid-area: sidebar3;
+    /* background-color: black; */
+}
+
+
+.empty1{
+    grid-area: empty1;
+}
+.empty2{
+    grid-area: empty2;
+}
+.empty3{
+    grid-area: empty3;
+}
+
+.line1{
+    grid-area: line1;
+}
+
+
+.text1{
+    grid-area: text1;
+}
+
+.text1 h1{
+    font-size: 80px;
+    margin-bottom: -10px;
+}
+
+.image1{
+    grid-area: image1;
+    overflow: hidden;
+}
+
+.image1 img{
+    display: block;
+    margin: auto;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+
 section{
     height: 100vh;
     color: black
 }
+
 
 section img{
     width: 100%;
@@ -48,6 +135,7 @@ section img{
 @media (max-width: 700px){
     .intro h1{
         font-size: 30px;
+        top: 65%;
     }
     .intro video{
         height: 0%;
@@ -57,8 +145,23 @@ section img{
     }
     
     .intro img{
-        width: 50%;
+        width: 100%;
         opacity: 1;
     }
+    
+    .text1 h1{
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    .text1 p1{
+        font-size: 14px;
+    }
+
+    .text1 p2{
+        font-size: 14px;
+    }
+
+
 
 }
