@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;400;500;700&display=swap');
 
 *{
-    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Jost', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +11,7 @@
     border: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -16,24 +19,32 @@ p1{
     font-size: 20px;
     color: #080808;
     opacity: 0;
+    font-weight: 500;
+    line-height: 0.5;
 }
 
 p2{
     font-size: 20px;
     color: #505050;
     opacity: 0;
+    font-weight: 400;
+    line-height: 0.5;
 }
 
 p3{
     font-size: 20px;
     color: #080808;
     opacity: 0;
+    font-weight: 500;
+    line-height: 0.5;
 }
 
 p4{
     font-size: 20px;
     color: #505050;
     opacity: 0;
+    font-weight: 400;
+    line-height: 0.5;
 }
 
 br{
@@ -72,7 +83,8 @@ br{
 
 .section1{
     height: 100vh;
-    /* background-color: #808080; */
+    width: 100vw;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -133,6 +145,8 @@ br{
 }
 
     .text1 h1{
+        font-family: 'Jost', sans-serif;
+        font-weight: bold;
         font-size: 80px;
         margin-bottom: -10px;
         opacity: 0;
@@ -182,28 +196,71 @@ section img{
         opacity: 1;
     }
     .section1{
-        height: 50vh;
-    }    
+        height: 100vh;
+        /* background-color: #808080; */
+        display: grid;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1%;
+        grid-template-areas:
+        "sidebar1 sidebar1"
+        "sidebar1 sidebar1"
+        "text1 text1"
+        "text1 text1"
+        ;
+    }
+
+    .sidebar2{
+        display: none;
+    }
     
+    .sidebar3{
+        display: none;
+    }   
+    
+    .empty1{
+        display: none;
+    }
+    .empty2{
+        display: none;
+    }
+    .empty3{
+        display: none;
+    }
+    
+    .line1{
+        display: none;
+    }
+        
     .text1 h1{
-        font-size: 30px;
+        font-size: 70px;
         margin-bottom: 0;
     }
 
     .text1 p1{
-        font-size: 14px;
+        font-size: 40px;
+        line-height: 1;
     }
 
     .text1 p2{
-        font-size: 14px;
+        font-size: 40px;
+        line-height: 1;
     }
 
     .text1 p3{
-        font-size: 14px;
+        font-size: 40px;
+        line-height: 1;
     }
 
     .text1 p4{
-        font-size: 14px;
+        font-size: 40px;
+        line-height: 1;
+    }
+
+    .image1{
+        display: none;
     }
 
 }

@@ -52,8 +52,8 @@ const controller = new ScrollMagic.Controller();
         line1Offset = -600;
     }
 
-    //SCENES
-    console.log(videoDuration);
+    //SCENES1
+    // console.log(videoDuration);
     let scene = new ScrollMagic.Scene({
         //Duration of the video, trigger next step after it
         duration: videoDuration,
@@ -66,25 +66,25 @@ const controller = new ScrollMagic.Controller();
         .addTo(controller);
 
 
-    //Video Animation
-    let accelAmount = 0.1;
-    let scrollPos = 0;
-    let delay = 0;
+        //Video Animation
+        let accelAmount = 0.1;
+        let scrollPos = 0;
+        let delay = 0;
 
-    scene.on('update', e => {
-        scrollpos = e.scrollPos / 1000;
-        // console.log(e);
-    });
+        scene.on('update', e => {
+            scrollpos = e.scrollPos / 1000;
+            // console.log(e);
+        });
 
-    setInterval(()=>{
-        delay += (scrollpos - delay) * accelAmount;
-        // console.log(scrollpos, delay);
+        setInterval(()=>{
+            delay += (scrollpos - delay) * accelAmount;
+            // console.log(scrollpos, delay);
 
-        // video.currentTime = scrollpos;
-        video.currentTime = delay;
-    }, 33.3);
+            // video.currentTime = scrollpos;
+            video.currentTime = delay;
+        }, 33.3);
 
-    //Text Animation
+    //Title Text Animation
     const textAni0 = TweenMax.fromTo(text0, 1, {opacity: 0}, {opacity: 0});
 
     let mainTextOff = new ScrollMagic.Scene({
@@ -122,10 +122,26 @@ const controller = new ScrollMagic.Controller();
     .setTween(textAni2)
     .addTo(controller);
 
+
+
+    //SCENE 2
+    let scene2 = new ScrollMagic.Scene({
+        //Duration of the video, trigger next step after it
+        duration: 1000,
+        triggerElement: section1,
+        triggerHook: 0
+    })
+        //Scroll Magic trigger indicators
+        .addIndicators()
+        .setPin(section1)
+        .addTo(controller);
+
+
+
     //horizontal-line1 Animation
-    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '0% 0% 0% -100%'}, {height: '6%', margin: '0% 0% 0% -0%'});
+    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '0% 0% 0% -100%'}, {height: '4%', margin: '0% 0% 0% -0%'});
     let line1Start = new ScrollMagic.Scene({
-        duration: line1Duration,
+        duration: 1000,
         offset: line1Offset,
         triggerElement: section1,
         triggerHook: 0
@@ -138,7 +154,7 @@ const controller = new ScrollMagic.Controller();
         //allkustom(Title)
         const textH1Ani = TweenMax.fromTo(textH1, 1, {opacity: 0}, {opacity: 1});
         let textH1AniStart = new ScrollMagic.Scene({
-            duration: line1Duration,
+            duration: 1000,
             offset: line1Offset,
             triggerElement: section1,
             triggerHook: 0
@@ -151,7 +167,7 @@ const controller = new ScrollMagic.Controller();
         const p1Ani = TweenMax.fromTo(p1, 1, {opacity: 0}, {opacity: 1});
         let p1Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+50,
+            offset: 100,
             triggerElement: section1,
             triggerHook: 0
         })
@@ -163,7 +179,7 @@ const controller = new ScrollMagic.Controller();
         const p2Ani = TweenMax.fromTo(p2, 1, {opacity: 0}, {opacity: 1});
         let p2Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+200,
+            offset: 200,
             triggerElement: section1,
             triggerHook: 0
         })
@@ -175,7 +191,7 @@ const controller = new ScrollMagic.Controller();
         const p3Ani = TweenMax.fromTo(p3, 1, {opacity: 0}, {opacity: 1});
         let p3Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+50,
+            offset: 300,
             triggerElement: section1,
             triggerHook: 0
         })
@@ -187,7 +203,7 @@ const controller = new ScrollMagic.Controller();
         const p4Ani = TweenMax.fromTo(p4, 1, {opacity: 0}, {opacity: 1});
         let p4Start = new ScrollMagic.Scene({
             duration: line1Duration,
-            offset: line1Offset+250,
+            offset: 400,
             triggerElement: section1,
             triggerHook: 0
         })
