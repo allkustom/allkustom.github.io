@@ -9,9 +9,6 @@ const intro = document.querySelector('.intro');
 const video = intro.querySelector('video');
 const text0 = intro.querySelector('h1');
 
-const section = document.querySelector('section');
-const end = section.querySelector('h1');
-
 const section1 = document.querySelector('.section1');
 const line1Div = document.querySelector('.line1');
 const line1 = line1Div.querySelector('.horizontal-line1');
@@ -132,7 +129,7 @@ const controller = new ScrollMagic.Controller();
         triggerHook: 0
     })
         //Scroll Magic trigger indicators
-        .addIndicators()
+        // .addIndicators()
         .setPin(section1)
         .addTo(controller);
 
@@ -141,7 +138,7 @@ const controller = new ScrollMagic.Controller();
     //horizontal-line1 Animation
     const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '0% 0% 0% -100%'}, {height: '4%', margin: '0% 0% 0% -0%'});
     let line1Start = new ScrollMagic.Scene({
-        duration: 1000,
+        duration: 2000,
         offset: line1Offset,
         triggerElement: section1,
         triggerHook: 0
@@ -149,6 +146,7 @@ const controller = new ScrollMagic.Controller();
     //.addIndicators()
     .setTween(line1Ani)
     .addTo(controller);
+    
 
     //Main Page Text Opacity Animation
         //allkustom(Title)
@@ -211,6 +209,37 @@ const controller = new ScrollMagic.Controller();
         .setTween(p4Ani)
         .addTo(controller);
 
+
+    //Selcted Work section
+    const selectedSection = document.querySelector("#selectedWork");
+
+    const selectedTitle = document.querySelector(".selectedTitle");
+    const selecteTitleText = selectedTitle.querySelector("h1");
+    const selectedLine = document.querySelector('.selectedHorizontal-line');
+    
+        //Title Opacity
+        const selectedTitleAni = TweenMax.fromTo(selecteTitleText, 1, {opacity: 0}, {opacity: 1});
+        let selectedTitleStart = new ScrollMagic.Scene({
+            duration: 700,
+            offset: -1000,
+            triggerElement: selectedSection,
+            triggerHook: 0
+        })
+        .addIndicators()
+        .setTween(selectedTitleAni)
+        .addTo(controller);
+
+        //Line Animation
+        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {height: '0.5px', margin: '0% 0% 0% -100%'}, {height: '3px', margin: '0% 0% 0% -0%'});
+        let selectedLineStart = new ScrollMagic.Scene({
+            duration: 700,
+            offset: -1000,
+            triggerElement: selectedSection,
+            triggerHook: 0
+        })
+        .addIndicators()
+        .setTween(selectedLineAni)
+        .addTo(controller);        
 
         
 

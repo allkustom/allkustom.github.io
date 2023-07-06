@@ -15,36 +15,12 @@
 }
 
 
-p1{
-    font-size: 20px;
-    color: #080808;
-    opacity: 0;
-    font-weight: 500;
-    line-height: 0.5;
+body{
+    background-color: #0c0c0c;
 }
 
-p2{
-    font-size: 20px;
-    color: #505050;
-    opacity: 0;
-    font-weight: 400;
-    line-height: 0.5;
-}
-
-p3{
-    font-size: 20px;
-    color: #080808;
-    opacity: 0;
-    font-weight: 500;
-    line-height: 0.5;
-}
-
-p4{
-    font-size: 20px;
-    color: #505050;
-    opacity: 0;
-    font-weight: 400;
-    line-height: 0.5;
+h1{
+    color: #EDEDED;
 }
 
 br{
@@ -77,7 +53,7 @@ br{
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 70px;
-    color:  black;
+    color:  #EDEDED;
     opacity: 0;
 }
 
@@ -99,82 +75,179 @@ br{
     ;
 }
 
-.sidebar1{
-    grid-area: sidebar1;
-    /* background-color: black; */
-}
-
-.sidebar2{
-    grid-area: sidebar2;
-    /* background-color: black; */
-}
-
-.sidebar3{
-    grid-area: sidebar3;
-    /* background-color: black; */
-}
-
-
-.empty1{
-    grid-area: empty1;
-}
-.empty2{
-    grid-area: empty2;
-}
-.empty3{
-    grid-area: empty3;
-}
-
-.line1{
-    grid-area: line1;
-    display: flex;
-    align-items: center;
-    /* justify-content: left; */
-
-}
-
-    .line1 .horizontal-line1{
-        height: 0%;
-        width: 100%;
-        background-color: #080808;
-        margin: 0% 0% 0% -100%;
+    .sidebar1{
+        grid-area: sidebar1;
+        /* background-color: black; */
     }
 
-.text1{
-    grid-area: text1;
+    .sidebar2{
+        grid-area: sidebar2;
+        /* background-color: black; */
+    }
+
+    .sidebar3{
+        grid-area: sidebar3;
+        /* background-color: black; */
+    }
+
+
+    .empty1{
+        grid-area: empty1;
+    }
+    .empty2{
+        grid-area: empty2;
+    }
+    .empty3{
+        grid-area: empty3;
+    }
+
+    .line1{
+        grid-area: line1;
+        display: flex;
+        align-items: center;
+        /* justify-content: left; */
+
+    }
+
+        .line1 .horizontal-line1{
+            height: 0%;
+            width: 100%;
+            background-color: #ededed;
+            margin: 0% 0% 0% -100%;
+        }
+
+    .text1{
+        grid-area: text1;
+    }
+
+        .text1 h1{
+            color: #EDEDED;
+            font-family: 'Jost', sans-serif;
+            font-weight: bold;
+            font-size: 80px;
+            margin-bottom: -10px;
+            opacity: 0;
+        }
+
+        p1{
+            font-size: 20px;
+            color: #EDEDED;
+            opacity: 0;
+            font-weight: 500;
+            line-height: 0.5;
+        }
+        
+        p2{
+            font-size: 20px;
+            color: #939393;
+            opacity: 0;
+            font-weight: 400;
+            line-height: 0.5;
+        }
+        
+        p3{
+            font-size: 20px;
+            color: #EDEDED;
+            opacity: 0;
+            font-weight: 500;
+            line-height: 0.5;
+        }
+        
+        p4{
+            font-size: 20px;
+            color: #939393;
+            opacity: 0;
+            font-weight: 400;
+            line-height: 0.5;
+        }
+
+    .image1{
+        grid-area: image1;
+        overflow: hidden;
+    }
+
+    .image1 img{
+        display: block;
+        margin: auto;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+
+#selectedWork{
+    scroll-margin-top: 16vh;
+    width: 100vw;
+    height: 16vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1%;
+    grid-template-areas:
+    "selectedSidebar1 selectedTitle selectedLine selectedLine selectedLine selectedLine selectedLine selectedLine"
+    ;
+
 }
 
-    .text1 h1{
-        font-family: 'Jost', sans-serif;
-        font-weight: bold;
-        font-size: 80px;
-        margin-bottom: -10px;
+    .selectedSidebar1{
+        grid-area: selectedSidebar1;
+    }
+
+    .selectedTitle{
+        grid-area: selectedTitle;
+    }
+
+    .selectedTitle h1{
+        position: relative;
+        top: 50%;
+        transform: translate(0%, -50%);
+        font-weight: 500;
+        font-size: 40px;
         opacity: 0;
     }
 
-.image1{
-    grid-area: image1;
+    .selectedLine{
+        grid-area: selectedLine;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        /* justify-content: left; */
+
+    }
+
+        .selectedLine .selectedHorizontal-line{
+            height: 3px;
+            width: 100%;
+            background-color: #ededed;
+            margin: 0% 0% 0% -100%;
+        }
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 12vw;
+    margin-right: 12vw;
+}
+
+.box-container .box{
     overflow: hidden;
 }
-
-.image1 img{
-    display: block;
-    margin: auto;
-    height: 100%;
-    /* object-fit: cover; */
-}
-
-
-section{
-    height: 100vh;
-    color: black
-}
-
-
-section img{
+.box-container .box img{
+    transition: 0.2s;
     width: 100%;
 }
 
+.box-container .box .overlay{
+    opacity: 0;
+
+    height: 0;
+}
+
+
+/* Dummy Section */
+.dummy{
+    height: 100vh;
+    
+}
 @media (max-width: 700px){
     .intro{
         padding: 0;
@@ -261,6 +334,28 @@ section img{
 
     .image1{
         display: none;
+    }
+
+    /* SelectedWork Section */
+    #selectedWork{
+        height: 10vh;
+        /* background-color: #808080; */
+        display: grid;
+        margin-left: 12vw;
+        margin-right: 12vw;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1%;
+        grid-template-areas:
+        "selectedTitle selectedLine selectedLine selectedLine"
+        ;
+    }
+        
+    .selectedTitle h1{
+        font-size: 20px;
+    }
+
+    .box-container{
+        grid-template-columns: repeat(1,1fr);
     }
 
 }
