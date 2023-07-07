@@ -229,6 +229,7 @@ br{
     gap: 0.5%;
     opacity: 0;
     margin: 10% 12vw 0 12vw ;
+    overflow: hidden;
 }
 
 .selected-container .box{
@@ -252,6 +253,10 @@ br{
 
 .selected-container .box img:hover{
     transform: scale(1.2);
+}
+
+.selected-container .box .workTitle{
+    overflow: hidden;
 }
 
 .selected-container .box .workTitle h1{
