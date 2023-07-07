@@ -24,6 +24,7 @@ let videoDuration;
 let mediaOffset;
 let line1Duration
 let line1Offset;
+let workGridBool;
 
 //SCROLL MAGIC
 const controller = new ScrollMagic.Controller();
@@ -39,6 +40,7 @@ const controller = new ScrollMagic.Controller();
         mediaOffset = 0;
         line1Duration = 600;
         line1Offset = -600;
+        workGridBool = false;
     }
     else {
         //if the page is wider than 700px
@@ -47,6 +49,7 @@ const controller = new ScrollMagic.Controller();
         mediaOffset = 2000;
         line1Duration = 500;
         line1Offset = -600;
+        workGridBool = true;
     }
 
     //SCENES1
@@ -220,28 +223,53 @@ const controller = new ScrollMagic.Controller();
         //Title Opacity
         const selectedTitleAni = TweenMax.fromTo(selecteTitleText, 1, {opacity: 0}, {opacity: 1});
         let selectedTitleStart = new ScrollMagic.Scene({
-            duration: 700,
+            duration: 1000,
             offset: -1000,
             triggerElement: selectedSection,
             triggerHook: 0
         })
-        .addIndicators()
+        // .addIndicators()
         .setTween(selectedTitleAni)
         .addTo(controller);
 
         //Line Animation
         const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {height: '0.5px', margin: '0% 0% 0% -100%'}, {height: '3px', margin: '0% 0% 0% -0%'});
         let selectedLineStart = new ScrollMagic.Scene({
-            duration: 700,
+            duration: 1000,
             offset: -1000,
             triggerElement: selectedSection,
             triggerHook: 0
         })
-        .addIndicators()
+        // .addIndicators()
         .setTween(selectedLineAni)
         .addTo(controller);        
 
-        
+        //Artwork Animation
+        const boxContainer = document.querySelector('.selected-container');
+
+        if(workGridBool == true){
+            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 12vw 0 12vw'}, {opacity: 1,margin: '0% 12vw 0 12vw'});
+            let boxConatinerStart = new ScrollMagic.Scene({
+                duration: 500,
+                offset: -500,
+                triggerElement: selectedSection,
+                triggerHook: 0
+            })
+            // .addIndicators()
+            .setTween(boxContainerAni)
+            .addTo(controller);
+        }else if(workGridBool == false){
+            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 5% 0 5%'}, {opacity: 1,margin: '0% 5% 0 5%'});
+            let boxConatinerStart = new ScrollMagic.Scene({
+                duration: 500,
+                offset: -500,
+                triggerElement: selectedSection,
+                triggerHook: 0
+            })
+            // .addIndicators()
+            .setTween(boxContainerAni)
+            .addTo(controller);
+        }
 
 
 

@@ -201,8 +201,10 @@ br{
         top: 50%;
         transform: translate(0%, -50%);
         font-weight: 500;
-        font-size: 40px;
+        font-size: 2.5vw;
         opacity: 0;
+        line-height: 1;
+        overflow: hidden;
     }
 
     .selectedLine{
@@ -221,26 +223,54 @@ br{
             margin: 0% 0% 0% -100%;
         }
 
-.box-container{
+.selected-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: 12vw;
-    margin-right: 12vw;
+    gap: 0.5%;
+    opacity: 0;
+    margin: 10% 12vw 0 12vw ;
 }
 
-.box-container .box{
+.selected-container .box{
     overflow: hidden;
 }
-.box-container .box img{
-    transition: 0.2s;
+
+.selected-container .box .imageBox{
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.selected-container .box .imageBox img{
+    transition: 0.3s ease-in-out;
     width: 100%;
+    height: 100%s;
+    object-fit: cover;
+    transform: scale(1.1);
 }
 
-.box-container .box .overlay{
-    opacity: 0;
-
-    height: 0;
+.selected-container .box img:hover{
+    transform: scale(1.2);
 }
+
+.selected-container .box .workTitle h1{
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #EDEDED;
+}
+
+.selected-container .box .workTitle p{
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: -5px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #939393;
+}
+
+
 
 
 /* Dummy Section */
@@ -341,8 +371,7 @@ br{
         height: 10vh;
         /* background-color: #808080; */
         display: grid;
-        margin-left: 12vw;
-        margin-right: 12vw;
+        margin: 20% 5% 0 5% ;
         grid-template-columns: repeat(4, 1fr);
         gap: 1%;
         grid-template-areas:
@@ -354,8 +383,21 @@ br{
         font-size: 20px;
     }
 
-    .box-container{
-        grid-template-columns: repeat(1,1fr);
+    .selected-container{
+        grid-template-columns: repeat(2,1fr);
+        margin-left: 5%;
+        margin-right: 5%;
+        gap: 1%;
     }
+    .selected-container .box .workTitle h1{
+        font-size: 14px;
+    }
+    .selected-container .box .workTitle p{
+        font-size: 11px;
+        margin-bottom: 10px;
+        margin-top: -px;
+    }
+    
+    
 
 }
