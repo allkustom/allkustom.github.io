@@ -9,6 +9,47 @@
 </head>
 
 <body>
+<header>
+    <a href="#home" class="logo">
+        <img src="assets/allkustom shape logo_white.png" alt="">
+    </a>
+    <!-- <div class="headerLine"></div> -->
+    <ul>
+        <li>
+            <a href="#">Artwork &#8964;</a>
+            <!-- <ul class="dropdown">
+                <li><a href="#">Selected</a></li>
+                <li><a href="#">Motion Grahpic</a></li>
+                <li><a href="#">Image Graphic</a></li>
+                <li><a href="#">Code/Program</a></li>
+                <li><a href="#">Physical</a></li>
+            </ul> -->
+        </li>
+        <li><a href="#">Bio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <!-- <div class="mobileMenu" onclick="MenuOn()" ><img src="assets/menu_icon.png" alt=""></div> -->
+    <div class="mobileMenu" onclick="MenuOn(this, mobileMenuOption)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</header>
+<div class="mobileMenuOption">
+    <ul>
+        <li><a href="#">Artwork</a></li>
+        <li><a href="#" class="smallMenu">Selected Work</a></li>
+        <li><a href="#" class="smallMenu">Motion Grahpic</a></li>
+        <li><a href="#" class="smallMenu">Image Graphic</a></li>
+        <li><a href="#" class="smallMenu">Code/Program</a></li>
+        <li><a href="#" class="smallMenu">Physical</a></li>
+        <li><a>-</a></li>
+        <li><a href="#">Bio</a></li>
+        <li><a href="#">Contact</a></li>
+
+</ul>
+</div>
+
     <div class="intro">
         <h1>
             allkustom
@@ -19,12 +60,7 @@
     </div>
 
     <div class="section1">
-        <div class="sidebar1"></div>
-        <div class="sidebar2"></div>
-        <div class="sidebar3"></div>
-        <div class="empty1"></div>
-        <div class="empty2"></div>
-        <div class="empty3"></div>
+        <div id="home"></div>
         <div class="line1">
             <div class="horizontal-line1"></div>
         </div>
@@ -48,11 +84,10 @@
 
         </div>
         <div class="image1">
-            <img src="assets/allkustom shape logo.png"></img>
+            <img src="assets/allkustom shape logo_2 2.jpg"></img>
         </div>
     </div>
     <div id="selectedWork">
-        <div class="selectedSidebar1"></div>
         <div class="selectedTitle">
             <h1>
                 Selected

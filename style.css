@@ -19,6 +19,150 @@ body{
     background-color: #0c0c0c;
 }
 
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 3vw 3vh 3vw;
+    /* background-color: #141414; */
+    z-index: 1001;
+    background-image: linear-gradient(180deg, #0c0c0c, 80%, transparent);
+}
+
+    header .logo{
+        position: relative;
+        width: 40px;
+        /* background-color: white; */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* font-weight: 500;
+        color: #EDEDED;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.6s; */
+    }
+
+    header .logo img{
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    header .headerLine{
+        height: 1px;
+        width: 100%;
+        background-color: #939393;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+
+    header ul{
+        position: relative;
+        display: flex;
+        list-style: none;
+    }
+
+    header ul li{
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+    }
+
+    header ul li a{
+        position: relative;
+        display: block;
+        color: #ededed;
+        font-size: 16px;
+        /* letter-spacing: 15px; */
+        transition: 0.5s;
+    }
+
+    header ul li a:hover{
+        color: #505050;
+    }
+
+        header .mobileMenu{
+            /* display: none;
+            width: 20px; */
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3{
+            width: 25px;
+            height: 3px;
+            background-color: #ededed;
+            margin: 0 0 6px 0;
+            transition: 0.3s ease-in-out;
+            border-radius: 2.5px;
+        }
+
+        .change .bar1{
+            transform: translate(0,9px) rotate(-45deg);
+            background-color: #ededed;
+        }
+        .change .bar2{
+            opacity: 0;
+        }
+        .change .bar3{
+            transform: translate(0,-9px) rotate(45deg);
+            background-color: #ededed;
+        }
+        
+
+
+        .mobileMenuOption{
+            position: fixed;
+            display: none;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .turnOn{
+            display: block;
+            opacity: 1;
+        }
+
+
+            .mobileMenuOption ul{
+                position: relative;
+                display: block;
+                list-style: none;
+                top: 20%;
+                right: 5%;
+            }
+            .mobileMenuOption ul li{
+                text-align: right;
+            }
+            .mobileMenuOption ul li a{
+                position: relative;
+                display: block;
+                color: #ededed;
+                font-size: 40px;
+                /* letter-spacing: 15px; */
+                transition: 0.5s;        
+                margin-top: 10px;
+            }
+
+            .mobileMenuOption ul li a.smallMenu{
+                color: #939393;
+                font-size: 30px;
+                margin-top: -2%;
+            }
+
 h1{
     color: #EDEDED;
 }
@@ -66,45 +210,20 @@ br{
     grid-template-rows: repeat(6, 1fr);
     gap: 1%;
     grid-template-areas:
-    "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
-    "sidebar1 empty1 empty1 empty1 empty1 empty1 empty1 sidebar2"
-    "line1 text1 text1 empty2 image1 image1 image1  sidebar2"
-    "sidebar3 text1 text1 empty2 image1 image1 image1  sidebar2"
-    "sidebar3 text1 text1 empty2 image1 image1 image1  sidebar2"
-    "sidebar3 empty3 empty3 empty3 empty3 empty3 empty3 sidebar2"
+    ". . . . . . . ."
+    ". . . . . . . ."
+    "line1 text1 text1 . image1 image1 image1  ."
+    ". text1 text1 . image1 image1 image1  ."
+    ". text1 text1 . image1 image1 image1  ."
+    ". . . . . . . ."
     ;
 }
 
-    .sidebar1{
-        grid-area: sidebar1;
-        /* background-color: black; */
-    }
-
-    .sidebar2{
-        grid-area: sidebar2;
-        /* background-color: black; */
-    }
-
-    .sidebar3{
-        grid-area: sidebar3;
-        /* background-color: black; */
-    }
-
-
-    .empty1{
-        grid-area: empty1;
-    }
-    .empty2{
-        grid-area: empty2;
-    }
-    .empty3{
-        grid-area: empty3;
-    }
 
     .line1{
         grid-area: line1;
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         /* justify-content: left; */
 
     }
@@ -113,7 +232,7 @@ br{
             height: 0%;
             width: 100%;
             background-color: #ededed;
-            margin: 0% 0% 0% -100%;
+            margin: 40% 0% 0% -100%;
         }
 
     .text1{
@@ -124,7 +243,8 @@ br{
             color: #EDEDED;
             font-family: 'Jost', sans-serif;
             font-weight: bold;
-            font-size: 80px;
+            font-size: 4.7vw;
+            /* font-size: 80px; */
             margin-bottom: -10px;
             opacity: 0;
         }
@@ -164,6 +284,8 @@ br{
     .image1{
         grid-area: image1;
         overflow: hidden;
+        justify-content: center;
+        align-items: center;
     }
 
     .image1 img{
@@ -183,14 +305,11 @@ br{
     grid-template-rows: 1fr;
     gap: 1%;
     grid-template-areas:
-    "selectedSidebar1 selectedTitle selectedLine selectedLine selectedLine selectedLine selectedLine selectedLine"
+    ". selectedTitle selectedLine selectedLine selectedLine selectedLine selectedLine selectedLine"
     ;
 
 }
 
-    .selectedSidebar1{
-        grid-area: selectedSidebar1;
-    }
 
     .selectedTitle{
         grid-area: selectedTitle;
@@ -251,7 +370,7 @@ br{
     transform: scale(1.1);
 }
 
-.selected-container .box img:hover{
+.selected-container .box:hover img{
     transform: scale(1.2);
 }
 
@@ -264,6 +383,8 @@ br{
     font-size: 20px;
     font-weight: 500;
     color: #EDEDED;
+    transition: 0.5s ease-in-out;
+    margin-left: 0%;
 }
 
 .selected-container .box .workTitle p{
@@ -273,17 +394,49 @@ br{
     font-weight: 400;
     overflow: hidden;
     color: #939393;
+    transition: 0.5s ease-in-out;
+    margin-left: 0%;
 }
 
+.selected-container .box:hover .workTitle h1{
+    margin-left: 5%;
+}
+
+.selected-container .box:hover .workTitle p{
+    margin-left: 10%;
+}
 
 
 
 /* Dummy Section */
 .dummy{
-    height: 100vh;
-    
+    height: 100vh;   
 }
+
+/* Media Control---------------------------------------------------------- */
 @media (max-width: 700px){
+    header{
+        padding: 3vh 6vw 0px 6vw;
+    }    
+
+    header ul{
+        display: none;
+    }
+
+    header .logo{
+        width: 30px;
+    }
+
+    header .mobileMenu{
+        display: block;
+    }
+    header .mobileMenu{
+        display: inline-block;
+    }
+    /* .mobileMenuOption{
+        display: block;
+    } */
+
     .intro{
         padding: 0;
     }
@@ -313,8 +466,8 @@ br{
         grid-template-rows: repeat(4, 1fr);
         gap: 1%;
         grid-template-areas:
-        "sidebar1 sidebar1"
-        "sidebar1 sidebar1"
+        ". ."
+        ". . "
         "text1 text1"
         "text1 text1"
         ;
@@ -389,19 +542,20 @@ br{
     }
 
     .selected-container{
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(1,1fr);
         margin-left: 5%;
         margin-right: 5%;
         gap: 1%;
     }
     .selected-container .box .workTitle h1{
-        font-size: 14px;
+        font-size: 16px;
     }
     .selected-container .box .workTitle p{
         font-size: 11px;
-        margin-bottom: 10px;
-        margin-top: -px;
+        margin-bottom: 15px;
     }
+
+    
     
     
 

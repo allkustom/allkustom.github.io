@@ -29,6 +29,13 @@ let workGridBool;
 //SCROLL MAGIC
 const controller = new ScrollMagic.Controller();
 
+//Mobile Header Animation
+const mobileMenuOption = document.querySelector('.mobileMenuOption');
+function MenuOn(x, y){
+    x.classList.toggle("change");
+    y.classList.toggle("turnOn");
+}
+
 
     //Scenes control with media query
     //Targeting Media Query 
@@ -123,6 +130,20 @@ const controller = new ScrollMagic.Controller();
     .addTo(controller);
 
 
+    //Header Animation
+    const header = document.querySelector('header');
+
+    const headerAni = TweenMax.fromTo(header, 1, {opacity: 0}, {opacity: 1});
+    let headerAniStart = new ScrollMagic.Scene({
+        duration: 50,
+        offset: -50,
+        triggerElement: section1,
+        triggerHook: 0
+    })
+    .addIndicators()
+    .setTween(headerAni)
+    .addTo(controller);
+
 
     //SCENE 2
     let scene2 = new ScrollMagic.Scene({
@@ -139,7 +160,7 @@ const controller = new ScrollMagic.Controller();
 
 
     //horizontal-line1 Animation
-    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '0% 0% 0% -100%'}, {height: '4%', margin: '0% 0% 0% -0%'});
+    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '40% 0% 0% -100%'}, {height: '4%', margin: '40% 0% 0% 0%'});
     let line1Start = new ScrollMagic.Scene({
         duration: 2000,
         offset: line1Offset,
