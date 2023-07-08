@@ -38,6 +38,7 @@ function MenuOn(x, y, z){
     x.classList.toggle("change");
     y.classList.toggle("turnOn");
     z.disabled = true;
+    z.classList.toggle("turnOff");
     htmlDiv.classList.toggle("turnOff");
 }
 
