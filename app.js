@@ -30,10 +30,15 @@ let workGridBool;
 const controller = new ScrollMagic.Controller();
 
 //Mobile Header Animation
+let scrollBool = false;
+const mobileMenu = document.querySelector('.mobileMenu');
 const mobileMenuOption = document.querySelector('.mobileMenuOption');
-function MenuOn(x, y){
+const htmlDiv = document.querySelector('html');
+function MenuOn(x, y, z){
     x.classList.toggle("change");
     y.classList.toggle("turnOn");
+    z.disabled = true;
+    htmlDiv.classList.toggle("turnOff");
 }
 
 
@@ -140,7 +145,7 @@ function MenuOn(x, y){
         triggerElement: section1,
         triggerHook: 0
     })
-    .addIndicators()
+    // .addIndicators()
     .setTween(headerAni)
     .addTo(controller);
 
@@ -244,8 +249,8 @@ function MenuOn(x, y){
         //Title Opacity
         const selectedTitleAni = TweenMax.fromTo(selecteTitleText, 1, {opacity: 0}, {opacity: 1});
         let selectedTitleStart = new ScrollMagic.Scene({
-            duration: 1000,
-            offset: -1000,
+            duration: 800,
+            offset: -800,
             triggerElement: selectedSection,
             triggerHook: 0
         })
@@ -254,10 +259,10 @@ function MenuOn(x, y){
         .addTo(controller);
 
         //Line Animation
-        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {height: '0.5px', margin: '0% 0% 0% -100%'}, {height: '3px', margin: '0% 0% 0% -0%'});
+        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {height: '0.5px', margin: '0% 0% 0% -100%'}, {height: '2px', margin: '0% 0% 0% -0%'});
         let selectedLineStart = new ScrollMagic.Scene({
-            duration: 1000,
-            offset: -1000,
+            duration: 800,
+            offset: -800,
             triggerElement: selectedSection,
             triggerHook: 0
         })

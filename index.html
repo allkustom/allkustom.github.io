@@ -8,9 +8,8 @@
     <title>allkustom portfolio</title>
 </head>
 
-<body>
 <header>
-    <a href="#home" class="logo">
+    <a href="#homeTag" class="logo">
         <img src="assets/allkustom shape logo_white.png" alt="">
     </a>
     <!-- <div class="headerLine"></div> -->
@@ -18,7 +17,7 @@
         <li>
             <a href="#">Artwork &#8964;</a>
             <!-- <ul class="dropdown">
-                <li><a href="#">Selected</a></li>
+                <li><a href="#selectedWorkTag">Selected</a></li>
                 <li><a href="#">Motion Grahpic</a></li>
                 <li><a href="#">Image Graphic</a></li>
                 <li><a href="#">Code/Program</a></li>
@@ -29,23 +28,25 @@
         <li><a href="#">Contact</a></li>
     </ul>
     <!-- <div class="mobileMenu" onclick="MenuOn()" ><img src="assets/menu_icon.png" alt=""></div> -->
-    <div class="mobileMenu" onclick="MenuOn(this, mobileMenuOption)">
+    <div class="mobileMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
 </header>
+
+<body>
 <div class="mobileMenuOption">
     <ul>
-        <li><a href="#">Artwork</a></li>
-        <li><a href="#" class="smallMenu">Selected Work</a></li>
-        <li><a href="#" class="smallMenu">Motion Grahpic</a></li>
-        <li><a href="#" class="smallMenu">Image Graphic</a></li>
-        <li><a href="#" class="smallMenu">Code/Program</a></li>
-        <li><a href="#" class="smallMenu">Physical</a></li>
-        <li><a>-</a></li>
-        <li><a href="#">Bio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#" onclick="MenuOn(mobileMenu, mobileMenuOption, body)"><div class="menuLine1"></div>Artwork</a></li>
+        <li><a href="#selectedWorkTag" class="smallMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">Selected Work</a></li>
+        <li><a href="#" class="smallMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">Motion Grahpic</a></li>
+        <li><a href="#" class="smallMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">Image Graphic</a></li>
+        <li><a href="#" class="smallMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">Code/Program</a></li>
+        <li><a href="#" class="smallMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">Physical</a></li>
+        <!-- <li><a>-</a></li> -->
+        <li><a href="#" onclick="MenuOn(mobileMenu, mobileMenuOption, body)"><div class="menuLine1"></div>Bio</a></li>
+        <li><a href="#" onclick="MenuOn(mobileMenu, mobileMenuOption, body)"    ><div class="menuLine1"></div>Contact</a></li>
 
 </ul>
 </div>
@@ -59,8 +60,8 @@
         <img src="assets/allkustom shape logo.png"></img>
     </div>
 
+    <div id="homeTag">
     <div class="section1">
-        <div id="home"></div>
         <div class="line1">
             <div class="horizontal-line1"></div>
         </div>
@@ -87,6 +88,8 @@
             <img src="assets/allkustom shape logo_2 2.jpg"></img>
         </div>
     </div>
+</div>
+<div id="selectedWorkTag">
     <div id="selectedWork">
         <div class="selectedTitle">
             <h1>
@@ -99,6 +102,7 @@
             <div class="selectedHorizontal-line"></div>
         </div>    
     </div>
+</div>
     <div class="selected-container">
         <div class="box">
             <a href="#">
@@ -175,7 +179,6 @@
 
     </div>
 
-<div class="dummy"></div>
     <section>
         <!-- <h1>Video Test Done</h1> -->
         <!-- <img src="assets/wireframe.png"></img> -->
