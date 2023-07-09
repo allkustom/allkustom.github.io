@@ -34,6 +34,7 @@ let scrollBool = false;
 const mobileMenu = document.querySelector('.mobileMenu');
 const mobileMenuOption = document.querySelector('.mobileMenuOption');
 const htmlDiv = document.querySelector('html');
+const logo = document.querySelector('.logo');
 let menuCheck = false;
 function MenuOn(x){
     mobileMenu.classList.toggle("change");
@@ -42,16 +43,7 @@ function MenuOn(x){
     menuCheck = true;
     x.classList.toggle("turnOff");
     htmlDiv.classList.toggle("turnOff");
-}
-function MenuOffLogo(x){
-    if(menuCheck == true){
-        mobileMenu.classList.toggle("change");
-        mobileMenuOption.classList.toggle("turnOn");
-        x.disabled = false;
-        menuCheck = false;
-        x.classList.toggle("turnOff");
-        htmlDiv.classList.toggle("turnOff");    
-    }
+    logo.classList.toggle("moveLeft");
 }
 
     //Scenes control with media query
