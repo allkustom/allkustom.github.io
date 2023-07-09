@@ -34,14 +34,25 @@ let scrollBool = false;
 const mobileMenu = document.querySelector('.mobileMenu');
 const mobileMenuOption = document.querySelector('.mobileMenuOption');
 const htmlDiv = document.querySelector('html');
-function MenuOn(x, y, z){
-    x.classList.toggle("change");
-    y.classList.toggle("turnOn");
-    z.disabled = true;
-    z.classList.toggle("turnOff");
+let menuCheck = false;
+function MenuOn(x){
+    mobileMenu.classList.toggle("change");
+    mobileMenuOption.classList.toggle("turnOn");
+    x.disabled = true;
+    menuCheck = true;
+    x.classList.toggle("turnOff");
     htmlDiv.classList.toggle("turnOff");
 }
-
+function MenuOffLogo(x){
+    if(menuCheck == true){
+        mobileMenu.classList.toggle("change");
+        mobileMenuOption.classList.toggle("turnOn");
+        x.disabled = false;
+        menuCheck = false;
+        x.classList.toggle("turnOff");
+        htmlDiv.classList.toggle("turnOff");    
+    }
+}
 
     //Scenes control with media query
     //Targeting Media Query 

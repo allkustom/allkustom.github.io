@@ -9,7 +9,7 @@
 </head>
 
 <header>
-    <a href="#homeTag" class="logo">
+    <a href="#homeTag" class="logo" onclick="MenuOffLogo(body)">
         <img src="assets/allkustom shape logo_white.png" alt="">
     </a>
     <!-- <div class="headerLine"></div> -->
@@ -17,13 +17,6 @@
     <ul>
         <li>
             <a href="#">Artwork &#8964;</a>
-            <!-- <div class="dropdown">
-                <a href="#selectedWorkTag">Selected</a>
-                <a href="#">Motion Grahpic</a>
-                <a href="#">Image Graphic</a>
-                <a href="#">Code/Program</a>
-                <a href="#">Physical</a>
-            </div> -->
             <ul class="dropdown">
                 <div class="verticalLine"></div>
                 <li><a href="#selectedWorkTag">Selected</a></li>
@@ -37,7 +30,7 @@
         <li><a href="#">Contact</a></li>
     </ul>
     <!-- <div class="mobileMenu" onclick="MenuOn()" ><img src="assets/menu_icon.png" alt=""></div> -->
-    <div class="mobileMenu" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">
+    <div class="mobileMenu" onclick="MenuOn(body)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -193,13 +186,14 @@
                 </div>
             </a>
         </div>
-
-
     </div>
+
+    <div class="dummy"></div>
 
     <section>
         <!-- <h1>Video Test Done</h1> -->
         <!-- <img src="assets/wireframe.png"></img> -->
+
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"

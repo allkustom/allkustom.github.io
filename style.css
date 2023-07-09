@@ -271,6 +271,10 @@ br{
     opacity: 0;
 }
 
+#homeTag{
+    scroll-margin-top: -100vh;
+}
+
 .section1{
     height: 100vh;
     width: 100vw;
@@ -365,8 +369,11 @@ br{
         /* object-fit: cover; */
     }
 
+#selectedWorkTag{
+    scroll-margin-top: 10vh;
+}
+
 #selectedWork{
-    scroll-margin-top: 16vh;
     width: 100vw;
     height: 16vh;
     margin: 0;
@@ -479,7 +486,10 @@ br{
 }
 
 
-
+.dummy{
+    height: 100vh;
+    background-color: black;
+}
 
 /* Media Control---------------------------------------------------------- */
 @media (max-width: 700px){
