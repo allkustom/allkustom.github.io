@@ -16,7 +16,7 @@
 
     <ul>
         <li>
-            <a href="#">Artwork &#8964;</a>
+            <a href="#allWorkTag">Artwork &#8964;</a>
             <ul class="dropdown">
                 <div class="verticalLine"></div>
                 <li><a href="#selectedWorkTag">Selected</a></li>
@@ -40,7 +40,7 @@
 <body>
     <div class="mobileMenuOption">
         <ul>
-            <li><a href="#" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">
+            <li><a href="#allWorkTag" onclick="MenuOn(mobileMenu, mobileMenuOption, body)">
                     <div class="menuLine1"></div>Artwork
                 </a></li>
             <li><a href="#selectedWorkTag" class="smallMenu"
@@ -191,10 +191,10 @@
     <div id="allWorkTag">
         <div class="allWorkSection">
             <div class="artContainer">
-
-                <div class="artContent">
+                <div class="artContent" onclick="motionLink()">
                     <div class="artContentImage">
-                        <img src="assets/art section sample.png" alt="">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/artworkSection sample.png" alt="">
                     </div>
                     <div class="artContentText">
                         <div class="connectorLine"></div>
@@ -204,10 +204,10 @@
                         </h1>
                     </div>
                 </div>
-
-                <div class="artContent">
+                <div class="artContent" onclick="imageLink()">
                     <div class="artContentImage">
-                        <img src="assets/art section sample.png" alt="">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/artworkSection sample.png" alt="">
                     </div>
                     <div class="artContentText">
                         <div class="connectorLine"></div>
@@ -217,10 +217,10 @@
                         </h1>
                     </div>
                 </div>
-
-                <div class="artContent">
+                <div class="artContent" onclick="codeLink()">
                     <div class="artContentImage">
-                        <img src="assets/art section sample.png" alt="">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/artworkSection sample.png" alt="">
                     </div>
                     <div class="artContentText">
                         <div class="connectorLine"></div>
@@ -231,9 +231,10 @@
                     </div>
                 </div>
 
-                <div class="artContent">
+                <div class="artContent" onclick="physicalLink()">
                     <div class="artContentImage">
-                        <img src="assets/art section sample.png" alt="">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/artworkSection sample.png" alt="">
                     </div>
                     <div class="artContentText">
                         <div class="connectorLine"></div>

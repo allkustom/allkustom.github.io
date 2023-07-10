@@ -25,6 +25,7 @@ let mediaOffset;
 let line1Duration
 let line1Offset;
 let workGridBool;
+let artLinkTimer;
 
 //SCROLL MAGIC
 const controller = new ScrollMagic.Controller();
@@ -57,6 +58,7 @@ function MenuOn(x){
         line1Duration = 600;
         line1Offset = -600;
         workGridBool = false;
+        artLinkTimer = 1000;
     }
     else {
         //if the page is wider than 700px
@@ -66,6 +68,7 @@ function MenuOn(x){
         line1Duration = 500;
         line1Offset = -600;
         workGridBool = true;
+        artLinkTimer = 0;
     }
 
     //SCENES1
@@ -301,6 +304,35 @@ function MenuOn(x){
             .addTo(controller);
         }
 
+
+    //All artWork section
+    // const artSection = document.querySelector("#selectedWork");
+
+
+    //All artwork Link Function
+    function motionLink(){
+        setTimeout(function(){
+            window.location.href = "#";
+        },artLinkTimer)
+    }
+
+    function iamgeLink(){
+        setTimeout(function(){
+            window.location.href = "#";
+        },artLinkTimer)
+    }
+
+    function codeLink(){
+        setTimeout(function(){
+            window.location.href = "#";
+        },artLinkTimer)
+    }
+
+    function physicalLink(){
+        setTimeout(function(){
+            window.location.href = "#";
+        },artLinkTimer)
+    }
 
 
 

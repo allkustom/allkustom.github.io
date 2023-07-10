@@ -491,7 +491,7 @@ br{
     }
 
 #allWorkTag{
-    scroll-margin-top: 10vh;
+    scroll-margin-top: 0vh;
 }
 
 .allWorkSection{
@@ -503,21 +503,12 @@ br{
     grid-template-rows: repeat(6, 1fr);
     gap: 1%;
     grid-template-areas:
-    /* ". . . . . . . ."
-    "motionSection motionSection motionSection motionSection motionSection . . ."
-    "imageSection imageSection imageSection imageSection imageSection title2 title2 title2"
-    "codeSection codeSection codeSection codeSection codeSection text2 text2 ."
-    "physicalSection physicalSection physicalSection physicalSection physicalSection text2 text2 ."
-    ". . . . . . . ." */
-
     ". . . . . . . ."
     "artContainer artContainer artContainer artContainer artContainer . . ."
     "artContainer artContainer artContainer artContainer artContainer title2 title2 title2"
     "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
     "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
     ". . . . . . . ."
-
-
     ;
 }
 
@@ -528,29 +519,47 @@ br{
     gap: 1.5%;
     grid-template-rows: repeat(4,1fr);
 }
+
+.artContainer a{
+    overflow: hidden;
+    display: flex;
+}
+
 .artContainer .artContent{
     overflow: hidden;
     display: grid;
     grid-template-columns: 4fr 1fr;
-    /* margin-left: -50vw; */
-    margin-left: -100%;
+    margin-left: -20vw;
     transition: 0.5s ease-in-out;
     cursor: pointer;
- }
+}
+
 .artContainer .artContent .artContentImage{
     overflow: hidden;
     display: flex;
+    position: relative;
     justify-content: right;
-    align-items: right;
-    border-radius: 2px;
+    align-items: center;
     transition: 0.5s ease-in-out;
-    /* width: 80%; */
+    /* border-radius: 50px; */
 }
+.artContainer .artContent .artContentImage .artContentImageOverlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out;
+}
+
+
 .artContainer .artContent .artContentImage img{
     /* width: 100%; */
     height: 100%;
     object-fit: cover;
-    
+    transition: 0.5s ease-in-out;
 }
 
 
@@ -564,8 +573,8 @@ br{
 
 .artContainer .artContent .artContentText .connectorLine{
     width: 1vw;
-    height: 2px;
-    margin: auto 0.5vw auto 0px;
+    height: 1px;
+    margin: auto 0.5vw auto 0.5vw;
     background-color: #939393;
     transition: 0.5s ease-in-out;
 }
@@ -578,19 +587,21 @@ br{
     transition: 0.5s ease-in-out;
 }
 
+
 .artContainer .artContent:hover{
     margin-left: 0vw;
 }
-.artContainer .artContent:hover .artContentImage{
-    border-radius: 0px;
+.artContainer .artContent:hover .artContentImage img{
+    height: 100%;
 }
-
+.artContainer .artContent:hover .artContentImage .artContentImageOverlay{
+    opacity: 0;
+}
 .artContainer .artContent:hover .artContentText h1{
     font-size: 30px;
     font-weight: 500;
     color: #ededed;
 }
-
 .artContainer .artContent:hover .artContentText .connectorLine{
     width: 2vw;
     height: 5px;
@@ -632,10 +643,6 @@ br{
     font-weight: 400;
     color: #939393;
 }
-
-
-
-
 
 .dummy{
     height: 100vh;
@@ -762,6 +769,100 @@ br{
         font-size: 16px;
         margin-bottom: 10px;
     }
+
+    #allWorkTag{
+        scroll-margin-top: 5vh;
+    }
+    
+    .allWorkSection{
+        height: 80vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1%;
+        grid-template-areas:
+        "title2 title2 title2 title2"
+        "text2 text2 text2 text2"
+        "artContainer artContainer artContainer artContainer"
+        "artContainer artContainer artContainer artContainer"
+        "artContainer artContainer artContainer artContainer"
+        "artContainer artContainer artContainer artContainer"
+        ;
+    }
+
+    .artContainer .artContent{
+        margin-left: -20vw;
+    }
+    .title2{
+        margin-left: 5%;
+    }
+    .title2 h1{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .title2 .line2{
+        width: 100%;
+        height: 2px;
+        background-color: #ededed;
+        margin-bottom: 1.5%;
+        margin-left: 2vw;
+    }
+
+    .text2{
+        margin: 0 5% 0 5%;
+    }
+    .text2 p{
+        font-size: 14px;
+        font-weight: 400;
+        color: #939393;
+    }    
+
+    .artContainer .artContent{
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+    }    
+    .artContainer .artContent .artContentImage img{
+        height: 80%;
+    }    
+    .artContainer .artContent .artContentImage .artContentImageOverlay{
+        opacity: 0.5;
+    }
+    .artContainer .artContent .artContentText .connectorLine{
+        width: 3vw;
+        height: 1px;
+        margin: auto 1vw auto 1vw;
+        background-color: #939393;
+        transition: 0.5s ease-in-out;
+    }    
+
+    .artContainer .artContent .artContentText h1{
+        font-size: 15px;
+        font-weight: 500;
+        color: #939393;
+    }
+
+    .artContainer .artContent:hover{
+        margin-left: 0vw;
+    }
+    .artContainer .artContent:hover .artContentImage img{
+        height: 100%;
+    }
+    .artContainer .artContent:hover .artContentImage .artContentImageOverlay{
+        opacity: 0;
+    }
+    .artContainer .artContent:hover .artContentText h1{
+        font-size: 20px;
+        font-weight: 500;
+        color: #ededed;
+    }
+    .artContainer .artContent:hover .artContentText .connectorLine{
+        width: 5vw;
+        height: 2px;
+        background-color: #ededed;
+    }
+    
+    
 
     
     
