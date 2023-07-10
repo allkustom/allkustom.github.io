@@ -423,6 +423,7 @@ br{
             height: 1px;
             width: 100%;
             background-color: #ededed;
+            opacity: 0;
             margin: 0% 0% 0% -100%;
         }
 
@@ -518,6 +519,8 @@ br{
     display: grid;
     gap: 1.5%;
     grid-template-rows: repeat(4,1fr);
+    opacity: 0;
+    margin: 0% 0% 0% -100%;
 }
 
 .artContainer a{
@@ -560,6 +563,7 @@ br{
     height: 100%;
     object-fit: cover;
     transition: 0.5s ease-in-out;
+    border-top-right-radius: 50px;
 }
 
 
@@ -593,6 +597,8 @@ br{
 }
 .artContainer .artContent:hover .artContentImage img{
     height: 100%;
+    border-top-right-radius: 0px;
+
 }
 .artContainer .artContent:hover .artContentImage .artContentImageOverlay{
     opacity: 0;
@@ -619,30 +625,41 @@ br{
 
     .title2 .title2TextBox{
         display: block;
-        height: fit-content;
-        width: 40%;
     }
         .title2 h1{
-            font-weight: 400;
-            font-size: 2vw;
+            font-weight: 500;
+            font-size: 2.5vw;
             line-height: 1;
             margin: 0;
+            opacity: 0;
         }
-    .title2 .line2{
+        .title2 .line2Box{
             width: 100%;
-            height: 3px;
-            background-color: #ededed;
-            margin-bottom: 2%;
+            display: flex;
+            overflow: hidden;
+            /* margin-bottom: 2%; */
+            /* margin: 0% 0% 2% -100%; */
         }
+            .title2 .line2Box .line2{
+                    width: 100%;
+                    height: 3px;
+                    background-color: #ededed;
+                    margin: 0% 0% 2% -100%;
+                    opacity: 0;
+                }
 
 .text2{
     grid-area: text2;
+    overflow: hidden;
 }
 .text2 p{
     font-size: 16px;
     font-weight: 400;
     color: #939393;
+    opacity: 0;
+    margin: 50% 0% 0% 0%;
 }
+
 
 .dummy{
     height: 100vh;
@@ -790,6 +807,10 @@ br{
         "artContainer artContainer artContainer artContainer"
         ;
     }
+    .artContainer{
+        gap: 1.5%;
+    }
+
 
     .artContainer .artContent{
         margin-left: -20vw;
@@ -801,12 +822,13 @@ br{
         font-size: 20px;
         font-weight: 500;
     }
-    .title2 .line2{
+    .title2 .line2Box.line2{
         width: 100%;
         height: 2px;
         background-color: #ededed;
-        margin-bottom: 1.5%;
-        margin-left: 2vw;
+        margin: 0% 0% 2% -100%;
+        /* margin-bottom: 1.5%;
+        margin-left: 2vw; */
     }
 
     .text2{
@@ -823,7 +845,7 @@ br{
         grid-template-columns: 4fr 2fr;
     }    
     .artContainer .artContent .artContentImage img{
-        height: 80%;
+        height: 90%;
     }    
     .artContainer .artContent .artContentImage .artContentImageOverlay{
         opacity: 0.5;
@@ -846,7 +868,7 @@ br{
         margin-left: 0vw;
     }
     .artContainer .artContent:hover .artContentImage img{
-        height: 100%;
+        height: 90%;
     }
     .artContainer .artContent:hover .artContentImage .artContentImageOverlay{
         opacity: 0;

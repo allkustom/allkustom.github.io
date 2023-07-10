@@ -266,7 +266,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Line Animation
-        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {height: '0.5px', margin: '0% 0% 0% -100%'}, {height: '2px', margin: '0% 0% 0% -0%'});
+        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 0% -100%'}, {opacity: 1, height: '2px', margin: '0% 0% 0% -0%'});
         let selectedLineStart = new ScrollMagic.Scene({
             duration: 800,
             offset: -800,
@@ -306,7 +306,63 @@ function MenuOn(x){
 
 
     //All artWork section
-    // const artSection = document.querySelector("#selectedWork");
+    const artSection = document.querySelector(".allWorkSection");
+
+    const allworkTitleDiv = document.querySelector('.title2');
+    const allworkTitle = allworkTitleDiv.querySelector('h1');
+    const allworkTitleLine = allworkTitleDiv.querySelector('.line2');
+    const allworkTextDiv = document.querySelector('.text2');
+    const allworkText = allworkTextDiv.querySelector('p');
+    const allworkContainer = document.querySelector('.artContainer');
+
+        //Title Opacity
+        const allworkTitleAni = TweenMax.fromTo(allworkTitle, 1, {opacity: 0}, {opacity: 1});
+        let allworkTitleStart = new ScrollMagic.Scene({
+            duration: 800,
+            offset: -600,
+            triggerElement: artSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(allworkTitleAni)
+        .addTo(controller);
+        
+        //Title Line Opacity
+        const allworkLineAni = TweenMax.fromTo(allworkTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2% -100%;'}, {opacity: 1, height: '2px', margin: '0% 0% 2% 0%;'});
+        let allworkLineStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: artSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(allworkLineAni)
+        .addTo(controller);
+
+        //Main text Animation
+        const allworkTextAni = TweenMax.fromTo(allworkText, 1, {opacity: 0, margin: '50% 0% 0% 0%;'}, {opacity: 1, margin: '0% 0% 0% 0%;'});
+        let allworkTextStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: artSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(allworkTextAni)
+        .addTo(controller);
+
+        //All art preview Animation
+        const allworkContainerAni = TweenMax.fromTo(allworkContainer, 1, {opacity: 0, margin: '0% 0% 0% -100%;'}, {opacity: 1, margin: '0% 0% 0% 0%;'});
+        let allworkContainerStart = new ScrollMagic.Scene({
+            duration: 600,
+            offset: -600,
+            triggerElement: artSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(allworkContainerAni)
+        .addTo(controller);
+        
 
 
     //All artwork Link Function
