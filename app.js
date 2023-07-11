@@ -88,18 +88,18 @@ function MenuOn(x){
         workGridBool = false;
         artLinkTimer = 700;
 
-        selectedTitleDuration = 800;
-        selectedTitleOffset = -1000;
-        selectedArtworkDuration = 800;
-        selectedArtworkOffset = -900
+        selectedTitleDuration = 500;
+        selectedTitleOffset = -800;
+        selectedArtworkDuration = 500;
+        selectedArtworkOffset = -700
         allworkTitleDuration = 600;
-        allworkTitleOffset = -600;
-        allworkContentDuration = 500;
-        allworkContentOffset = -550;
-        contactTitleDuration = 800;
-        contactTitleOffset = -900;
+        allworkTitleOffset = -800;
+        allworkContentDuration = 600;
+        allworkContentOffset = -750;
+        contactTitleDuration = 600;
+        contactTitleOffset = -800;
         contactContentDuration = 500;
-        contactContentOffset = -650;
+        contactContentOffset = -750;
     }
     else {
         //if the page is wider than 700px
@@ -325,7 +325,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Line Animation
-        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 0% -100%', filter: 'blur(1px)'}, {opacity: 1, height: '2px', margin: '0% 0% 0% -0%', filter: 'blur(0px)'});
+        const selectedLineAni = TweenMax.fromTo(selectedLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 0% -100%', filter: 'blur(1px)'}, {opacity: 1, height: '2px', margin: '0% 0% 0% 0%', filter: 'blur(0px)'});
         let selectedLineStart = new ScrollMagic.Scene({
             duration: selectedTitleDuration,
             offset: selectedTitleOffset,
@@ -375,7 +375,7 @@ function MenuOn(x){
     const allworkContainer = document.querySelector('.artContainer');
 
         //Title Opacity
-        const allworkTitleAni = TweenMax.fromTo(allworkTitle, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
+        const allworkTitleAni = TweenMax.fromTo(allworkTitle, 1, {opacity: 0, filter: 'blur(3px)'}, {opacity: 1, filter: 'blur(0px)'});
         let allworkTitleStart = new ScrollMagic.Scene({
             duration: allworkTitleDuration,
             offset: allworkTitleOffset,
@@ -387,7 +387,7 @@ function MenuOn(x){
         .addTo(controller);
         
         //Line Opacity
-        const allworkLineAni = TweenMax.fromTo(allworkTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2% -100%;', filter: 'blur(1px)'}, {opacity: 1, height: '2px', margin: '0% 0% 2% 0%;', filter: 'blur(0px)'});
+        const allworkLineAni = TweenMax.fromTo(allworkTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2% -100%;'}, {opacity: 1, height: '2px', margin: '0% 0% 2% 0%;'});
         let allworkLineStart = new ScrollMagic.Scene({
             duration: allworkTitleDuration,
             offset: allworkTitleOffset,
@@ -399,7 +399,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Main text Animation
-        const allworkTextAni = TweenMax.fromTo(allworkText, 1, {opacity: 0, margin: '50% 0% 0% 0%;', filter: 'blur(5px)'}, {opacity: 1, margin: '0% 0% 0% 0%;', filter: 'blur(0px)'});
+        const allworkTextAni = TweenMax.fromTo(allworkText, 1, {opacity: 0, margin: '50% 0% 0% 0%;', filter: 'blur(2px)'}, {opacity: 1, margin: '0% 0% 0% 0%;', filter: 'blur(0px)'});
         let allworkTextStart = new ScrollMagic.Scene({
             duration: allworkContentDuration,
             offset: allworkContentOffset,
@@ -464,7 +464,7 @@ function MenuOn(x){
         const contactLogo = contactLogoBox.querySelector('img');
     
         //Title3 Opacity
-        const contactTitleAni = TweenMax.fromTo(contactTitle, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
+        const contactTitleAni = TweenMax.fromTo(contactTitle, 1, {opacity: 0, filter: 'blur(3px)'}, {opacity: 1, filter: 'blur(0px)'});
         let contactTitleStart = new ScrollMagic.Scene({
             duration: contactTitleDuration,
             offset: contactTitleOffset,
@@ -477,7 +477,7 @@ function MenuOn(x){
 
         
         //Title3 Line Animation
-        const contactTitleLineAni = TweenMax.fromTo(contactTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2.5% -100%;', filter: 'blur(1px)'}, {opacity: 1, height: '2px', margin: '0% 0% 2.5% 0%;', filter: 'blur(0px)'});
+        const contactTitleLineAni = TweenMax.fromTo(contactTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2.5% -100%;'}, {opacity: 1, height: '2px', margin: '0% 0% 2.5% 0%;'});
         let contactTitleLineStart = new ScrollMagic.Scene({
             duration: contactTitleDuration,
             offset: contactTitleOffset,
@@ -489,7 +489,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Text3 Animation
-        const contactTextAni = TweenMax.fromTo(contactText, 1, {opacity: 0, margin: '50% 0% 0% 0%;', filter: 'blur(5px)'}, {opacity: 1, margin: '0% 0% 0% 0%;', filter: 'blur(0px)'});
+        const contactTextAni = TweenMax.fromTo(contactText, 1, {opacity: 0, margin: '50% 0% 0% 0%;', filter: 'blur(3px)'}, {opacity: 1, margin: '0% 0% 0% 0%;', filter: 'blur(0px)'});
         let contactTextStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,
@@ -501,7 +501,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Contact Social Animation
-        const contactSocialAni = TweenMax.fromTo(contactSocialBox, 1, {opacity: 0, margin: '100% 0% 0% 0%', filter: 'blur(5px)'}, {opacity: 1, margin: '0% 0% 0% 0%', filter: 'blur(0px)'});
+        const contactSocialAni = TweenMax.fromTo(contactSocialBox, 1, {opacity: 0, margin: '100% 0% 0% 0%', filter: 'blur(3px)'}, {opacity: 1, margin: '0% 0% 0% 0%', filter: 'blur(0px)'});
         let contactSocialStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,
@@ -513,7 +513,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Contact Logo Animation
-        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(30px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
+        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(10px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
         let contactLogoStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,

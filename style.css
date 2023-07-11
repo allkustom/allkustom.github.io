@@ -881,6 +881,7 @@ p9{
 
     .intro {
         padding: 0;
+        /* display: none; */
     }
 
     .intro h1 {
@@ -899,6 +900,7 @@ p9{
         width: 80%;
         opacity: 1;
     }
+
 
     #homeTag {
         scroll-margin-top: -140vh;
@@ -931,7 +933,7 @@ p9{
     }
     .text1 h1 {
         font-size: 70px;
-        margin-bottom: 0;
+        margin-bottom: -5%;
     }
 
     .text1 p1 {
