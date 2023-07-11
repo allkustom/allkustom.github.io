@@ -17,11 +17,15 @@ html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-
+    background-color: #0c0c0c;
 }
 
 .turnOff {
     overflow-y: hidden;
+}
+
+.blurSection{
+    filter: blur(10px);
 }
 
 
@@ -195,7 +199,8 @@ header .mobileMenu {
     transition: 0.3s ease-in-out;
     height: 120vh;
     width: 100vw;
-    background-color: rgba(12, 12, 12, 0.95);
+    background-image: linear-gradient(270deg, #0c0c0c, 85%, transparent);
+    /* background-color: rgba(12, 12, 12, 0.7); */
     z-index: 1000;
 }
 
@@ -261,6 +266,7 @@ br {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s ease-in-out;
 }
 
 .intro video {
@@ -290,6 +296,7 @@ br {
 }
 
 .section1 {
+    transition: 0.3s ease-in-out;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -389,6 +396,7 @@ p4 {
 }
 
 #selectedWork {
+    transition: 0.3s ease-in-out;
     width: 100vw;
     height: 16vh;
     margin: 0;
@@ -435,11 +443,13 @@ p4 {
 }
 
 .selected-container {
+    transition: 0.3s ease-in-out;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5%;
     opacity: 0;
     margin: 10% 12vw 0 12vw;
+    transition: 0.3s ease-in-out;
     /* overflow-x: hidden; */
 }
 
@@ -468,6 +478,7 @@ p4 {
 
 .selected-container .box .workTitle {
     overflow: hidden;
+    
 }
 
 .selected-container .box .workTitle h1 {
@@ -504,6 +515,7 @@ p4 {
 }
 
 .allWorkSection {
+    transition: 0.3s ease-in-out;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -684,6 +696,7 @@ p4 {
 }
 
 .contactSection {
+    transition: 0.3s ease-in-out;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
