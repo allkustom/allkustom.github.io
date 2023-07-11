@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;400;500;700&display=swap');
 
-*{
+* {
     /* font-family: 'Noto Sans', sans-serif; */
     font-family: 'Jost', sans-serif;
     box-sizing: border-box;
@@ -13,25 +13,25 @@
     scroll-behavior: smooth;
 }
 
-html{
+html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
 
 }
 
-.turnOff{
+.turnOff {
     overflow-y: hidden;
 }
 
 
-body{
+body {
     background-color: #0c0c0c;
     overflow-x: hidden;
 }
 
 
-header{
+header {
     top: 0;
     left: 0;
     height: 12vh;
@@ -47,29 +47,29 @@ header{
     background-image: linear-gradient(180deg, #0c0c0c, 80%, transparent);
 }
 
-    header .logo{
-        position: relative;
-        width: 40px;
-        /* background-color: white; */
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s ease-in-out;
-    }
+header .logo {
+    position: relative;
+    width: 40px;
+    /* background-color: white; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
 
-    .moveLeft{
-        margin-left: -20vw;
-    }
+.moveLeft {
+    margin-left: -20vw;
+}
 
-    header .logo img{
-        /* height: 5vh; */
-        width: 100%;
-        object-fit: cover;
-        display: block;
-    }
+header .logo img {
+    /* height: 5vh; */
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-    /* header .headerLine{
+/* header .headerLine{
         height: 1px;
         width: 100%;
         background-color: #939393;
@@ -78,212 +78,218 @@ header{
     } */
 
 
-    header ul{
-        /* position: relative; */
-        display: flex;
-        list-style: none;
-        /* height: 300px; */
-    }
+header ul {
+    /* position: relative; */
+    display: flex;
+    list-style: none;
+    /* height: 300px; */
+}
 
-    header ul li{
-        position: relative;
-        display: inline-block;
-        /* width: 100px;
+header ul li {
+    position: relative;
+    display: inline-block;
+    /* width: 100px;
         text-align: center; */
-    }
+}
 
-    header ul li a{
-        /* position: relative; */
-        display: block;
-        padding: 0px 25px;
-        color: #ededed;
-        text-decoration: none;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 500;
-        /* letter-spacing: 15px; */
-        transition: 0.5s;
-        
-    }
+header ul li a {
+    /* position: relative; */
+    display: block;
+    padding: 0px 25px;
+    color: #ededed;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    /* letter-spacing: 15px; */
+    transition: 0.5s;
 
-    header ul li a:hover{
-        color: #505050;
-    }
+}
 
-
-
-    header ul li ul.dropdown .verticalLine{
-        display: block;
-        width: 2px;
-        height: 20px;
-        background-color: #ededed;
-        margin-left: 50%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    header ul li ul.dropdown li{
-        display: block;
-    }
-
-    header ul li ul.dropdown li a{
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        padding: 5px 5px;
-        background-color: rgba(12,12,12,0.85);
-        border-radius: 5px;
-    }
-
-    header ul li ul.dropdown{
-        width: 100%;
-        position: absolute;
-        display: none;
-        justify-content: center;
-        align-items: center;   
-        z-index: 9999;
-        /* background-color: rgba(12,12,12,0.7); */
-        border-radius: 10px;
-    }
-
-    ul li:hover ul.dropdown{
-        display: block;
-    }
+header ul li a:hover {
+    color: #505050;
+}
 
 
-        header .mobileMenu{
-            /* display: none;
+
+header ul li ul.dropdown .verticalLine {
+    display: block;
+    width: 2px;
+    height: 20px;
+    background-color: #ededed;
+    margin-left: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header ul li ul.dropdown li {
+    display: block;
+}
+
+header ul li ul.dropdown li a {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    background-color: rgba(12, 12, 12, 0.85);
+    border-radius: 5px;
+}
+
+header ul li ul.dropdown {
+    width: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* background-color: rgba(12,12,12,0.7); */
+    border-radius: 10px;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+
+header .mobileMenu {
+    /* display: none;
             width: 20px; */
-            display: none;
-            cursor: pointer;
-        }
+    display: none;
+    cursor: pointer;
+}
 
-        .bar1, .bar2, .bar3{
-            width: 25px;
-            height: 3px;
-            background-color: #ededed;
-            margin: 0 0 6px 0;
-            transition: 0.3s ease-in-out;
-            border-radius: 2.5px;
-        }
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #ededed;
+    margin: 0 0 6px 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 2.5px;
+}
 
-        .change .bar1{
-            transform: translate(0,9px) rotate(-45deg);
-            background-color: #ededed;
-        }
-        .change .bar2{
-            opacity: 0;
-        }
-        .change .bar3{
-            transform: translate(0,-9px) rotate(45deg);
-            background-color: #ededed;
-        }
-        
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+    background-color: #ededed;
+}
 
+.change .bar2 {
+    opacity: 0;
+}
 
-        .mobileMenuOption{
-            position: fixed;
-            /* display: none; */
-            display: block;
-            opacity: 0;
-            margin-left: 100%;
-            transition: 0.3s ease-in-out;
-            height: 120vh;
-            width: 100vw;
-            background-color: rgba(12,12,12,0.95);
-            z-index: 1000;
-        }
-        .turnOn{
-            /* display: block; */
-            opacity: 1;
-            margin-left: 0%;
-        }
-
-
-            .mobileMenuOption ul{
-                position: relative;
-                display: block;
-                list-style: none;
-                top: 15%;
-                right: 5%;
-            }
-            .mobileMenuOption ul li{
-                text-align: right;
-            }
+.change .bar3 {
+    transform: translate(0, -9px) rotate(45deg);
+    background-color: #ededed;
+}
 
 
 
-            .mobileMenuOption ul li a{
-                position: relative;
-                display: flex;
-                color: #ededed;
-                font-size: 40px;
-                transition: 0.5s;        
-                margin-top: 10px;
-                justify-content: right;
-                align-items: center;
-                font-weight: 700;
-            }
+.mobileMenuOption {
+    position: fixed;
+    /* display: none; */
+    display: block;
+    opacity: 0;
+    margin-left: 100%;
+    transition: 0.3s ease-in-out;
+    height: 120vh;
+    width: 100vw;
+    background-color: rgba(12, 12, 12, 0.95);
+    z-index: 1000;
+}
 
-            .mobileMenuOption ul li a .menuLine1{
-                background-color: #ededed;
-                width: 100%;
-                height: 0.5px;
-                margin-right: 5%;
-                display: block;
-            }
+.turnOn {
+    /* display: block; */
+    opacity: 1;
+    margin-left: 0%;
+}
 
-            .mobileMenuOption ul li a.smallMenu{
-                color: #939393;
-                font-weight: 400;
-                font-size: 25px;
-                margin-top: 2%;
-            }
 
-h1{
+.mobileMenuOption ul {
+    position: relative;
+    display: block;
+    list-style: none;
+    top: 15%;
+    right: 5%;
+}
+
+.mobileMenuOption ul li {
+    text-align: right;
+}
+
+
+
+.mobileMenuOption ul li a {
+    position: relative;
+    display: flex;
+    color: #ededed;
+    font-size: 40px;
+    transition: 0.5s;
+    margin-top: 10px;
+    justify-content: right;
+    align-items: center;
+    font-weight: 700;
+}
+
+.mobileMenuOption ul li a .menuLine1 {
+    background-color: #ededed;
+    width: 100%;
+    height: 0.5px;
+    margin-right: 5%;
+    display: block;
+}
+
+.mobileMenuOption ul li a.smallMenu {
+    color: #939393;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 2%;
+}
+
+h1 {
     color: #EDEDED;
 }
 
-br{
+br {
     display: block;
     margin-bottom: 50%;
 }
 
-.intro{
+.intro {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.intro video{
+.intro video {
     height: 100vh;
     object-fit: cover;
     opacity: 1;
 }
 
-.intro img{
+.intro img {
     width: 0%;
     opacity: 0;
 }
 
 
-.intro h1{
+.intro h1 {
     position: absolute;
     top: 85%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 70px;
-    color:  #EDEDED;
+    color: #EDEDED;
     opacity: 0;
 }
 
-#homeTag{
+#homeTag {
     scroll-margin-top: -100vh;
 }
 
-.section1{
+.section1 {
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -292,96 +298,97 @@ br{
     grid-template-rows: repeat(6, 1fr);
     gap: 1%;
     grid-template-areas:
-    ". . . . . . . ."
-    ". . . . . . . ."
-    "line1 text1 text1 . image1 image1 image1  ."
-    ". text1 text1 . image1 image1 image1  ."
-    ". text1 text1 . image1 image1 image1  ."
-    ". . . . . . . ."
+        ". . . . . . . ."
+        ". . . . . . . ."
+        "line1 text1 text1 . image1 image1 image1  ."
+        ". text1 text1 . image1 image1 image1  ."
+        ". text1 text1 . image1 image1 image1  ."
+        ". . . . . . . ."
     ;
 }
 
 
-    .line1{
-        grid-area: line1;
-        display: flex;
-        /* align-items: center; */
-        /* justify-content: left; */
+.line1 {
+    grid-area: line1;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: left; */
 
-    }
-
-        .line1 .horizontal-line1{
-            height: 0%;
-            width: 100%;
-            background-color: #ededed;
-            margin: 40% 0% 0% -100%;
-        }
-
-    .text1{
-        grid-area: text1;
-    }
-
-        .text1 h1{
-            color: #EDEDED;
-            font-family: 'Jost', sans-serif;
-            font-weight: bold;
-            font-size: 4.7vw;
-            /* font-size: 80px; */
-            margin-bottom: -10px;
-            opacity: 0;
-        }
-
-        p1{
-            font-size: 20px;
-            color: #EDEDED;
-            opacity: 0;
-            font-weight: 500;
-            line-height: 0.5;
-        }
-        
-        p2{
-            font-size: 20px;
-            color: #939393;
-            opacity: 0;
-            font-weight: 400;
-            line-height: 0.5;
-        }
-        
-        p3{
-            font-size: 20px;
-            color: #EDEDED;
-            opacity: 0;
-            font-weight: 500;
-            line-height: 0.5;
-        }
-        
-        p4{
-            font-size: 20px;
-            color: #939393;
-            opacity: 0;
-            font-weight: 400;
-            line-height: 0.5;
-        }
-
-    .image1{
-        grid-area: image1;
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image1 img{
-        display: block;
-        margin: auto;
-        height: 100%;
-        /* object-fit: cover; */
-    }
-
-#selectedWorkTag{
-    scroll-margin-top: 10vh;
 }
 
-#selectedWork{
+.line1 .horizontal-line1 {
+    height: 0%;
+    width: 100%;
+    background-color: #ededed;
+    margin: 40% 0% 0% -100%;
+}
+
+.text1 {
+    grid-area: text1;
+}
+
+.text1 h1 {
+    color: #EDEDED;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    font-size: 4.7vw;
+    /* font-size: 80px; */
+    margin-bottom: -10px;
+    opacity: 0;
+}
+
+p1 {
+    font-size: 20px;
+    color: #EDEDED;
+    opacity: 0;
+    font-weight: 500;
+    line-height: 0.5;
+}
+
+p2 {
+    font-size: 20px;
+    color: #939393;
+    opacity: 0;
+    font-weight: 400;
+    line-height: 0.5;
+}
+
+p3 {
+    font-size: 20px;
+    color: #EDEDED;
+    opacity: 0;
+    font-weight: 500;
+    line-height: 0.5;
+}
+
+p4 {
+    font-size: 20px;
+    color: #939393;
+    opacity: 0;
+    font-weight: 400;
+    line-height: 0.5;
+}
+
+.image1 {
+    grid-area: image1;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.image1 img {
+    display: block;
+    margin: auto;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+#selectedWorkTag {
+    scroll-margin-top: 10vh;
+    margin-top: 10%;
+}
+
+#selectedWork {
     width: 100vw;
     height: 16vh;
     margin: 0;
@@ -390,112 +397,113 @@ br{
     grid-template-rows: 1fr;
     gap: 1%;
     grid-template-areas:
-    ". selectedTitle selectedLine selectedLine selectedLine selectedLine selectedLine selectedLine"
+        ". selectedTitle selectedLine selectedLine selectedLine selectedLine selectedLine selectedLine"
     ;
 }
 
 
-    .selectedTitle{
-        grid-area: selectedTitle;
-    }
-
-    .selectedTitle h1{
-        position: relative;
-        top: 50%;
-        transform: translate(0%, -50%);
-        font-weight: 500;
-        font-size: 2.5vw;
-        line-height: 1;
-        opacity: 0;
-        overflow: hidden;
-    }
-
-    .selectedLine{
-        grid-area: selectedLine;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        /* justify-content: left; */
-
-    }
-
-        .selectedLine .selectedHorizontal-line{
-            height: 1px;
-            width: 100%;
-            background-color: #ededed;
-            opacity: 0;
-            margin: 0% 0% 0% -100%;
-        }
-
-    .selected-container{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5%;
-        opacity: 0;
-        margin: 10% 12vw 0 12vw ;
-        /* overflow-x: hidden; */
-    }
-
-    .selected-container .box{
-        overflow: hidden;
-    }
-
-    .selected-container .box .imageBox{
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-        border-radius: 2px;
-    }
-
-    .selected-container .box .imageBox img{
-        transition: 0.3s ease-in-out;
-        width: 100%;
-        height: 100%s;
-        object-fit: cover;
-        transform: scale(1.1);
-    }
-
-    .selected-container .box:hover img{
-        transform: scale(1.2);
-    }
-
-    .selected-container .box .workTitle{
-        overflow: hidden;
-    }
-
-    .selected-container .box .workTitle h1{
-        margin-top: 5px;
-        font-size: 20px;
-        font-weight: 500;
-        color: #EDEDED;
-        transition: 0.5s ease-in-out;
-        margin-left: 0%;
-    }
-
-    .selected-container .box .workTitle p{
-        font-size: 15px;
-        margin-bottom: 15px;
-        margin-top: -5px;
-        font-weight: 400;
-        overflow: hidden;
-        color: #939393;
-        transition: 0.5s ease-in-out;
-        margin-left: 0%;
-    }
-
-    .selected-container .box:hover .workTitle h1{
-        margin-left: 5%;
-    }
-
-    .selected-container .box:hover .workTitle p{
-        margin-left: 7%;
-    }
-
-#allWorkTag{
-    scroll-margin-top: 0vh;
+.selectedTitle {
+    grid-area: selectedTitle;
 }
 
-.allWorkSection{
+.selectedTitle h1 {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-weight: 500;
+    font-size: 2.5vw;
+    line-height: 1;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.selectedLine {
+    grid-area: selectedLine;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* justify-content: left; */
+
+}
+
+.selectedLine .selectedHorizontal-line {
+    height: 1px;
+    width: 100%;
+    background-color: #ededed;
+    opacity: 0;
+    margin: 0% 0% 0% -100%;
+}
+
+.selected-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5%;
+    opacity: 0;
+    margin: 10% 12vw 0 12vw;
+    /* overflow-x: hidden; */
+}
+
+.selected-container .box {
+    overflow: hidden;
+}
+
+.selected-container .box .imageBox {
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.selected-container .box .imageBox img {
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%s;
+    object-fit: cover;
+    transform: scale(1.1);
+}
+
+.selected-container .box:hover img {
+    transform: scale(1.2);
+}
+
+.selected-container .box .workTitle {
+    overflow: hidden;
+}
+
+.selected-container .box .workTitle h1 {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #EDEDED;
+    transition: 0.5s ease-in-out;
+    margin-left: 0%;
+}
+
+.selected-container .box .workTitle p {
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: -5px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #939393;
+    transition: 0.5s ease-in-out;
+    margin-left: 0%;
+}
+
+.selected-container .box:hover .workTitle h1 {
+    margin-left: 5%;
+}
+
+.selected-container .box:hover .workTitle p {
+    margin-left: 7%;
+}
+
+#allWorkTag {
+    scroll-margin-top: 0vh;
+    margin-top: 10%;
+}
+
+.allWorkSection {
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -504,31 +512,31 @@ br{
     grid-template-rows: repeat(6, 1fr);
     gap: 1%;
     grid-template-areas:
-    ". . . . . . . ."
-    "artContainer artContainer artContainer artContainer artContainer . . ."
-    "artContainer artContainer artContainer artContainer artContainer title2 title2 title2"
-    "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
-    "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
-    ". . . . . . . ."
+        ". . . . . . . ."
+        "artContainer artContainer artContainer artContainer artContainer . . ."
+        "artContainer artContainer artContainer artContainer artContainer title2 title2 title2"
+        "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
+        "artContainer artContainer artContainer artContainer artContainer text2 text2 ."
+        ". . . . . . . ."
     ;
 }
 
-.artContainer{
+.artContainer {
     grid-area: artContainer;
     height: 100%;
     display: grid;
     gap: 1.5%;
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
     opacity: 0;
     margin: 0% 0% 0% -100%;
 }
 
-.artContainer a{
+.artContainer a {
     overflow: hidden;
     display: flex;
 }
 
-.artContainer .artContent{
+.artContainer .artContent {
     overflow: hidden;
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -537,7 +545,7 @@ br{
     cursor: pointer;
 }
 
-.artContainer .artContent .artContentImage{
+.artContainer .artContent .artContentImage {
     overflow: hidden;
     display: flex;
     position: relative;
@@ -546,28 +554,29 @@ br{
     transition: 0.5s ease-in-out;
     /* border-radius: 50px; */
 }
-.artContainer .artContent .artContentImage .artContentImageOverlay{
+
+.artContainer .artContent .artContentImage .artContentImageOverlay {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #141414;
+    background-color: #0c0c0c;
     opacity: 0.5;
     transition: 0.5s ease-in-out;
 }
 
 
-.artContainer .artContent .artContentImage img{
+.artContainer .artContent .artContentImage img {
     /* width: 100%; */
     height: 100%;
     object-fit: cover;
     transition: 0.5s ease-in-out;
-    border-top-right-radius: 50px;
+    border-top-right-radius: 40px;
 }
 
 
-.artContainer .artContent .artContentText{
+.artContainer .artContent .artContentText {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 0;
@@ -575,7 +584,7 @@ br{
     display: flex;
 }
 
-.artContainer .artContent .artContentText .connectorLine{
+.artContainer .artContent .artContentText .connectorLine {
     width: 1vw;
     height: 1px;
     margin: auto 0.5vw auto 0.5vw;
@@ -584,7 +593,7 @@ br{
 }
 
 
-.artContainer .artContent .artContentText h1{
+.artContainer .artContent .artContentText h1 {
     font-size: 20px;
     font-weight: 400;
     color: #939393;
@@ -592,30 +601,34 @@ br{
 }
 
 
-.artContainer .artContent:hover{
+.artContainer .artContent:hover {
     margin-left: 0vw;
 }
-.artContainer .artContent:hover .artContentImage img{
+
+.artContainer .artContent:hover .artContentImage img {
     height: 100%;
     border-top-right-radius: 0px;
 
 }
-.artContainer .artContent:hover .artContentImage .artContentImageOverlay{
+
+.artContainer .artContent:hover .artContentImage .artContentImageOverlay {
     opacity: 0;
 }
-.artContainer .artContent:hover .artContentText h1{
+
+.artContainer .artContent:hover .artContentText h1 {
     font-size: 30px;
     font-weight: 500;
     color: #ededed;
 }
-.artContainer .artContent:hover .artContentText .connectorLine{
+
+.artContainer .artContent:hover .artContentText .connectorLine {
     width: 2vw;
     height: 5px;
     background-color: #ededed;
 }
 
 
-.title2{
+.title2 {
     grid-area: title2;
     display: flex;
     position: relative;
@@ -623,36 +636,40 @@ br{
     align-items: end;
 }
 
-    .title2 .title2TextBox{
-        display: block;
-    }
-        .title2 h1{
-            font-weight: 500;
-            font-size: 2.5vw;
-            line-height: 1;
-            margin: 0;
-            opacity: 0;
-        }
-        .title2 .line2Box{
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-            /* margin-bottom: 2%; */
-            /* margin: 0% 0% 2% -100%; */
-        }
-            .title2 .line2Box .line2{
-                    width: 100%;
-                    height: 3px;
-                    background-color: #ededed;
-                    margin: 0% 0% 2% -100%;
-                    opacity: 0;
-                }
+.title2 .title2TextBox {
+    display: block;
+}
 
-.text2{
+.title2 h1 {
+    font-weight: 500;
+    font-size: 2.5vw;
+    line-height: 1;
+    margin: 0;
+    opacity: 0;
+}
+
+.title2 .line2Box {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    /* margin-bottom: 2%; */
+    /* margin: 0% 0% 2% -100%; */
+}
+
+.title2 .line2Box .line2 {
+    width: 100%;
+    height: 3px;
+    background-color: #ededed;
+    margin: 0% 0% 2% -100%;
+    opacity: 0;
+}
+
+.text2 {
     grid-area: text2;
     overflow: hidden;
 }
-.text2 p{
+
+.text2 p {
     font-size: 16px;
     font-weight: 400;
     color: #939393;
@@ -661,52 +678,213 @@ br{
 }
 
 
+#contactTag {
+    scroll-margin-top: 0vh;
+    margin-top: 10%;
+}
+
+.contactSection {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1%;
+    grid-template-areas:
+        ". . . . . . . ."
+        "contactLogo contactLogo contactLogo contactLogo . title3 title3 title3"
+        "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
+        "contactLogo contactLogo contactLogo contactLogo . contactSocial contactSocial ."
+        "contactLogo contactLogo contactLogo contactLogo . . . ."
+        "contactLogo contactLogo contactLogo contactLogo . . . ."
+        "contactLogo contactLogo contactLogo contactLogo . . . ."
+    ;
+}
+
+.title3 {
+    grid-area: title3;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: end;
+}
+
+    .title3 .title3TextBox {
+        display: block;
+    }
+
+    .title3 h1 {
+        font-weight: 500;
+        font-size: 2.5vw;
+        line-height: 1;
+        margin: 0;
+        opacity: 0;
+        /* opacity: 0; */
+    }
+
+    .title3 .line3Box {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        margin-left: 1vw;
+    }
+
+    .title3 .line3Box .line3 {
+        width: 100%;
+        height: 0.5px;
+        background-color: #ededed;
+        opacity: 0;
+        margin: 0% 0% 2.5% -100%;
+    }
+
+
+.text3 {
+    grid-area: text3;
+    overflow: hidden;
+}
+
+.text3 .text3Box{
+    overflow: hidden;
+    opacity: 0;
+    margin: 0% 0% 0% 0%;
+}
+
+p7{
+    font-size: 20px;
+    font-weight: 400;
+    color: #ededed;
+}
+p8{
+    font-size: 20px;
+    font-weight: 400;
+    color: #939393;
+}
+p9{
+    font-size: 20px;
+    font-weight: 400;
+    color: #ededed;
+    margin-left: 5%;
+}
+
+.contactSection .contactSocial{
+    /* overflow: hidden; */
+    grid-area: contactSocial;
+}
+
+.contactSection .contactSocial .contactSocialBox{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 100% 0% 0% 0%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.contactSection .contactSocial .contactSocialBox .contactSocialTopBox{
+    /* width: 100%; */
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+}
+
+.contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube{
+    width: fit-content;
+}
+    .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube img{
+        height: 50px;
+    }
+
+.contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram{
+    width: fit-content;
+    /* margin-left: 10%; */
+}
+    .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram img{
+        height: 50px;
+    }
+.contactSection .contactSocial .contactSocialBox .contactLinktree{
+    width: fit-content;
+    /* margin-left: 10%; */
+}
+    .contactSection .contactSocial .contactSocialBox .contactLinktree img{        
+        height: 40px;
+    }
+
+    
+
+
+.contactSection .contactLogo {
+    grid-area: contactLogo;
+    width: 100%;
+    /* overflow: hidden; */
+    justify-content: center;
+    align-items: end;
+    display: flex;
+}
+
+.contactSection .contactLogo img {
+    /* height: 100vh; */
+    width: 90%;
+    opacity: 0.3;
+    margin: auto auto -10% -15%;
+    filter: blur(0px);
+}
+
+/* 
 .dummy{
     height: 100vh;
     background-color: black;
-}
+} */
 
-/* Media Control---------------------------------------------------------- */
-@media (max-width: 700px){
-    header{
+/* Media Control------------------------------------------------------------------------------------------------------------ */
+/* Media Control------------------------------------------------------------------------------------------------------------ */
+/* Media Control------------------------------------------------------------------------------------------------------------ */
+/* Media Control------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 700px) {
+    header {
         padding: 3vh 6vw 2vh 6vw;
-    }    
+    }
 
-    header ul{
+    header ul {
         display: none;
     }
 
-    header .logo{
+    header .logo {
         width: 30px;
     }
 
-    header .mobileMenu{
+    header .mobileMenu {
         display: block;
     }
+
     /* .mobileMenuOption{
         display: block;
     } */
 
-    .intro{
+    .intro {
         padding: 0;
     }
 
-    .intro h1{
+    .intro h1 {
         font-size: 40px;
         top: 80%;
     }
-    .intro video{
+
+    .intro video {
         height: 0%;
         width: 0%;
         object-fit: none;
         opacity: 0;
     }
-    
-    .intro img{
+
+    .intro img {
         width: 80%;
         opacity: 1;
     }
-    .section1{
+
+    .section1 {
         height: 100vh;
         /* background-color: #808080; */
         display: grid;
@@ -716,82 +894,84 @@ br{
         grid-template-rows: repeat(4, 1fr);
         gap: 1%;
         grid-template-areas:
-        ". ."
-        ". . "
-        "text1 text1"
-        "text1 text1"
+            ". ."
+            ". . "
+            "text1 text1"
+            "text1 text1"
         ;
     }
 
-    .line1{
+    .line1 {
         display: none;
     }
-        
-    .text1 h1{
+
+    .text1 h1 {
         font-size: 70px;
         margin-bottom: 0;
     }
 
-    .text1 p1{
+    .text1 p1 {
         font-size: 40px;
         line-height: 1;
     }
 
-    .text1 p2{
+    .text1 p2 {
         font-size: 40px;
         line-height: 1;
     }
 
-    .text1 p3{
+    .text1 p3 {
         font-size: 40px;
         line-height: 1;
     }
 
-    .text1 p4{
+    .text1 p4 {
         font-size: 40px;
         line-height: 1;
     }
 
-    .image1{
+    .image1 {
         display: none;
     }
 
     /* SelectedWork Section */
-    #selectedWork{
+    #selectedWork {
         height: 10vh;
         /* background-color: #808080; */
         display: grid;
-        margin: 20% 5% 0 5% ;
+        margin: 20% 5% 0 5%;
         grid-template-columns: repeat(4, 1fr);
         gap: 1%;
         grid-template-areas:
-        "selectedTitle selectedLine selectedLine selectedLine"
+            "selectedTitle selectedLine selectedLine selectedLine"
         ;
     }
-        
-    .selectedTitle h1{
+
+    .selectedTitle h1 {
         font-size: 20px;
     }
 
-    .selected-container{
-        grid-template-columns: repeat(1,1fr);
+    .selected-container {
+        grid-template-columns: repeat(1, 1fr);
         margin-left: 5%;
         margin-right: 5%;
         gap: 0%;
     }
-    .selected-container .box .workTitle h1{
+
+    .selected-container .box .workTitle h1 {
         font-size: 20px;
     }
-    .selected-container .box .workTitle p{
+
+    .selected-container .box .workTitle p {
         font-size: 16px;
         margin-bottom: 10px;
     }
 
-    #allWorkTag{
+    #allWorkTag {
         scroll-margin-top: 5vh;
     }
-    
-    .allWorkSection{
+
+    .allWorkSection {
         height: 80vh;
         width: 100vw;
         display: grid;
@@ -799,30 +979,34 @@ br{
         grid-template-rows: repeat(6, 1fr);
         gap: 1%;
         grid-template-areas:
-        "title2 title2 title2 title2"
-        "text2 text2 text2 text2"
-        "artContainer artContainer artContainer artContainer"
-        "artContainer artContainer artContainer artContainer"
-        "artContainer artContainer artContainer artContainer"
-        "artContainer artContainer artContainer artContainer"
+            "title2 title2 title2 title2"
+            "text2 text2 text2 text2"
+            "artContainer artContainer artContainer artContainer"
+            "artContainer artContainer artContainer artContainer"
+            "artContainer artContainer artContainer artContainer"
+            "artContainer artContainer artContainer artContainer"
         ;
     }
-    .artContainer{
+
+    .artContainer {
         gap: 1.5%;
     }
 
 
-    .artContainer .artContent{
+    .artContainer .artContent {
         margin-left: -20vw;
     }
-    .title2{
+
+    .title2 {
         margin-left: 5%;
     }
-    .title2 h1{
+
+    .title2 h1 {
         font-size: 20px;
         font-weight: 500;
     }
-    .title2 .line2Box.line2{
+
+    .title2 .line2Box.line2 {
         width: 100%;
         height: 2px;
         background-color: #ededed;
@@ -831,63 +1015,114 @@ br{
         margin-left: 2vw; */
     }
 
-    .text2{
+    .text2 {
         margin: 0 5% 0 5%;
     }
-    .text2 p{
+
+    .text2 p {
         font-size: 14px;
         font-weight: 400;
         color: #939393;
-    }    
+    }
 
-    .artContainer .artContent{
+    .artContainer .artContent {
         display: grid;
         grid-template-columns: 4fr 2fr;
-    }    
-    .artContainer .artContent .artContentImage img{
-        height: 90%;
-    }    
-    .artContainer .artContent .artContentImage .artContentImageOverlay{
-        opacity: 0.5;
     }
-    .artContainer .artContent .artContentText .connectorLine{
+
+    .artContainer .artContent .artContentImage img {
+        height: 90%;
+    }
+
+    .artContainer .artContent .artContentImage .artContentImageOverlay {
+        opacity: 0.4;
+    }
+
+    .artContainer .artContent .artContentText .connectorLine {
         width: 3vw;
         height: 1px;
         margin: auto 1vw auto 1vw;
         background-color: #939393;
         transition: 0.5s ease-in-out;
-    }    
+    }
 
-    .artContainer .artContent .artContentText h1{
+    .artContainer .artContent .artContentText h1 {
         font-size: 15px;
         font-weight: 500;
         color: #939393;
     }
 
-    .artContainer .artContent:hover{
+    .artContainer .artContent:hover {
         margin-left: 0vw;
     }
-    .artContainer .artContent:hover .artContentImage img{
+
+    .artContainer .artContent:hover .artContentImage img {
         height: 90%;
     }
-    .artContainer .artContent:hover .artContentImage .artContentImageOverlay{
+
+    .artContainer .artContent:hover .artContentImage .artContentImageOverlay {
         opacity: 0;
     }
-    .artContainer .artContent:hover .artContentText h1{
+
+    .artContainer .artContent:hover .artContentText h1 {
         font-size: 20px;
         font-weight: 500;
         color: #ededed;
     }
-    .artContainer .artContent:hover .artContentText .connectorLine{
+
+    .artContainer .artContent:hover .artContentText .connectorLine {
         width: 5vw;
         height: 2px;
         background-color: #ededed;
     }
-    
-    
 
-    
-    
-    
 
+
+
+    #contactTag {
+        scroll-margin-top: 0vh;
+    }    
+
+    .contactSection {
+        height: 80vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1%;
+        grid-template-areas:
+            ". . . ."
+            ". . title3 title3"
+            ". . text3 text3 "
+            ". . contactSocial contactSocial "
+            "contactLogo contactLogo . ."
+            "contactLogo contactLogo . ."
+            "contactLogo contactLogo . ."
+        ;
+    }
+    .title3 h1 {
+        font-weight: 500;
+        font-size: 23px;
+    }
+    .title3 .line3Box {
+        margin-left: 2vw;
+    }
+
+    p7, p7, p8, p9{
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube img{
+        height: 30px;
+    }
+    .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram img{
+        height: 30px;
+    }
+    .contactSection .contactSocial .contactSocialBox .contactLinktree img{        
+        height: 20px;
+    }
+    .contactSection .contactLogo img {
+        width: 100%;
+        opacity: 0.3;
+        margin: auto auto -10% -15%;
+    }
+    
 }

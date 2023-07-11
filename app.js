@@ -58,7 +58,7 @@ function MenuOn(x){
         line1Duration = 600;
         line1Offset = -600;
         workGridBool = false;
-        artLinkTimer = 1000;
+        artLinkTimer = 700;
     }
     else {
         //if the page is wider than 700px
@@ -354,8 +354,8 @@ function MenuOn(x){
         //All art preview Animation
         const allworkContainerAni = TweenMax.fromTo(allworkContainer, 1, {opacity: 0, margin: '0% 0% 0% -100%;'}, {opacity: 1, margin: '0% 0% 0% 0%;'});
         let allworkContainerStart = new ScrollMagic.Scene({
-            duration: 600,
-            offset: -600,
+            duration: 500,
+            offset: -500,
             triggerElement: artSection,
             triggerHook: 0
         })
@@ -391,6 +391,80 @@ function MenuOn(x){
     }
 
 
+    const contactSection = document.querySelector('.contactSection');
+    const contactTitleDiv = contactSection.querySelector('.title3');
+    const contactTitleBox = contactTitleDiv.querySelector('.title3TextBox');
+        const contactTitle = contactTitleBox.querySelector('h1');
+    const contactTitleLineBox = contactTitleDiv.querySelector('.line3Box');
+        const contactTitleLine = contactTitleLineBox.querySelector('.line3');
+    const contactTextBox = contactSection.querySelector('.text3');
+        const contactText = contactTextBox.querySelector('.text3Box');
+    const contactSocial = contactSection.querySelector('.contactSocial');
+        const contactSocialBox = contactSocial.querySelector('.contactSocialBox');
+    const contactLogoBox = contactSection.querySelector('.contactLogo');
+        const contactLogo = contactLogoBox.querySelector('img');
+    
+        //Title3 Opacity
+        const contactTitleAni = TweenMax.fromTo(contactTitle, 1, {opacity: 0}, {opacity: 1});
+        let contactTitleStart = new ScrollMagic.Scene({
+            duration: 800,
+            offset: -600,
+            triggerElement: contactSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(contactTitleAni)
+        .addTo(controller);
+
+        
+        //Title3 Line Animation
+        const contactTitleLineAni = TweenMax.fromTo(contactTitleLine, 1, {opacity: 0, height: '0.5px', margin: '0% 0% 2.5% -100%;'}, {opacity: 1, height: '2px', margin: '0% 0% 2.5% 0%;'});
+        let contactTitleLineStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: contactSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(contactTitleLineAni)
+        .addTo(controller);
+
+        //Text3 Animation
+        const contactTextAni = TweenMax.fromTo(contactText, 1, {opacity: 0, margin: '50% 0% 0% 0%;'}, {opacity: 1, margin: '0% 0% 0% 0%;'});
+        let contactTextStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: contactSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(contactTextAni)
+        .addTo(controller);
+
+        //Contact Social Animation
+        const contactSocialAni = TweenMax.fromTo(contactSocialBox, 1, {opacity: 0, margin: '100% 0% 0% 0%'}, {opacity: 1, margin: '0% 0% 0% 0%'});
+        let contactSocialStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: contactSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(contactSocialAni)
+        .addTo(controller);
+
+        //Contact Logo Animation
+        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(0px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(5px)'});
+        let contactLogoStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: -500,
+            triggerElement: contactSection,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(contactLogoAni)
+        .addTo(controller);
+        
 
 //--------------------------
 
