@@ -89,17 +89,17 @@ function MenuOn(x){
         artLinkTimer = 700;
 
         selectedTitleDuration = 500;
-        selectedTitleOffset = -800;
+        selectedTitleOffset = -650;
         selectedArtworkDuration = 500;
-        selectedArtworkOffset = -700
+        selectedArtworkOffset = -600
         allworkTitleDuration = 600;
-        allworkTitleOffset = -800;
+        allworkTitleOffset = -700;
         allworkContentDuration = 600;
-        allworkContentOffset = -750;
+        allworkContentOffset = -700;
         contactTitleDuration = 600;
-        contactTitleOffset = -800;
+        contactTitleOffset = -700;
         contactContentDuration = 500;
-        contactContentOffset = -750;
+        contactContentOffset = -650;
     }
     else {
         //if the page is wider than 700px
@@ -513,7 +513,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Contact Logo Animation
-        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(10px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
+        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(0px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
         let contactLogoStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,
