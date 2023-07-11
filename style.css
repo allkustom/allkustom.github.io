@@ -291,8 +291,10 @@ br {
     opacity: 0;
 }
 
+/* Section1--------------------------------------------------------------------------------------------- */
+
 #homeTag {
-    scroll-margin-top: -100vh;
+    scroll-margin-top: -115vh;
 }
 
 .section1 {
@@ -457,7 +459,7 @@ p4 {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .selected-container .box .imageBox img {
@@ -467,6 +469,7 @@ p4 {
     object-fit: cover;
     transform: scale(1.1);
 }
+
 
 .selected-container .box:hover img {
     transform: scale(1.2);
@@ -579,7 +582,7 @@ p4 {
     height: 100%;
     object-fit: cover;
     transition: 0.5s ease-in-out;
-    border-top-right-radius: 40px;
+    border-top-right-radius: 50px;
 }
 
 
@@ -615,6 +618,7 @@ p4 {
 .artContainer .artContent:hover .artContentImage img {
     height: 100%;
     border-top-right-radius: 0px;
+    border-bottom-right-radius: 50px;
 
 }
 
@@ -685,12 +689,12 @@ p4 {
 }
 
 
-#contactTag {
+#contactTag{
     scroll-margin-top: 0vh;
     margin-top: 10%;
 }
 
-.contactSection {
+.contactSection{
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -701,12 +705,12 @@ p4 {
     gap: 1%;
     grid-template-areas:
         ". . . . . . . ."
+        "contactLogo contactLogo contactLogo contactLogo . . . ."
         "contactLogo contactLogo contactLogo contactLogo . title3 title3 title3"
         "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
         "contactLogo contactLogo contactLogo contactLogo . contactSocial contactSocial ."
         "contactLogo contactLogo contactLogo contactLogo . . . ."
-        "contactLogo contactLogo contactLogo contactLogo . . . ."
-        "contactLogo contactLogo contactLogo contactLogo . . . ."
+        /* "contactLogo contactLogo contactLogo contactLogo . . . ." */
     ;
 }
 
@@ -841,10 +845,10 @@ p9{
 }
 
 
-.dummy{
+/* .dummy{
     height: 100vh;
     background-color: black;
-}
+} */
 
 /* Media Control------------------------------------------------------------------------------------------------------------ */
 /* Media Control------------------------------------------------------------------------------------------------------------ */
@@ -896,6 +900,10 @@ p9{
         opacity: 1;
     }
 
+    #homeTag {
+        scroll-margin-top: -140vh;
+    }
+    
     .section1 {
         transition: 0.3s ease-in-out;
         height: 100vh;
@@ -908,7 +916,7 @@ p9{
         gap: 1%;
         grid-template-areas:
             ". ."
-            ". . "
+            ". ."
             "text1 text1"
             "text1 text1"
         ;
@@ -986,7 +994,7 @@ p9{
     }
 
     #allWorkTag {
-        scroll-margin-top: 5vh;
+        scroll-margin-top: 8vh;
     }
 
     .allWorkSection {
@@ -1138,6 +1146,7 @@ p9{
     p7, p7, p8, p9{
         font-size: 15px;
         font-weight: 400;
+        text-decoration: none;
     }
 
     .contactSection .contactSocial .contactSocialBox{
