@@ -164,7 +164,7 @@ function MenuOn(x){
     .addTo(controller);
 
 
-    //SCENE 2
+    //Section 1 Animation
     let scene2 = new ScrollMagic.Scene({
         //Duration of the video, trigger next step after it
         duration: 1000,

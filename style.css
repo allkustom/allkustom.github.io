@@ -157,8 +157,6 @@ ul li:hover ul.dropdown {
 
 
 header .mobileMenu {
-    /* display: none;
-            width: 20px; */
     display: none;
     cursor: pointer;
 }
@@ -166,6 +164,7 @@ header .mobileMenu {
 .bar1,
 .bar2,
 .bar3 {
+    display: none;
     width: 25px;
     height: 3px;
     background-color: #ededed;
@@ -195,11 +194,12 @@ header .mobileMenu {
     /* display: none; */
     display: block;
     opacity: 0;
-    margin-left: 100%;
+    /* margin-left: 100%; */
+    margin-left: 120vw;
     transition: 0.3s ease-in-out;
     height: 120vh;
     width: 100vw;
-    background-image: linear-gradient(270deg, #0c0c0c, 85%, transparent);
+    background-image: linear-gradient(270deg, #0c0c0c, 50%, transparent);
     /* background-color: rgba(12, 12, 12, 0.7); */
     z-index: 1000;
 }
@@ -296,7 +296,6 @@ br {
 }
 
 .section1 {
-    transition: 0.3s ease-in-out;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -396,7 +395,6 @@ p4 {
 }
 
 #selectedWork {
-    transition: 0.3s ease-in-out;
     width: 100vw;
     height: 16vh;
     margin: 0;
@@ -443,13 +441,11 @@ p4 {
 }
 
 .selected-container {
-    transition: 0.3s ease-in-out;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5%;
     opacity: 0;
     margin: 10% 12vw 0 12vw;
-    transition: 0.3s ease-in-out;
     /* overflow-x: hidden; */
 }
 
@@ -515,7 +511,6 @@ p4 {
 }
 
 .allWorkSection {
-    transition: 0.3s ease-in-out;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -696,7 +691,6 @@ p4 {
 }
 
 .contactSection {
-    transition: 0.3s ease-in-out;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -790,6 +784,7 @@ p9{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 10%;
     margin: 100% 0% 0% 0%;
     opacity: 0;
     width: 100%;
@@ -800,7 +795,7 @@ p9{
     width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10%;
+    gap: 20%;
 }
 
 .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube{
@@ -845,11 +840,11 @@ p9{
     filter: blur(0px);
 }
 
-/* 
+
 .dummy{
     height: 100vh;
     background-color: black;
-} */
+}
 
 /* Media Control------------------------------------------------------------------------------------------------------------ */
 /* Media Control------------------------------------------------------------------------------------------------------------ */
@@ -869,6 +864,10 @@ p9{
     }
 
     header .mobileMenu {
+        display: block;
+    }
+
+    .bar1, .bar2, .bar3{
         display: block;
     }
 
@@ -898,11 +897,12 @@ p9{
     }
 
     .section1 {
+        transition: 0.3s ease-in-out;
         height: 100vh;
         /* background-color: #808080; */
         display: grid;
-        margin-left: 5%;
-        margin-right: 5%;
+        /* margin-left: 5%;
+        margin-right: 5%; */
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
         gap: 1%;
@@ -918,6 +918,9 @@ p9{
         display: none;
     }
 
+    .text1{
+        margin-left: 5%;
+    }
     .text1 h1 {
         font-size: 70px;
         margin-bottom: 0;
@@ -949,6 +952,7 @@ p9{
 
     /* SelectedWork Section */
     #selectedWork {
+        transition: 0.3s ease-in-out;
         height: 10vh;
         /* background-color: #808080; */
         display: grid;
@@ -965,6 +969,7 @@ p9{
     }
 
     .selected-container {
+        /* transition: 0.3s ease-in-out;         */
         grid-template-columns: repeat(1, 1fr);
         margin-left: 5%;
         margin-right: 5%;
@@ -985,6 +990,7 @@ p9{
     }
 
     .allWorkSection {
+        transition: 0.3s ease-in-out;
         height: 80vh;
         width: 100vw;
         display: grid;
@@ -1097,20 +1103,26 @@ p9{
     }    
 
     .contactSection {
-        height: 80vh;
+        transition: 0.3s ease-in-out;
+        height: 70vh;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
         gap: 1%;
         grid-template-areas:
             ". . . ."
             ". . title3 title3"
-            ". . text3 text3 "
-            ". . contactSocial contactSocial "
-            "contactLogo contactLogo . ."
+            ". . text3 text3"
+            ". . text3 text3"
+            "contactLogo contactLogo contactSocial contactSocial"
             "contactLogo contactLogo . ."
             "contactLogo contactLogo . ."
         ;
     }
+
+    /* .title3{
+        margin-left: 5%;
+    } */
+
     .title3 h1 {
         font-weight: 500;
         font-size: 23px;
@@ -1119,10 +1131,22 @@ p9{
         margin-left: 2vw;
     }
 
+    /* .text3{
+        margin-left: 10%;
+    } */
+
     p7, p7, p8, p9{
         font-size: 15px;
         font-weight: 400;
     }
+
+    .contactSection .contactSocial .contactSocialBox{
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: end;
+    }
+
+
     .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube img{
         height: 30px;
     }
@@ -1136,6 +1160,17 @@ p9{
         width: 100%;
         opacity: 0.3;
         margin: auto auto -10% -15%;
+    }   
+}
+
+
+
+/* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
+/* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
+/* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
+/* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 1400px) {
+    header ul {
+        display: none;
     }
-    
 }
