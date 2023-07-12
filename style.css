@@ -199,7 +199,7 @@ header .mobileMenu {
     transition: 0.3s ease-in-out;
     height: 120vh;
     width: 100vw;
-    background-image: linear-gradient(270deg, #0c0c0c, 50%, transparent);
+    background-image: linear-gradient(270deg, #0c0c0c, 75%, transparent);
     /* background-color: rgba(12, 12, 12, 0.7); */
     z-index: 1000;
 }
@@ -1168,7 +1168,7 @@ p9{
         height: 20px;
     }
     .contactSection .contactLogo img {
-        width: 100%;
+        width: 80%;
         opacity: 0.3;
         margin: auto auto -10% -15%;
     }   

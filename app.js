@@ -85,8 +85,8 @@ function MenuOn(x){
         headerOffset = 900;
         section1PinDuration = 1200;
 
-        section1TitleDuration = 400;
-        section1TitleOffset = -300;
+        section1TitleDuration = 350;
+        section1TitleOffset = -200;
         line1Duration = 600;
         line1Offset = -1000;
         workGridBool = false;
