@@ -25,6 +25,8 @@ let mediaOffset;
 let headerDuration;
 let headerOffset;
 let section1PinDuration;
+let section1TitleDuration;
+let section1TitleOffset;
 let line1Duration
 let line1Offset;
 let section1ContentDuration;
@@ -83,8 +85,10 @@ function MenuOn(x){
         headerOffset = 900;
         section1PinDuration = 1200;
 
+        section1TitleDuration = 400;
+        section1TitleOffset = -300;
         line1Duration = 600;
-        line1Offset = -600;
+        line1Offset = -1000;
         workGridBool = false;
         artLinkTimer = 700;
 
@@ -111,6 +115,8 @@ function MenuOn(x){
         headerOffset = 900;
         section1PinDuration = 1200;
 
+        section1TitleDuration = 1000;
+        section1TitleOffset = -300;
         line1Duration = 1300;
         line1Offset = -300;
         section1ContentDuration = 500;
@@ -231,7 +237,7 @@ function MenuOn(x){
 
 
     //horizontal-line1 Animation
-    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '40% 0% 0% -100%', filter: 'blur(1.5px)'}, {height: '4%', margin: '40% 0% 0% 0%', filter: 'blur(0px)'});
+    const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '40% 0% 0% -100%', filter: 'blur(1.5px)'}, {height: '3%', margin: '40% 0% 0% 0%', filter: 'blur(0px)'});
     let line1Start = new ScrollMagic.Scene({
         duration: line1Duration,
         offset: line1Offset,
@@ -247,8 +253,8 @@ function MenuOn(x){
         //allkustom(Title)
         const textH1Ani = TweenMax.fromTo(textH1, 1, {opacity: 0, filter: 'blur(3px)'}, {opacity: 1, filter: 'blur(0px)'});
         let textH1AniStart = new ScrollMagic.Scene({
-            duration: 1000,
-            offset: line1Offset,
+            duration: section1TitleDuration,
+            offset: section1TitleOffset,
             triggerElement: section1,
             triggerHook: 0
         })
