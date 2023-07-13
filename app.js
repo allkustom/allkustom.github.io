@@ -77,7 +77,7 @@ function MenuOn(x){
 
     //Scenes control with media query
     //Targeting Media Query 
-    let query = window.matchMedia("(max-width: 700px)");
+    let query = window.matchMedia("(max-width: 1400px)");
     if (query.matches) {
         //if the page is narrower than 700px
         console.log('under 700px');
@@ -397,7 +397,7 @@ function MenuOn(x){
         const boxContainer = document.querySelector('.selected-container');
 
         if(mediaBool == true){
-            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 12vw 0 12vw', filter: 'blur(5px)'}, {opacity: 1,margin: '0% 12vw 0 12vw', filter: 'blur(0px)'});
+            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '50% 12vw 0 12vw', filter: 'blur(10px)'}, {opacity: 1,margin: '0% 12vw 0 12vw', filter: 'blur(0px)'});
             let boxConatinerStart = new ScrollMagic.Scene({
                 duration: selectedArtworkDuration,
                 offset: selectedArtworkOffset,
@@ -408,7 +408,7 @@ function MenuOn(x){
             .setTween(boxContainerAni)
             .addTo(controller);
         }else if(mediaBool == false){
-            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 5% 0 5%', filter: 'blur(5px)'}, {opacity: 1,margin: '0% 5% 0 5%', filter: 'blur(0px)'});
+            const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '50% 5% 0 5%'}, {opacity: 1,margin: '0% 5% 0 5%'});
             let boxConatinerStart = new ScrollMagic.Scene({
                 duration: selectedArtworkDuration,
                 offset: selectedArtworkOffset,
