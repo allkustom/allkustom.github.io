@@ -6,8 +6,6 @@
 
 
 const intro = document.querySelector('.intro');
-// const video = intro.querySelector('video');
-const text0 = intro.querySelector('h1');
 
 const pinBox = document.querySelector('.section1PinBox');
 
@@ -146,36 +144,55 @@ function MenuOn(x){
         contactContentOffset = -500;
     }
 
-    //0. Intro Video Section ----------------------------------------------------------------------------------------------------
-    // let scene = new ScrollMagic.Scene({
-    //     //Duration of the video, trigger next step after it
-    //     duration: videoDuration,
-    //     triggerElement: intro,
-    //     triggerHook: 0
-    // })
-    //     //Scroll Magic trigger indicators
-    //     .addIndicators()
-    //     .setPin(intro)
-    //     .addTo(controller);
+    //0. Mobile intro image Section ----------------------------------------------------------------------------------------------------
+
+    const introScrollImageBox = intro.querySelector('.mobileScrollIamge');
+    const introScrollImage = introScrollImageBox.querySelector('img');
+    const introLogoImageBox = intro.querySelector('.mobileLogoImage');
+    const introLogoImage = introLogoImageBox.querySelector('img');
 
 
-    //     //Video Animation
-    //     let accelAmount = 0.1;
-    //     let scrollPos = 0;
-    //     let delay = 0;
+    if(mediaBool == false){
+        let mobileScene = new ScrollMagic.Scene({
+            //Duration of the video, trigger next step after it
+            duration: 1600,
+            triggerElement: intro,
+            triggerHook: 0
+        })
+            // .addIndicators()
+            .setPin(intro)
+            .addTo(controller);
 
-    //     scene.on('update', e => {
-    //         scrollpos = e.scrollPos / 1000;
-    //         // console.log(e);
-    //     });
+        //Scroll Iamge Opacity
+        const scrollImageAni = TweenMax.fromTo(introScrollImage, 1, {opacity: 0.8, width: '20%', filter: 'blur(0px)'}, {opacity: 0, width: '18%', filter: 'blur(2px)'});
 
-    //     setInterval(()=>{
-    //         delay += (scrollpos - delay) * accelAmount;
-    //         // console.log(scrollpos, delay);
+        let scrollImageStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: 0,
+            triggerElement: intro,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(scrollImageAni)
+        .addTo(controller);    
 
-    //         // video.currentTime = scrollpos;
-    //         video.currentTime = delay;
-    //     }, 33.3);
+        //Logo Iamge Opacity
+        const logoImageAni = TweenMax.fromTo(introLogoImage, 1, {opacity: 0, width: '20%', filter: 'blur(10px)'}, {opacity: 0.9, width: '70%', filter: 'blur(0px)'});
+
+        let logoImageStart = new ScrollMagic.Scene({
+            duration: 1000,
+            offset: 500,
+            triggerElement: intro,
+            triggerHook: 0
+        })
+        // .addIndicators()
+        .setTween(logoImageAni)
+        .addTo(controller);    
+
+    }
+
+
+
 
 //-----------------------------------------------------------------------------------------------------------------------------------
     

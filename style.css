@@ -273,13 +273,31 @@ br {
     transition: 0.3s ease-in-out;
 }
 
-.intro video {
-    height: 100vh;
-    object-fit: cover;
-    opacity: 1;
+.mobileScrollIamge{
+    display: block;
+    position: absolute;
+    /* background-color: grey; */
+    justify-content: center;
+    align-items: center;
 }
 
-.intro img {
+.mobileScrollIamge img{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    opacity: 0;
+}
+
+.mobileLogoImage{
+    display: block;
+    position: absolute;
+    justify-content: center;
+    align-items: center;   
+}
+
+.mobileLogoImage img{
+    margin-left: 50%;
+    transform: translateX(-50%);
     width: 0%;
     opacity: 0;
 }
@@ -532,7 +550,7 @@ p4 {
 
 #allWorkTag {
     scroll-margin-top: 0vh;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 .allWorkSection {
@@ -905,23 +923,15 @@ p9{
         padding: 0;
         display: flex;
     }
-
-    .intro h1 {
-        font-size: 40px;
-        top: 80%;
-    }
-
-    .intro video {
-        height: 0%;
-        width: 0%;
-        object-fit: none;
-        opacity: 0;
-    }
-
-    .intro img {
-        width: 80%;
+    
+    .mobileScrollIamge img{
+        width: 20%;
         opacity: 1;
     }
+    .mobileLogoImage img{
+        width: 50%;
+        opacity: 1;
+    }    
 
     .videoBox {
         display: none;
