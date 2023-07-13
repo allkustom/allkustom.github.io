@@ -6,8 +6,13 @@
 
 
 const intro = document.querySelector('.intro');
-const video = intro.querySelector('video');
+// const video = intro.querySelector('video');
 const text0 = intro.querySelector('h1');
+
+const pinBox = document.querySelector('.section1PinBox');
+
+const videoBox = document.querySelector('.videoBox');
+const video = videoBox.querySelector('video');
 
 const section1 = document.querySelector('.section1');
 const line1Div = document.querySelector('.line1');
@@ -20,6 +25,7 @@ const p2 = document.querySelector('p2');
 const p3 = document.querySelector('p3');
 const p4 = document.querySelector('p4');
 
+let mediaBool;
 let videoDuration;
 let mediaOffset;
 let headerDuration;
@@ -30,7 +36,6 @@ let section1TitleOffset;
 let line1Duration
 let line1Offset;
 let section1ContentDuration;
-let workGridBool;
 let artLinkTimer;
 let selectedTitleDuration;
 let selectedTitleOffset;
@@ -78,7 +83,10 @@ function MenuOn(x){
     if (query.matches) {
         //if the page is narrower than 700px
         console.log('under 700px');
+        mediaBool = false;
+
         videoDuration = 100;
+        endIntro = 0;
         mediaOffset = 0;
 
         headerDuration = 200;
@@ -88,8 +96,7 @@ function MenuOn(x){
         section1TitleDuration = 350;
         section1TitleOffset = -200;
         line1Duration = 600;
-        line1Offset = -1000;
-        workGridBool = false;
+        line1Offset = -500;
         artLinkTimer = 700;
 
         selectedTitleDuration = 500;
@@ -108,19 +115,21 @@ function MenuOn(x){
     else {
         //if the page is wider than 700px
         console.log('over 700px');
-        videoDuration = 3000;
+        mediaBool = true;
+
+        videoDuration = 4000;
+        endIntro = 4500;
         mediaOffset = 2000;
 
         headerDuration = 200;
-        headerOffset = 900;
-        section1PinDuration = 1200;
-
+        headerOffset = 1200;
         section1TitleDuration = 1000;
-        section1TitleOffset = -300;
+        section1PinDuration = endIntro + section1TitleDuration + 600;
+
+        section1TitleOffset = 0;
         line1Duration = 1300;
-        line1Offset = -300;
-        section1ContentDuration = 500;
-        workGridBool = true;
+        line1Offset = 0;
+        section1ContentDuration = 700;
         artLinkTimer = 0;
         
         selectedTitleDuration = 800;
@@ -138,73 +147,98 @@ function MenuOn(x){
     }
 
     //0. Intro Video Section ----------------------------------------------------------------------------------------------------
-    let scene = new ScrollMagic.Scene({
-        //Duration of the video, trigger next step after it
-        duration: videoDuration,
-        triggerElement: intro,
-        triggerHook: 0
-    })
-        //Scroll Magic trigger indicators
+    // let scene = new ScrollMagic.Scene({
+    //     //Duration of the video, trigger next step after it
+    //     duration: videoDuration,
+    //     triggerElement: intro,
+    //     triggerHook: 0
+    // })
+    //     //Scroll Magic trigger indicators
+    //     .addIndicators()
+    //     .setPin(intro)
+    //     .addTo(controller);
+
+
+    //     //Video Animation
+    //     let accelAmount = 0.1;
+    //     let scrollPos = 0;
+    //     let delay = 0;
+
+    //     scene.on('update', e => {
+    //         scrollpos = e.scrollPos / 1000;
+    //         // console.log(e);
+    //     });
+
+    //     setInterval(()=>{
+    //         delay += (scrollpos - delay) * accelAmount;
+    //         // console.log(scrollpos, delay);
+
+    //         // video.currentTime = scrollpos;
+    //         video.currentTime = delay;
+    //     }, 33.3);
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+    
+        let pinBoxSet = new ScrollMagic.Scene({
+            //Duration of the video, trigger next step after it
+            duration: section1PinDuration,
+            triggerElement: pinBox,
+            triggerHook: 0
+        })
+            //Scroll Magic trigger indicators
+            // .addIndicators()
+            .setPin(pinBox)
+            .addTo(controller);
+
+    
+            //Video Animation
+            let accelAmount = 0.1;
+            let scrollPos = 0;
+            let delay = 0;
+    
+            pinBoxSet.on('update', e => {
+                scrollpos = e.scrollPos / 1000;
+                // console.log(e);
+            });
+    
+            setInterval(()=>{
+                delay += (scrollpos - delay) * accelAmount;
+                // console.log(scrollpos, delay);
+    
+                // video.currentTime = scrollpos;
+                video.currentTime = delay;
+            }, 33.3);
+            
+        //VideoBox Opacity
+        const videoBoxOpacityAni = TweenMax.fromTo(videoBox, 1, {opacity: 1}, {opacity: 0});
+
+        let videoBoxOpacityStart = new ScrollMagic.Scene({
+            duration: 500,
+            offset: videoDuration,
+            triggerElement: pinBox,
+            triggerHook: 0
+        })
         // .addIndicators()
-        .setPin(intro)
-        .addTo(controller);
+        .setTween(videoBoxOpacityAni)
+        .addTo(controller);    
+
+        //VideoBox Display none
+        if(mediaBool == true){
+            const videoBoxDisplayAni = TweenMax.fromTo(videoBox, 1, {display: 'flex'}, {display: 'none'});
+
+            let videoBoxDisplayStart = new ScrollMagic.Scene({
+                duration: 1,
+                offset: videoDuration+500,
+                triggerElement: pinBox,
+                triggerHook: 0
+            })
+            // .addIndicators()
+            .setTween(videoBoxDisplayAni)
+            .addTo(controller);            
+    
+        }
 
 
-        //Video Animation
-        let accelAmount = 0.1;
-        let scrollPos = 0;
-        let delay = 0;
-
-        scene.on('update', e => {
-            scrollpos = e.scrollPos / 1000;
-            // console.log(e);
-        });
-
-        setInterval(()=>{
-            delay += (scrollpos - delay) * accelAmount;
-            // console.log(scrollpos, delay);
-
-            // video.currentTime = scrollpos;
-            video.currentTime = delay;
-        }, 33.3);
-
-    //Title Text Animation
-    const textAni0 = TweenMax.fromTo(text0, 1, {opacity: 0}, {opacity: 0});
-
-    let mainTextOff = new ScrollMagic.Scene({
-        duration: 10,
-        offset: -1,
-        triggerElement: intro,
-        triggerHook: 0
-    })
-    // .addIndicators()
-    .setTween(textAni0)
-    .addTo(controller);
-
-    const textAni1 = TweenMax.fromTo(text0, 1, {opacity: 0}, {opacity: 1});
-
-    let mainTextStart = new ScrollMagic.Scene({
-        duration: 1000,
-        offset: mediaOffset+10,
-        triggerElement: intro,
-        triggerHook: 0
-    })
-    // .addIndicators()
-    .setTween(textAni1)
-    .addTo(controller);
-
-    const textAni2 = TweenMax.fromTo(text0, 1, {opacity: 1}, {opacity: 0});
-    // const textAni2 = TweenMax.fromTo(text, 3, {opacity: 1, left: "50%"}, {opacity: 0, left: "120%"});
-
-    let mainTestEnd = new ScrollMagic.Scene({
-        duration: 1000,
-        offset: mediaOffset+1010,
-        triggerElement: intro,
-        triggerHook: 0
-    })
-    // .addIndicators()
-    .setTween(textAni2)
-    .addTo(controller);
 
 
     //0. Header Animation ----------------------------------------------------------------------------------------------------
@@ -213,8 +247,8 @@ function MenuOn(x){
     const headerAni = TweenMax.fromTo(header, 1, {opacity: 0, filter: 'blur(10px)'}, {opacity: 1, filter: 'blur(0px)'});
     let headerAniStart = new ScrollMagic.Scene({
         duration: headerDuration,
-        offset: headerOffset,
-        triggerElement: section1,
+        offset: endIntro + headerOffset,
+        triggerElement: pinBox,
         triggerHook: 0
     })
     // .addIndicators()
@@ -223,16 +257,16 @@ function MenuOn(x){
 
 
     //Section1 ----------------------------------------------------------------------------------------------------
-    let scene2 = new ScrollMagic.Scene({
-        //Duration of the video, trigger next step after it
-        duration: section1PinDuration,
-        triggerElement: section1,
-        triggerHook: 0
-    })
-        //Scroll Magic trigger indicators
-        // .addIndicators()
-        .setPin(section1)
-        .addTo(controller);
+    // let scene2 = new ScrollMagic.Scene({
+    //     //Duration of the video, trigger next step after it
+    //     duration: endIntro + section1PinDuration,
+    //     triggerElement: section1,
+    //     triggerHook: 0
+    // })
+    //     //Scroll Magic trigger indicators
+    //     // .addIndicators()
+    //     .setPin(section1)
+    //     .addTo(controller);
 
 
 
@@ -240,8 +274,8 @@ function MenuOn(x){
     const line1Ani = TweenMax.fromTo(line1, 1, {height: '0%', margin: '40% 0% 0% -100%', filter: 'blur(1.5px)'}, {height: '3%', margin: '40% 0% 0% 0%', filter: 'blur(0px)'});
     let line1Start = new ScrollMagic.Scene({
         duration: line1Duration,
-        offset: line1Offset,
-        triggerElement: section1,
+        offset: endIntro + line1Offset,
+        triggerElement: pinBox,
         triggerHook: 0
     })
     // .addIndicators()
@@ -254,8 +288,8 @@ function MenuOn(x){
         const textH1Ani = TweenMax.fromTo(textH1, 1, {opacity: 0, filter: 'blur(3px)'}, {opacity: 1, filter: 'blur(0px)'});
         let textH1AniStart = new ScrollMagic.Scene({
             duration: section1TitleDuration,
-            offset: section1TitleOffset,
-            triggerElement: section1,
+            offset: endIntro + section1TitleOffset,
+            triggerElement: pinBox,
             triggerHook: 0
         })
         //.addIndicators()
@@ -266,8 +300,8 @@ function MenuOn(x){
         const p1Ani = TweenMax.fromTo(p1, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
         let p1Start = new ScrollMagic.Scene({
             duration: section1ContentDuration,
-            offset: 100,
-            triggerElement: section1,
+            offset: endIntro + 200,
+            triggerElement: pinBox,
             triggerHook: 0
         })
         //.addIndicators()
@@ -278,8 +312,8 @@ function MenuOn(x){
         const p2Ani = TweenMax.fromTo(p2, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
         let p2Start = new ScrollMagic.Scene({
             duration: section1ContentDuration,
-            offset: 200,
-            triggerElement: section1,
+            offset: endIntro + 400,
+            triggerElement: pinBox,
             triggerHook: 0
         })
         //.addIndicators()
@@ -290,8 +324,8 @@ function MenuOn(x){
         const p3Ani = TweenMax.fromTo(p3, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
         let p3Start = new ScrollMagic.Scene({
             duration: section1ContentDuration,
-            offset: 300,
-            triggerElement: section1,
+            offset: endIntro + 600,
+            triggerElement: pinBox,
             triggerHook: 0
         })
         //.addIndicators()
@@ -302,8 +336,8 @@ function MenuOn(x){
         const p4Ani = TweenMax.fromTo(p4, 1, {opacity: 0, filter: 'blur(5px)'}, {opacity: 1, filter: 'blur(0px)'});
         let p4Start = new ScrollMagic.Scene({
             duration: section1ContentDuration,
-            offset: 400,
-            triggerElement: section1,
+            offset: endIntro + 800,
+            triggerElement: pinBox,
             triggerHook: 0
         })
         //.addIndicators()
@@ -345,7 +379,7 @@ function MenuOn(x){
         //Artwork Animation
         const boxContainer = document.querySelector('.selected-container');
 
-        if(workGridBool == true){
+        if(mediaBool == true){
             const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 12vw 0 12vw', filter: 'blur(5px)'}, {opacity: 1,margin: '0% 12vw 0 12vw', filter: 'blur(0px)'});
             let boxConatinerStart = new ScrollMagic.Scene({
                 duration: selectedArtworkDuration,
@@ -356,7 +390,7 @@ function MenuOn(x){
             // .addIndicators()
             .setTween(boxContainerAni)
             .addTo(controller);
-        }else if(workGridBool == false){
+        }else if(mediaBool == false){
             const boxContainerAni = TweenMax.fromTo(boxContainer, 1, {opacity: 0, margin: '20% 5% 0 5%', filter: 'blur(5px)'}, {opacity: 1,margin: '0% 5% 0 5%', filter: 'blur(0px)'});
             let boxConatinerStart = new ScrollMagic.Scene({
                 duration: selectedArtworkDuration,
@@ -519,7 +553,22 @@ function MenuOn(x){
         .addTo(controller);
 
         //Contact Logo Animation
-        const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(0px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
+       
+    
+
+
+        if(mediaBool == true){
+            const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(0px)'}, {opacity: 0.3, margin: 'auto auto -10% -15%', filter: 'blur(10px)'});
+            let contactLogoStart = new ScrollMagic.Scene({
+                duration: contactContentDuration,
+                offset: contactContentOffset,
+                triggerElement: contactSection,
+                triggerHook: 0
+            })
+            // .addIndicators()
+            .setTween(contactLogoAni)
+            .addTo(controller);
+        }else if(mediaBool == false){ const contactLogoAni = TweenMax.fromTo(contactLogo, 1, {opacity: 0, margin: 'auto auto -10% -50%', filter: 'blur(0px)'}, {opacity: 0.5, margin: 'auto auto 10% 10%', filter: 'blur(3px)'});
         let contactLogoStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,
@@ -529,4 +578,4 @@ function MenuOn(x){
         // .addIndicators()
         .setTween(contactLogoAni)
         .addTo(controller);
-        
+        }
