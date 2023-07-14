@@ -78,10 +78,12 @@ function MenuOn(x){
 
     //Scenes control with media query
     //Targeting Media Query 
-    let query = window.matchMedia("(max-width: 1400px)");
+    let query = window.matchMedia("(max-width: 700px)");
+    let query2 = window.matchMedia("(max-width: 1400px)");
+
     if (query.matches) {
         //if the page is narrower than 700px
-        console.log('under 700px');
+        // console.log('under 700px');
         mediaBool = false;
 
         videoDuration = 100;
@@ -113,9 +115,13 @@ function MenuOn(x){
     }
     else {
         //if the page is wider than 700px
-        console.log('over 700px');
+        // console.log('over 700px');
+        if(query2.matches){
+            mediaBool = true;
+        }
+        else{
         mediaBool = true;
-
+        }
         videoDuration = 4000;
         endIntro = 4500;
         mediaOffset = 2000;
@@ -143,6 +149,7 @@ function MenuOn(x){
         contactTitleOffset = -850;
         contactContentDuration = 300;
         contactContentOffset = -500;
+        
     }
     
 
@@ -166,7 +173,7 @@ function MenuOn(x){
             .addTo(controller);
 
         //Scroll Iamge Opacity
-        const scrollImageAni = TweenMax.fromTo(introScrollImage, 1, {opacity: 0.8, width: '20%', filter: 'blur(0px)'}, {opacity: 0, width: '18%', filter: 'blur(2px)'});
+        const scrollImageAni = TweenMax.fromTo(introScrollImage, 1, {opacity: 0.9, width: '16%', filter: 'blur(0px)'}, {opacity: 0, width: '13%', filter: 'blur(2px)'});
 
         let scrollImageStart = new ScrollMagic.Scene({
             duration: 500,
@@ -179,7 +186,7 @@ function MenuOn(x){
         .addTo(controller);    
 
         //Logo Iamge Opacity
-        const logoImageAni = TweenMax.fromTo(introLogoImage, 1, {opacity: 0, width: '20%', filter: 'blur(10px)'}, {opacity: 0.9, width: '70%', filter: 'blur(0px)'});
+        const logoImageAni = TweenMax.fromTo(introLogoImage, 1, {opacity: 0, width: '20%', filter: 'blur(10px)'}, {opacity: 0.85, width: '70%', filter: 'blur(0px)'});
 
         let logoImageStart = new ScrollMagic.Scene({
             duration: 1000,
