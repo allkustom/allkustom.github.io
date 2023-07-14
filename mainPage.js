@@ -118,9 +118,11 @@ function MenuOn(x){
         // console.log('over 700px');
         if(query2.matches){
             mediaBool = true;
+            artLinkTimer = 700;
         }
         else{
         mediaBool = true;
+        artLinkTimer = 0;
         }
         videoDuration = 4000;
         endIntro = 4500;
@@ -135,7 +137,6 @@ function MenuOn(x){
         line1Duration = 1300;
         line1Offset = 0;
         section1ContentDuration = 700;
-        artLinkTimer = 0;
         
         selectedTitleDuration = 800;
         selectedTitleOffset = -1000;
