@@ -42,7 +42,7 @@ header {
     width: 100%;
     position: fixed;
     display: flex;
-    opacity: 0;
+    opacity: 1;
     justify-content: space-between;
     align-items: center;
     padding: 3vh 3vw 3vh 3vw;
@@ -461,7 +461,7 @@ p4 {
     font-weight: 500;
     font-size: 2.5vw;
     line-height: 1;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
 }
 
@@ -478,7 +478,7 @@ p4 {
     height: 1px;
     width: 100%;
     background-color: #ededed;
-    opacity: 0;
+    opacity: 1;
     margin: 0% 0% 0% -100%;
 }
 
@@ -486,8 +486,8 @@ p4 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5%;
-    opacity: 0;
-    margin: 10% 12vw 0 12vw;
+    opacity: 1;
+    margin: 0% 12vw 0 12vw;
     /* overflow-x: hidden; */
 }
 
@@ -885,6 +885,61 @@ p9{
 }
 
 
+/* Allwork PAge Style------------------------------------------------------------------------------- */
+
+#motionTag, #imageTag, #codeTag, #physicalTag {
+    scroll-margin-top: 10vh;
+    margin-top: 10%;
+}
+
+
+.allworkTitleDiv {
+    width: 100vw;
+    height: 16vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1%;
+    grid-template-areas:
+        ". allworkTitle allworkLine allworkLine allworkLine allworkLine allworkLine allworkLine"
+    ;
+}
+
+
+.allworkTitle {
+    grid-area: allworkTitle;
+}
+
+.allworkTitle h1 {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-weight: 500;
+    font-size: 2vw;
+    line-height: 1;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.allworkLine {
+    grid-area: allworkLine;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.allworkLine .allworkHorizontal-line {
+    height: 1px;
+    width: 100%;
+    background-color: #ededed;
+    opacity: 1;
+}
+
+.extraEnd{
+    height: 20vh;
+}
+
 /* .dummy{
     height: 200vh;
     background-color: black;
@@ -1019,6 +1074,7 @@ p9{
         grid-template-columns: repeat(1, 1fr);
         margin-left: 5%;
         margin-right: 5%;
+        opacity: 1;
         gap: 0%;
     }
 
@@ -1208,6 +1264,21 @@ p9{
         opacity: 0.3;
         margin: auto auto -10% -15%;
     }   
+
+
+
+    .allworkTitleDiv {
+        margin: 20% 5% 0 5%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1%;
+        grid-template-areas:
+            "allworkTitle allworkLine allworkLine allworkLine"
+        ;
+    }
+    
+    .allworkTitle h1 {
+        font-size: 20px;
+    }
 }
 
 
