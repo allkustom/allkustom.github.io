@@ -22,6 +22,8 @@ let menuCheck = false;function MenuOn(x){
     menuCheck = true;
     x.classList.toggle("turnOff");
     htmlDiv.classList.toggle("turnOff");
+
+    logo.classList.toggle("moveLeft");
     // boxContainer.classList.toggle("blurSection");
     // motionTag.classList.toggle("blurSection");
     // imageTag.classList.toggle("blurSection");
