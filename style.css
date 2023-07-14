@@ -603,6 +603,7 @@ p4 {
     align-items: center;
     transition: 0.5s ease-in-out;
     /* border-radius: 50px; */
+    
 }
 
 .artContainer .artContent .artContentImage .artContentImageOverlay {
@@ -616,14 +617,51 @@ p4 {
     transition: 0.5s ease-in-out;
 }
 
-
 .artContainer .artContent .artContentImage img {
     /* width: 100%; */
     height: 100%;
     object-fit: cover;
     transition: 0.5s ease-in-out;
-    border-top-right-radius: 50px;
+    /* border-top-right-radius: 50px; */
 }
+
+.artContainer .artContent .artContentImage::before {
+    transition: 0.5s ease-in-out;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 50px solid #0c0c0c;
+    border-left: 50px solid transparent;
+    width: 0;
+}
+.artContainer .artContent .artContentImage::after {
+    transition: 0.5s ease-in-out;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 0px solid #0c0c0c;
+    border-left: 0px solid transparent;
+    width: 0;
+}
+
+.artContainer .artContent:hover .artContentImage img {
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    /* border-top-right-radius: 0px; 
+     border-bottom-right-radius: 50px; */
+}
+
+.artContainer .artContent:hover .artContentImage::before {
+    border-top: 0px solid #0c0c0c;
+    border-left: 0px solid transparent;
+}
+.artContainer .artContent:hover .artContentImage::after {
+    border-bottom: 50px solid #0c0c0c;
+    border-left: 50px solid transparent;
+}
+
 
 
 .artContainer .artContent .artContentText {
@@ -655,12 +693,6 @@ p4 {
     margin-left: 0vw;
 }
 
-.artContainer .artContent:hover .artContentImage img {
-    height: 100%;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 50px;
-
-}
 
 .artContainer .artContent:hover .artContentImage .artContentImageOverlay {
     opacity: 0;
@@ -1182,6 +1214,24 @@ p9{
 
     .artContainer .artContent:hover .artContentImage img {
         height: 90%;
+    }
+
+    .artContainer .artContent .artContentImage::before {
+        border-top: 35px solid #0c0c0c;
+        border-left: 35px solid transparent;
+    }
+    .artContainer .artContent .artContentImage::after {
+        border-bottom: 0px solid #0c0c0c;
+        border-left: 0px solid transparent;
+    }
+    
+    .artContainer .artContent:hover .artContentImage::before {
+        border-top: 0px solid #0c0c0c;
+        border-left: 0px solid transparent;
+    }
+    .artContainer .artContent:hover .artContentImage::after {
+        border-bottom: 35px solid #0c0c0c;
+        border-left: 35px solid transparent;
     }
 
     .artContainer .artContent:hover .artContentImage .artContentImageOverlay {
