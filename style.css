@@ -505,14 +505,14 @@ p4 {
 .selected-container .box .imageBox img {
     transition: 0.3s ease-in-out;
     width: 100%;
-    height: 100%s;
+    height: 100%;
     object-fit: cover;
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 
 .selected-container .box:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .selected-container .box .workTitle {
@@ -545,7 +545,7 @@ p4 {
 }
 
 .selected-container .box:hover .workTitle p {
-    margin-left: 7%;
+    margin-left: 5%;
 }
 
 #allWorkTag {
@@ -613,7 +613,7 @@ p4 {
     width: 100%;
     height: 100%;
     background-color: #0c0c0c;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: 0.5s ease-in-out;
 }
 
