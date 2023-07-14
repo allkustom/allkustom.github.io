@@ -67,12 +67,12 @@ function MenuOn(x){
     htmlDiv.classList.toggle("turnOff");
 
     logo.classList.toggle("moveLeft");
-    intro.classList.toggle("blurSection");
-    section1.classList.toggle("blurSection");
-    selectedSection.classList.toggle("blurSection");
-    artSection.classList.toggle("blurSection");
-    contactSection.classList.toggle("blurSection");
-    boxContainer.classList.toggle("blurSection");
+    // intro.classList.toggle("blurSection");
+    // section1.classList.toggle("blurSection");
+    // selectedSection.classList.toggle("blurSection");
+    // artSection.classList.toggle("blurSection");
+    // contactSection.classList.toggle("blurSection");
+    // boxContainer.classList.toggle("blurSection");
 
 }
 

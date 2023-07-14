@@ -22,11 +22,11 @@ let menuCheck = false;function MenuOn(x){
     menuCheck = true;
     x.classList.toggle("turnOff");
     htmlDiv.classList.toggle("turnOff");
-    boxContainer.classList.toggle("blurSection");
-    motionTag.classList.toggle("blurSection");
-    imageTag.classList.toggle("blurSection");
-    codeTag.classList.toggle("blurSection");
-    physicalTag.classList.toggle("blurSection");
+    // boxContainer.classList.toggle("blurSection");
+    // motionTag.classList.toggle("blurSection");
+    // imageTag.classList.toggle("blurSection");
+    // codeTag.classList.toggle("blurSection");
+    // physicalTag.classList.toggle("blurSection");
 
 }
 
