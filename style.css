@@ -485,7 +485,7 @@ p4 {
 .selected-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5%;
+    gap: 0%;
     opacity: 1;
     margin: 0% 12vw 0 12vw;
     /* overflow-x: hidden; */
@@ -507,7 +507,7 @@ p4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1);
+    transform: scale(1.05);
 }
 
 
@@ -972,6 +972,125 @@ p9{
     height: 20vh;
 }
 
+/* Artwork detail pages style---------------------------------------------------------------------------------------------------- */
+.form1Grid{
+    margin: 24vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2%;
+    /* height: 100vh; */
+}
+
+.pageBackDiv{
+    position: fixed;
+    width: 6vw;
+    height: 6vw;
+    transform: translate(-50%, -50%);
+    margin-top: 50vh;
+    margin-left: 6vw;
+}
+
+.pageBackDiv .arrowTop{
+    width: 40px;
+    height: 5px;
+    margin-top: 50%;
+    margin-left: 15%;
+    background-color: #939393;
+    transition: 0.5s ease-in-out;
+    border-radius: 2.5px;
+    transform: translate(0px, -10px) rotate(-45deg);
+
+}
+
+.pageBackDiv .arrowBot{
+    width: 40px;
+    height: 5px;
+    margin-left: 15%;
+    background-color: #939393;
+    transition: 0.5s ease-in-out;
+    border-radius: 2.5px;
+    transform: translate(0px, 10px) rotate(45deg);
+}
+
+.pageBackDiv:hover .arrowTop{
+    background-color: #ededed;
+    margin-left: 0%;
+    transform: translate(0px, -6.5px) rotate(-30deg);
+}
+.pageBackDiv:hover .arrowBot{
+    background-color: #ededed;
+    margin-left: 0%;
+    transform: translate(0px, 6.5px) rotate(30deg);
+}
+
+
+.form1Grid .form1MainImage{
+    width: 100%;
+}
+
+.form1Grid .form1MainImage img{
+    width: 100%;
+}
+
+
+.form1Grid iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.form1Grid .form1Text{
+    margin-bottom: 10%;
+}
+
+.form1Grid .form1Text a{
+    background-color: #939393;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.form1Grid .form1Text a p10{
+    font-size: 18px;
+    font-weight: 400;
+    color: #0c0c0c;
+}
+.form1Grid .form1Text a:hover{
+    background-color: #ededed;
+}
+
+
+h2{
+    font-size: 50px;
+    font-weight: 500;
+    color: #ededed;
+    line-height: 1;
+}
+
+.separateLine{
+    width: 100%;
+    height: 2px;
+    background-color: #ededed;
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+}
+
+p10, p11, p12{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+p10{
+    color: #ededed;
+    font-weight: 500;
+}
+p11{
+    color: #ededed;
+}
+p12{
+    color: #939393;
+}
+
+
+
 /* .dummy{
     height: 200vh;
     background-color: black;
@@ -1333,6 +1452,89 @@ p9{
     .allworkTitle h1 {
         font-size: 20px;
     }
+
+
+    
+
+    .form1Grid{
+        margin: 30% 5% 0 5%;
+        display: block;
+        /* grid-template-columns: 2fr 1fr; */
+        gap: 5%;
+        /* height: 100vh; */
+    }
+
+    .pageBackDiv{
+        position: fixed;
+        width: 50px;
+        height: 60px;
+        transform: translate(-50%, -50%);
+        margin-top: 85vh;
+        margin-left: 90vw;
+        background-color: #0c0c0c;
+        border-radius: 10px;
+    }
+    
+    .pageBackDiv .arrowTop{
+        width: 30px;
+        height: 4px;
+        margin-top: 50%;
+        margin-left: 15%;
+        background-color: #ededed;
+        transition: 0.5s ease-in-out;
+        border-radius: 2.5px;
+        transform: translate(0px, -6px) rotate(-35deg);
+    
+    }
+    
+    .pageBackDiv .arrowBot{
+        width: 30px;
+        height: 4px;
+        margin-left: 15%;
+        background-color: #ededed;
+        transition: 0.5s ease-in-out;
+        border-radius: 2.5px;
+        transform: translate(0px, 6px) rotate(35deg);
+    }
+
+    
+    .form1Grid .form1Content iframe{
+        width: 100%;
+        height: 30vh;
+    }
+
+    h2{
+        font-size: 30px;
+        font-weight: 500;
+        color: #ededed;
+        margin-top: 2vh;
+    }
+    
+    .separateLine{
+        width: 100%;
+        height: 2px;
+        background-color: #939393;
+        margin-bottom: 1vh;
+    }
+    
+    p10, p11, p12{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    p10{
+        color: #ededed;
+        font-weight: 500;
+    }
+    p11{
+        color: #ededed;
+    }
+    p12{
+        color: #939393;
+    }
+    
+
+
 }
 
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <title>allkustom portfolio</title>
+</head>
+
+<header>
+    <a href="index.html#homeTag" class="logo">
+        <img src="assets/allkustom shape logo_white.png" alt="">
+    </a>
+    <!-- <div class="headerLine"></div> -->
+
+    <ul>
+        <li>
+            <a href="index.html#allWorkTag">Artwork &#8964;</a>
+            <ul class="dropdown">
+                <div class="verticalLine"></div>
+                <li><a href="index.html#selectedWorkTag">Selected</a></li>
+                <li><a href="allworks.html#motionTag">Motion Grahpic</a></li>
+                <li><a href="allworks.html#imageTag">Image Graphic</a></li>
+                <li><a href="allworks.html#codeTag">Code/Program</a></li>
+                <li><a href="allworks.html#physicalTag">Physical</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Bio</a></li>
+        <li><a href="index.html#contactTag">Contact</a></li>
+    </ul>
+    <!-- <div class="mobileMenu" onclick="MenuOn()" ><img src="assets/menu_icon.png" alt=""></div> -->
+    <div class="mobileMenu" onclick="MenuOn(body)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</header>
+
+<body>
+    <div class="mobileMenuOption">
+        <ul>
+            <li><a href="index.html#allWorkTag" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Artwork
+                </a></li>
+            <li><a href="index.html#selectedWorkTag" class="smallMenu" onclick="MenuOn(body)">Selected Work</a></li>
+            <li><a href="allworks.html#motionTag" class="smallMenu" onclick="MenuOn(body)">Motion Grahpic</a>
+            </li>
+            <li><a href="allworks.html#imageTag" class="smallMenu" onclick="MenuOn(body)">Image Graphic</a>
+            </li>
+            <li><a href="allworks.html#codeTag" class="smallMenu" onclick="MenuOn(body)">Code/Program</a></li>
+            <li><a href="allworks.html#physicalTag" class="smallMenu" onclick="MenuOn(body)">Physical</a></li>
+            <!-- <li><a>-</a></li> -->
+            <li><a href="#" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Bio
+                </a></li>
+            <li><a href="index.html#contactTag" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Contact
+                </a></li>
+
+        </ul>
+    </div>
+    <a href="allworks.html#codeTag">
+        <div class="pageBackDiv">
+            <div class="arrowTop"></div>
+            <div class="arrowBot"></div>
+        </div>
+    </a>
+
+    <div class="form1Grid">
+        <div class="form1Content">
+            <iframe width="1713" height="799" src="https://www.youtube.com/embed/z0EugtaPr7U"
+                title="Arm with manners [Robotic art performance]" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+
+        <div class="form1Text">
+            <h2>
+                Arm with manner
+            </h2>
+            <div class="separateLine"></div>
+            <p10>
+                Date:
+            </p10>
+            <p12>
+                12/15/2020
+            </p12>
+            <br>
+            <p10>
+                Medium:
+            </p10>
+            <p12>
+                Kuka / Performance
+            </p12>
+            <br>
+            <p10>
+                Size:
+            </p10>
+            <p12>
+                393*393 inch(performance stage), 4min 17sec
+            </p12>
+            <br>
+            <br>
+            <br>
+            <p10>
+                Description:
+            </p10>
+            <br>
+
+            <!-- Need to separate important words-------------------------------------------------------- -->
+            <p12>
+                As the final task of the Seoul Institute of the Arts, Robotic art lecture, the performance of acting
+                with the robot arm Kuka was constructed. I was with Seongrok Jeong, Rigeon Jeong, and Junha Hwang, and
+                as a team leader, I was in charge of deriving concepts, organizing performances, programming for Kuka's
+                movements, editing music for performances, and playing the main character. It is a waste to express a
+                good material called Kuka as installation art, so we made a lot of effort to show Kuka and the actor
+                breathing together. The main story is that a person who has used Kuka to replace one arm goes to the
+                movie theater. Kuka suddenly malfunctions, and the story unfolds through conflicts with other audiences.
+                And the performance was completed through a twist.
+            </p12>
+            <div class="separateLine"></div>
+        </div>
+        <!-- <div class="form1MainImage">
+            <img src="assets/0 Original file collect/3 Code/arm with manner_thumbnail.png" alt="">
+        </div> -->
+    </div>
+
+
+
+
+    <div class="extraEnd"></div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+        integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"
+        integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"
+        integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="allworksPage.js"></script>
+</body>
+
+</html>
