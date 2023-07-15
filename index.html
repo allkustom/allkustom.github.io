@@ -5,20 +5,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <title>allkustom portfolio</title>
 </head>
 
-<body>
-    <div class="intro">
-        <h1>
-            allkustom
-        </h1>
-        <video src="assets/motion 3.mp4" alt=""></video>
-        <source media="(max-width: 700px)" srcset="assets/sample.png" />
-        <img src="assets/allkustom shape logo.png"></img>
+<header>
+    <a href="#homeTag" class="logo">
+        <img src="assets/allkustom shape logo_white.png" alt="">
+    </a>
+    <!-- <div class="headerLine"></div> -->
+
+    <ul>
+        <li>
+            <a href="#allWorkTag">Artwork &#8964;</a>
+            <ul class="dropdown">
+                <div class="verticalLine"></div>
+                <li><a href="#selectedWorkTag">Selected</a></li>
+                <li><a href="allworks.html#motionTag">Motion Grahpic</a></li>
+                <li><a href="allworks.html#imageTag">Image Graphic</a></li>
+                <li><a href="allworks.html#codeTag">Code/Program</a></li>
+                <li><a href="allworks.html#physicalTag">Physical</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Bio</a></li>
+        <li><a href="#contactTag">Contact</a></li>
+    </ul>
+    <!-- <div class="mobileMenu" onclick="MenuOn()" ><img src="assets/menu_icon.png" alt=""></div> -->
+    <div class="mobileMenu" onclick="MenuOn(body)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
+</header>
+
+<body>
+    <div class="mobileMenuOption">
+        <ul>
+            <li><a href="#allWorkTag" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Artwork
+                </a></li>
+            <li><a href="#selectedWorkTag" class="smallMenu" onclick="MenuOn(body)">Selected Work</a></li>
+            <li><a href="allworks.html#motionTag" class="smallMenu" onclick="MenuOn(body)">Motion Grahpic</a>
+            </li>
+            <li><a href="allworks.html#imageTag" class="smallMenu" onclick="MenuOn(body)">Image Graphic</a>
+            </li>
+            <li><a href="allworks.html#codeTag" class="smallMenu" onclick="MenuOn(body)">Code/Program</a></li>
+            <li><a href="allworks.html#physicalTag" class="smallMenu" onclick="MenuOn(body)">Physical</a></li>
+            <!-- <li><a>-</a></li> -->
+            <li><a href="#" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Bio
+                </a></li>
+            <li><a href="#contactTag" onclick="MenuOn(body)">
+                    <div class="menuLine1"></div>Contact
+                </a></li>
+
+        </ul>
+    </div>
+
+    <div class="intro">
+        <div class="mobileScrollIamge">
+            <img src="assets/mobile intro scroll.png"></img>
+        </div>
+        <div class="mobileLogoImage">
+            <img src="assets/allkustom shape logo_white.png"></img>
+        </div>
+    </div>
+
+    <div id="homeTag">
+        <div class="section1PinBox">
+            <div class="videoBox">
+                <video src="assets/intro video.mp4" alt=""></video>
+            </div>
+            <div class="section1">
+                <div class="line1">
+                    <div class="horizontal-line1"></div>
+                </div>
+                <div class="text1">
+                    <h1>
+                        allkustom
+                    </h1>
+                    <p1>
+                        all
+                    </p1>
+                    <p2>
+                        design must be
+                    </p2>
+                    <br>
+                    <p3>
+                        kustom
+                    </p3>
+                    <p4>
+                        -ized to their purpose
+                    </p4>
+
+                </div>
+                <div class="image1">
+                    <!-- <img src="assets/allkustom shape logo_white.png"></img> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="selectedWorkTag">
+        <div id="selectedWork">
+            <div class="selectedTitle">
+                <h1>
+                    Selected
+                    <br>
+                    Works
+                </h1>
+            </div>
+            <div class="selectedLine">
+                <div class="selectedHorizontal-line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="selected-container">
+        <div class="box">
+            <a href="1-1motionReel.html">
+                <div class="imageBox">
+                    <img src="assets/motion portfolio_thumbnail.gif" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>2020 Motion Showreel</h1>
+                    <p>Motion Graphic</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="1-2hunting.html">
+                <div class="imageBox">
+                    <img src="assets/hunting_thumbnail.gif" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>Hunting</h1>
+                    <p>Motion Graphic</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="#">
+                <div class="imageBox">
+                    <img src="assets/MM_thumbnail.png" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>M.M</h1>
+                    <p>Unity - Code/Program</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="#">
+                <div class="imageBox">
+                    <img src="assets/enigma thumbnail.png" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>21C Enigma Machine</h1>
+                    <p>Code/Program</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="#">
+                <div class="imageBox">
+                    <img src="assets/drawing theremin_thumbnail.png" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>Drawing Theremin</h1>
+                    <p>Code/Program</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="#">
+                <div class="imageBox">
+                    <img src="assets/arm with manner_thumbnail.png" alt="">
+                </div>
+                <div class="workTitle">
+                    <h1>Arm with manner</h1>
+                    <p>Code/Program + Performance</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="allWorkTag">
+        <div class="allWorkSection">
+            <div class="artContainer">
+                <div class="artContent" onclick="motionLink()">
+                    <div class="artContentImage">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/allwork-motion.png" alt="">
+                    </div>
+                    <div class="artContentText">
+                        <div class="connectorLine"></div>
+                        <h1>Motion
+                            <br>
+                            Graphic
+                        </h1>
+                    </div>
+                </div>
+                <div class="artContent" onclick="imageLink()">
+                    <div class="artContentImage">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/allwork-image.png" alt="">
+                    </div>
+                    <div class="artContentText">
+                        <div class="connectorLine"></div>
+                        <h1>Image
+                            <br>
+                            Graphic
+                        </h1>
+                    </div>
+                </div>
+                <div class="artContent" onclick="codeLink()">
+                    <div class="artContentImage">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/allwork-code.png" alt="">
+                    </div>
+                    <div class="artContentText">
+                        <div class="connectorLine"></div>
+                        <h1>Code
+                            <br>
+                            /Program
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="artContent" onclick="physicalLink()">
+                    <div class="artContentImage">
+                        <div class="artContentImageOverlay"></div>
+                        <img src="assets/allwork-physical.png" alt="">
+                    </div>
+                    <div class="artContentText">
+                        <div class="connectorLine"></div>
+                        <h1>Physical
+                        </h1>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="title2">
+                <div class="title2TextBox">
+                    <h1>
+                        More works
+                    </h1>
+                </div>
+                <div class="line2Box">
+                    <div class="line2"></div>
+                </div>
+            </div>
+            <div class="text2">
+                <p>
+                    Depending on the purpose and topic, different expression/media are required
+                    <br>
+                    Because I can't tell every story with just one technique, I'm studying as many areas as I can.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div id="contactTag">
+        <div class="contactSection">>
+            <div class="title3">
+                <div class="title3TextBox">
+                    <h1>
+                        Contact
+                    </h1>
+                </div>
+                <div class="line3Box">
+                    <div class="line3"></div>
+                </div>
+            </div>
+            <div class="text3">
+                <div class="text3Box">
+                    <p7>
+                        Email:
+                    </p7>
+                    <p8>
+                        allkustom97@gmail.com
+                    </p8>
+                    <br>
+                    <p7>
+                        Phone
+                    </p7>
+                    <br>
+                    <p9>
+                        US:
+                    </p9>
+                    <p8>
+                        +1 347-977-7641
+                    </p8>
+                    <br>
+                    <p9>
+                        Kor:
+                    </p9>
+                    <p8>
+                        +82 010-2327-2175
+                    </p8>
+                </div>
+            </div>
+
+            <div class="contactSocial">
+                <div class="contactSocialBox">
+                    <div class="contactSocialTopBox">
+                        <div class="contactYoutube">
+                            <a href="https://www.youtube.com/channel/UC5QXCQQk3PJFhVzmZYa08QQ" target="_blank">
+                                <img src="assets/youtube logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="contactInstagram">
+                            <a href="https://www.instagram.com/allkustom_minkyu/" target="_blank">
+                                <img src="assets/insta logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contactLinktree">
+                        <a href="https://linktr.ee/allkustom" target="_blank">
+                            <img src="assets/linktree logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="contactLogo">
+                <img src="assets/allkustom shape logo_white.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="dummy"></div>
+
     <section>
-        <h1>Video Test Done</h1>
+        <!-- <h1>Video Test Done</h1> -->
+        <!-- <img src="assets/wireframe.png"></img> -->
+
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
@@ -35,7 +360,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    <script src="app.js"></script>
+    <script src="mainPage.js"></script>
 </body>
 
 </html>
