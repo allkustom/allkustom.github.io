@@ -780,7 +780,7 @@ p4 {
         "contactLogo contactLogo contactLogo contactLogo . . . ."
         "contactLogo contactLogo contactLogo contactLogo . title3 title3 title3"
         "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
-        "contactLogo contactLogo contactLogo contactLogo . contactSocial contactSocial ."
+        "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
         "contactLogo contactLogo contactLogo contactLogo . . . ."
         /* "contactLogo contactLogo contactLogo contactLogo . . . ." */
     ;
@@ -853,7 +853,8 @@ p9{
 
 .contactSection .contactSocial{
     /* overflow: hidden; */
-    grid-area: contactSocial;
+    /* grid-area: contactSocial; */
+    margin-top: 5%;
 }
 
 .contactSection .contactSocial .contactSocialBox{
@@ -1074,21 +1075,329 @@ h2{
     margin-top: 1.5vh;
 }
 
-p10, p11, p12{
+
+.form1Grid .form1Text p10{
+    color: #ededed;
     font-size: 18px;
+    font-weight: 500;
+}
+.form1Grid .form1Text p11{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ededed;
+}
+.form1Grid .form1Text p12{
+    font-size: 18px;
+    font-weight: 400;
+    color: #939393;
+}
+
+
+
+
+/* Bio Page Contents------------------------------------------------------------------------------------------------------ */
+.bioFirst{
+    margin: 20vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    gap: 2%;
+}
+
+.bioFirst .bioProfileLine{
+    height: 1px;
+    background-color: #ededed;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.bioFirst .bioProfileImage{
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.bioFirst .bioProfileImage img{
+    width: 110%;
+}
+
+.bioFirst .bioMainQuote{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.bioFirst .bioMainQuote h1{
+    font-size: 50px;
+    font-weight: 500;
+    color: #ededed;
+    line-height: 1;
+}
+
+.bioFirst .bioSubQuote{
+    margin-top: 5%;
+    /* margin-left: 2%; */
+    width: 100%;
+    line-height: 2;
+}
+
+.bioFirst p10, .bioFirst p11, .bioFirst p12, .bioFirst p13{
+    color: #ededed;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+.bioFirst p10{
+    font-weight: 500;
+}
+.bioFirst p12, .bioFirst p13{
+    color: #939393;
+}
+
+.bioProfileContactLink{
+    background-color: #676767;
+    width: 250px;
+    height: fit-content;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-top: 10%;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+.bioProfileContactLink h3{
+    font-size: 20px;
+    color: #0c0c0c;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+
+}
+
+.bioProfileContactLink:hover{
+    background-color: #ededed;
+    width: 100%;
+}
+
+
+
+
+
+.bioConnectorLine{
+    background-color: #ededed;
+    width: 1px;
+    height: 20vh;
+    margin: 12vh auto 12vh auto;
+}
+
+
+
+
+
+
+.bioSecond{
+    margin: 0 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+}
+
+.bioSecond p10, .bioSecond p11, .bioSecond p12, .bioSecond p13{
+    color: #ededed;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.bioSecond p10{
+    font-weight: 500;
+}
+.bioSecond p12, .bioSecond p13{
+    color: #939393;
+}
+
+
+.bioInfo{
+    /* background-color: #a8a8a8; */
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #141414;
+    display: flex;
+}
+
+.bioInfo .bioInfoContent{
+    margin-left: 5%;
+    margin-top: 25px;
+}
+
+.bioInfo .bioInfoTitle{
+    margin-bottom: 2%;
+}
+
+.bioSecond .bioInfo .bioInfoTitle h1{
+    font-size: 40px;
+}
+
+
+.bioInfo .bioInfoContent p11::before{
+    content: '- ';
+}
+
+.bioInfo .bioInfoContent p13::before{
+    content: '- ';
+}
+
+.marginText{
+    margin-left: 10%;
+}
+
+
+.bioDegree{
+    padding: 30px;
+    background-color: #141414;
+    border-radius: 10px;
+    display: flex;
+}
+.bioDegree .bioDegreeTitle{
+    margin-bottom: 2%;
+}
+
+.bioDegree .bioDegreeContent{
+    margin-left: 5%;
+    margin-top: 25px;
+}
+
+.bioDegree .bioDegreeTitle{
+    margin-bottom: 2%;
+}
+
+.bioDegree .bioDegreeTitle h1{
+    font-size: 40px;
+}
+
+
+.bioDegree .bioDegreeContent p12{
+    font-size: 18px;
+}
+
+.titleLine{
+    height: 3px;
+    background-color: #ededed;
+}
+
+
+.bioThrid{
+    margin: 2vh 12vw 0 12vw;
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+    background-color: #141414;
+    display: flex;
+}
+
+.bioThrid p10, .bioThrid p11, .bioThrid p12, .bioThrid p13{
+    color: #ededed;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+.bioThrid p10{
+    font-weight: 500;
+}
+.bioThrid p12, .bioThrid p13{
+    color: #939393;
+}
+
+.bioThrid .bioExpContent{
+    margin-left: 3%;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.bioThrid .bioExpContent p12::before{
+    content: '- ';
+}
+
+
+.bioForth{
+    margin: 0 12vw 0 12vw;
+}
+
+.bioForth .toolTitle{
+    display: block;
+    /* text-align: center; */
+}
+
+.bioForth .toolTitle h1{
+    font-size: 70px;
+    margin-bottom: 6vh;
+}
+
+.bioForth .toolFirst{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.bioForth .toolSecond{
+    margin: 6vh 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.bioForth .toolThrid{
+    margin: 6vh 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.bioForth .toolForth{
+    margin: 6vh 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+.toolContent{
+    height: 8vh;
+    /* justify-content: center;
+    align-items: center; */
+    display: flex;
+}
+
+.toolContent .toolContentImage{
+    height: 100%;
+    /* margin-left: 25%; */
+    display: block;
+}
+
+.toolContent .toolContentImage img{
+    height: 100%;
+}
+
+.toolContent .toolContentLine{
+    background-color: #939393;
+    height: 1px;
+    width: 20px;
+    margin: auto 3% auto 3%;
+}
+
+.toolContent .toolContentTextBox{
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin-left: 10%; */
+    width: fit-content;
+    transition: 0.5s ease-in-out;
+}
+
+.toolContent .toolContentTextBox .toolContentText{
+    width: fit-content;
+}
+
+.toolContent .toolContentTextBox .toolContentText p{
+    color: #939393;
+    font-size: 20px;
     font-weight: 400;
 }
 
-p10{
-    color: #ededed;
-    font-weight: 500;
-}
-p11{
-    color: #ededed;
-}
-p12{
-    color: #939393;
-}
 
 
 
@@ -1518,23 +1827,186 @@ p12{
         margin-bottom: 1vh;
     }
     
-    p10, p11, p12{
-        font-size: 16px;
-        font-weight: 400;
-    }
-    
-    p10{
+    .form1Grid .form1Text p10{
         color: #ededed;
+        font-size: 16px;
         font-weight: 500;
     }
-    p11{
+    .form1Grid .form1Text p11{
+        font-size: 16px;
+        font-weight: 400;
         color: #ededed;
     }
-    p12{
+    .form1Grid .form1Text p12{
+        font-size: 16px;
+        font-weight: 400;
         color: #939393;
     }
     
 
+
+    .bioFirst{
+        margin: 12vh 5% 0 5%;
+        display: block;
+    }
+    .bioFirst .bioProfileLine{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    .bioFirst .bioMainQuote h1{
+        font-size: 40px;
+    }
+    
+    .bioFirst .bioSubQuote{
+        margin-top: 5%;
+        /* margin-left: 2%; */
+        width: 100%;
+        line-height: 2;
+    }
+    
+    .bioFirst p10, .bioFirst p11, .bioFirst p12, .bioFirst p13{
+        font-size: 16px;
+    }
+    
+    .bioProfileContactLink{
+        background-color: #939393;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .bioConnectorLine{
+        background-color: #ededed;
+        width: 1px;
+        height: 10vh;
+        margin: 6vh auto 6vh auto;
+    }
+
+
+
+    .bioSecond{
+        margin: 0 5% 0 5%;
+        display: block;
+    }
+    
+    .bioSecond p10, .bioSecond p11, .bioSecond p12, .bioSecond p13{
+        font-size: 16px;
+    }
+
+    
+    .bioInfo{
+        /* background-color: #a8a8a8; */
+        padding: 20px;
+        display: block;
+    }
+    
+    .bioInfo .bioInfoContent{
+        margin-left: 0%;
+        margin-top: 10px;
+    }
+        
+    .bioSecond .bioInfo .bioInfoTitle h1{
+        font-size: 30px;
+    }
+    
+    .marginText{
+        margin-left: 5%;
+    }
+    
+
+    .bioDegree{
+        margin-top: 5%;
+        padding: 20px;
+        display: block;
+    }
+    
+    .bioDegree .bioDegreeContent{
+        margin-left: 0%;
+        margin-top: 10px;
+    }
+        
+    .bioDegree .bioDegreeTitle h1{
+        font-size: 30px;
+    }
+        
+    .bioDegree .bioDegreeContent p12{
+        font-size: 14px;
+    }
+    
+    .titleLine{
+        height: 2px;
+        background-color: #ededed;
+    }
+
+
+    .bioThrid{
+        margin: 5% 5% 0 5%;
+        padding: 20px;
+        display: block;
+    }
+    
+    .bioThrid p10, .bioThrid p11, .bioThrid p12, .bioThrid p13{
+        font-size: 16px;
+    }
+    
+    .bioThrid .bioExpContent{
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .bioForth{
+        margin: 0% 15% 0 15%;
+    }
+    
+    .bioForth .toolTitle{
+        display: block;
+        text-align: center;
+    }
+    
+    .bioForth .toolTitle h1{
+        font-size: 50px;
+        margin-bottom: 0vh;
+    }
+    
+    .bioForth .toolFirst, .bioForth .toolSecond, .bioForth .toolThrid, .bioForth .toolForth{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 15%;
+        margin-top: 10%;
+    }
+    
+
+    
+    .toolContent{
+        height: 6vh;
+        /* justify-content: center;
+        align-items: center; */
+        display: flex;
+    }
+    
+    
+    .toolContent .toolContentLine{
+        height: 0px;
+        width: 0px;
+        margin: auto 3% auto 3%;
+    }
+    
+    .toolContent .toolContentTextBox{
+        margin-top: auto;
+        margin-bottom: auto;
+        /* margin-left: 10%; */
+        width: fit-content;
+        transition: 0.5s ease-in-out;
+    }
+    
+    
+    .toolContent .toolContentTextBox .toolContentText p{
+        font-size: 12px;
+    }
+        
+    
 
 }
 
@@ -1544,7 +2016,7 @@ p12{
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
-@media (max-width: 1400px) {
+@media (max-width: 1380px) {
     header ul {
         display: none;
     }

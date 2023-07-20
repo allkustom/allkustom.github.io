@@ -34,10 +34,12 @@ let menuCheck = false;function MenuOn(x){
 
     //Scenes control with media query
     //Targeting Media Query 
-    let query = window.matchMedia("(max-width: 1400px)");
+    let query = window.matchMedia("(max-width: 700px)");
+    let query2 = window.matchMedia("(max-width: 1380px)");
+
     if (query.matches) {
         //if the page is narrower than 700px
-        console.log('under 700px');
+        // console.log('under 700px');
         mediaBool = false;
 
         videoDuration = 100;
@@ -69,9 +71,15 @@ let menuCheck = false;function MenuOn(x){
     }
     else {
         //if the page is wider than 700px
-        console.log('over 700px');
+        // console.log('over 700px');
+        if(query2.matches){
+            mediaBool = true;
+            artLinkTimer = 700;
+        }
+        else{
         mediaBool = true;
-
+        artLinkTimer = 0;
+        }
         videoDuration = 4000;
         endIntro = 4500;
         mediaOffset = 2000;
@@ -85,7 +93,6 @@ let menuCheck = false;function MenuOn(x){
         line1Duration = 1300;
         line1Offset = 0;
         section1ContentDuration = 700;
-        artLinkTimer = 0;
         
         selectedTitleDuration = 800;
         selectedTitleOffset = -1000;
@@ -99,5 +106,6 @@ let menuCheck = false;function MenuOn(x){
         contactTitleOffset = -850;
         contactContentDuration = 300;
         contactContentOffset = -500;
+        
     }
     
