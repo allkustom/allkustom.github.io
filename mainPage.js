@@ -568,7 +568,7 @@ function MenuOn(x){
         .addTo(controller);
 
         //Contact Social Animation
-        const contactSocialAni = TweenMax.fromTo(contactSocialBox, 1, {opacity: 0, margin: '100% 0% 0% 0%', filter: 'blur(3px)'}, {opacity: 1, margin: '0% 0% 0% 0%', filter: 'blur(0px)'});
+        const contactSocialAni = TweenMax.fromTo(contactSocialBox, 1, {opacity: 0, margin: '100% 0% 0% 0%', filter: 'blur(3px)'}, {opacity: 1, margin: '10% 0% 0% 0%', filter: 'blur(0px)'});
         let contactSocialStart = new ScrollMagic.Scene({
             duration: contactContentDuration,
             offset: contactContentOffset,

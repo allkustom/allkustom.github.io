@@ -5,6 +5,7 @@ const controller = new ScrollMagic.Controller();
 let scrollBool = false;
 const mobileMenu = document.querySelector('.mobileMenu');
 const mobileMenuOption = document.querySelector('.mobileMenuOption');
+const body = document.querySelector('body');
 const htmlDiv = document.querySelector('html');
 const logo = document.querySelector('.logo');
 
@@ -109,3 +110,30 @@ let menuCheck = false;function MenuOn(x){
         
     }
     
+    // const form1Grid = document.querySelector('.form1Grid');
+    const form1MainImageDiv = document.querySelector('.form1MainImage');
+    const form1MainImage = form1MainImageDiv.querySelector('img');
+
+    let addImg = document.createElement('img');
+
+    const overlayDiv = document.querySelector('.overlayImage');
+    const overlayImageDiv = overlayDiv.querySelector('.overlayImageBox');
+    const overlayImageSouceBox = overlayImageDiv.querySelector('.overlayImageSource');
+    const overlayImage = overlayImageSouceBox.querySelector('img');
+
+    const pageBackDiv = document.querySelector('.pageBackDiv');
+    function ImgZoom(){
+        addImg.src = form1MainImage.src;
+        overlayImageSouceBox.appendChild(addImg);
+        overlayDiv.style.display = "block"; 
+        pageBackDiv.style.display = "none";
+        body.style.overflow = "hidden";
+        htmlDiv.style.overflow = "hidden";
+    }
+
+    function ImgZoomClose(){
+        overlayDiv.style.display = "none"; 
+        pageBackDiv.style.display = "block";
+        body.style.overflow = "";
+        htmlDiv.style.overflow = "";
+    }

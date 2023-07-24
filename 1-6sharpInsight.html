@@ -21,10 +21,10 @@
             <ul class="dropdown">
                 <div class="verticalLine"></div>
                 <li><a href="index.html#selectedWorkTag">Selected</a></li>
-                <li><a href="allworks.html#motionTag">Motion Grahpic</a></li>
+                <li><a href="allworks.html#motionTag">Motion & Video</a></li>
                 <li><a href="allworks.html#imageTag">Image Graphic</a></li>
-                <li><a href="allworks.html#codeTag">Code/Program</a></li>
-                <li><a href="allworks.html#physicalTag">Physical</a></li>
+                <li><a href="allworks.html#codeTag">Code & Program</a></li>
+                <li><a href="allworks.html#physicalTag">Various Genre</a></li>
             </ul>
         </li>
         <li><a href="bio.html">Bio</a></li>
@@ -39,18 +39,28 @@
 </header>
 
 <body>
+    <div class="overlayImage" onclick="ImgZoomClose()">
+        <div class="overlayImageBox">
+            <div class="overlayImageSource">
+            </div>
+            <!-- <div class="closeBarDiv" onclick="ImgZoomClose()">
+                <div class="closeBar1"></div>
+                <div class="closeBar2"></div>
+            </div> -->
+        </div>
+    </div>
     <div class="mobileMenuOption">
         <ul>
             <li><a href="index.html#allWorkTag" onclick="MenuOn(body)">
                     <div class="menuLine1"></div>Artwork
                 </a></li>
             <li><a href="index.html#selectedWorkTag" class="smallMenu" onclick="MenuOn(body)">Selected Work</a></li>
-            <li><a href="allworks.html#motionTag" class="smallMenu" onclick="MenuOn(body)">Motion Grahpic</a>
+            <li><a href="allworks.html#motionTag" class="smallMenu" onclick="MenuOn(body)">Motion & Video</a>
             </li>
             <li><a href="allworks.html#imageTag" class="smallMenu" onclick="MenuOn(body)">Image Graphic</a>
             </li>
-            <li><a href="allworks.html#codeTag" class="smallMenu" onclick="MenuOn(body)">Code/Program</a></li>
-            <li><a href="allworks.html#physicalTag" class="smallMenu" onclick="MenuOn(body)">Physical</a></li>
+            <li><a href="allworks.html#codeTag" class="smallMenu" onclick="MenuOn(body)">Code & Program</a></li>
+            <li><a href="allworks.html#physicalTag" class="smallMenu" onclick="MenuOn(body)">Various Genre</a></li>
             <!-- <li><a>-</a></li> -->
             <li><a href="bio.html" onclick="MenuOn(body)">
                     <div class="menuLine1"></div>Bio
@@ -110,6 +120,9 @@
             </p12>
             <div class="separateLine"></div>
     
+        </div>
+        <div class="form1MainImage" onclick="ImgZoom()">
+            <img src="assets/0 Original file collect/1 Video/sharp insight_full image.png" alt="">
         </div>
     </div>
 

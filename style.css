@@ -24,6 +24,7 @@ html {
     overflow-y: hidden;
 }
 
+
 .blurSection{
     filter: blur(10px);
 }
@@ -550,7 +551,7 @@ p4 {
 
 #allWorkTag {
     scroll-margin-top: 0vh;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .allWorkSection {
@@ -763,7 +764,7 @@ p4 {
 
 #contactTag{
     scroll-margin-top: 0vh;
-    margin-top: 10%;
+    margin-top: 0%;
 }
 
 .contactSection{
@@ -781,7 +782,7 @@ p4 {
         "contactLogo contactLogo contactLogo contactLogo . title3 title3 title3"
         "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
         "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
-        "contactLogo contactLogo contactLogo contactLogo . . . ."
+        "contactLogo contactLogo contactLogo contactLogo . text3 text3 ."
         /* "contactLogo contactLogo contactLogo contactLogo . . . ." */
     ;
 }
@@ -897,7 +898,25 @@ p9{
         height: 40px;
     }
 
-    
+.contactSection .contactSocial .contactSocialBox .contactResume {
+    margin-top: 5%;
+}
+
+.contactSection .contactSocial .contactSocialBox .contactResume a{
+    background-color: #939393;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.contactSection .contactSocial .contactSocialBox .contactResume a p10{
+    font-size: 18px;
+    font-weight: 500;
+    color: #0c0c0c;
+}
+.contactSection .contactSocial .contactSocialBox .contactResume a:hover{
+    background-color: #ededed;
+}    
 
 
 .contactSection .contactLogo {
@@ -916,6 +935,7 @@ p9{
     margin: auto auto -10% -15%;
     filter: blur(0px);
 }
+
 
 
 /* Allwork PAge Style------------------------------------------------------------------------------- */
@@ -982,6 +1002,74 @@ p9{
     /* height: 100vh; */
 }
 
+.overlayImage{
+    /* display: none; */
+    display: none;
+    position: fixed;
+    /* position: absolute; */
+    width: 100vw;
+    height: 100vh;
+    padding:  4%;
+    background-color: rgba(12, 12, 12, 0.95);
+}
+
+.overlayImage .overlayImageBox{
+    width: fit-content;
+    height: 90%;
+    display: flex;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6vh;
+}
+
+.overlayImage .overlayImageBox img{
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.overlayImage .overlayImageBox img:hover{
+    transform: scale(1.05);
+}
+
+.closeBarDiv{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-top: 6vh;
+    margin-left: 50px;
+}
+
+.closeBar1, .closeBar2{
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #939393;
+    margin: 0 0 6px 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 2.5px;
+}
+
+.closeBar1{
+    transform: translate(0, 24px) rotate(-45deg);
+}
+
+.closeBar2{
+    transform: translate(0, 16px) rotate(45deg);
+}
+
+.closeBarDiv:hover .closeBar1{
+    transform: translate(0, 24px) rotate(45deg);
+    background-color: #ededed;
+}
+.closeBarDiv:hover .closeBar2{
+    transform: translate(0, 16px) rotate(-45deg);
+    background-color: #ededed;
+}
+
+
+
 .pageBackDiv{
     position: fixed;
     width: 6vw;
@@ -1026,13 +1114,19 @@ p9{
 }
 
 
-.form1Grid .form1MainImage{
-    width: 100%;
+.form1MainImage{
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.form1Grid .form1MainImage img{
-    width: 100%;
-}
+.form1MainImage img{
+    width: 100%;    
+    transition: 0.3s ease-in-out;
+} 
+
+
 
 
 .form1Grid iframe{
@@ -1094,6 +1188,90 @@ h2{
 
 
 
+.form2Grid{
+    margin: 12vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    /* height: 100vh; */
+}
+.form2Grid iframe{
+    width: 100%;
+    height: 500px;
+}
+.form2Grid .form2MainImage{
+    width: 100%;
+    cursor: pointer;
+}
+
+.form2Grid .form2MainImage img{
+    width: 100%;    
+} 
+.form2Grid h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ededed;
+}
+
+
+.form2Grid p10, .form2Grid p11, .form2Grid p12{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ededed;
+}
+.form2Grid p10{
+    font-weight: 400;
+}
+.form2Grid p12{
+    color: #939393;
+}
+
+
+
+
+
+
+.form3Grid{
+    margin: 24vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2%;
+    /* height: 100vh; */
+}
+.form3Grid iframe{
+    width: 100%;
+    height: 500px;
+}
+.form3Grid .form3MainImage{
+    width: 100%;
+    cursor: pointer;
+}
+
+.form3Grid .form3MainImage img{
+    width: 100%;    
+} 
+
+.form3Text{
+    text-align: right;
+}
+
+.form3Grid h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ededed;
+}
+
+.form3Grid p10, .form3Grid p11, .form3Grid p12{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ededed;
+}
+.form3Grid p10{
+    font-weight: 400;
+}
+.form3Grid p12{
+    color: #939393;
+}
 
 /* Bio Page Contents------------------------------------------------------------------------------------------------------ */
 .bioFirst{
@@ -1115,10 +1293,15 @@ h2{
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .bioFirst .bioProfileImage img{
-    width: 110%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 0 0 0;
 }
 
 .bioFirst .bioMainQuote{
@@ -1128,24 +1311,25 @@ h2{
 }
 
 .bioFirst .bioMainQuote h1{
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 5vw;
+    font-weight: bold;
     color: #ededed;
     line-height: 1;
 }
+
+
 
 .bioFirst .bioSubQuote{
     margin-top: 5%;
     /* margin-left: 2%; */
     width: 100%;
-    line-height: 2;
 }
 
 .bioFirst p10, .bioFirst p11, .bioFirst p12, .bioFirst p13{
-    color: #ededed;
-    font-size: 22px;
+    color: #dedede;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1;
+    line-height: 30px;
 }
 .bioFirst p10{
     font-weight: 500;
@@ -1156,10 +1340,10 @@ h2{
 
 .bioProfileContactLink{
     background-color: #676767;
-    width: 250px;
+    width: 200px;
     height: fit-content;
     padding: 10px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 10%;
     transition: 0.3s ease-in-out;
     text-align: center;
@@ -1698,8 +1882,8 @@ h2{
             ". . title3 title3"
             ". . text3 text3"
             ". . text3 text3"
-            "contactLogo contactLogo contactSocial contactSocial"
-            "contactLogo contactLogo . ."
+            "contactLogo contactLogo text3 text3"
+            "contactLogo contactLogo text3 text3"
             "contactLogo contactLogo . ."
         ;
     }
@@ -1748,7 +1932,19 @@ h2{
         margin: auto auto -10% -15%;
     }   
 
-
+    .contactSection .contactSocial .contactSocialBox .contactResume {
+        margin-top: 5%;
+    }
+    
+    .contactSection .contactSocial .contactSocialBox .contactResume a{
+        background-color: #ededed;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    
+    .contactSection .contactSocial .contactSocialBox .contactResume a p10{
+        font-size: 14px;
+    }
 
     .allworkTitleDiv {
         margin: 20% 5% 0 5%;
@@ -1855,18 +2051,18 @@ h2{
     }
     
     .bioFirst .bioMainQuote h1{
-        font-size: 40px;
+        font-size: 70px;
     }
     
     .bioFirst .bioSubQuote{
         margin-top: 5%;
         /* margin-left: 2%; */
         width: 100%;
-        line-height: 2;
     }
     
     .bioFirst p10, .bioFirst p11, .bioFirst p12, .bioFirst p13{
-        font-size: 16px;
+        line-height: 25px;
+        font-size: 18px;
     }
     
     .bioProfileContactLink{
@@ -2005,7 +2201,37 @@ h2{
     .toolContent .toolContentTextBox .toolContentText p{
         font-size: 12px;
     }
+
+    .overlayImage{
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        padding: 5%;
+    }
+    
+    .overlayImage .overlayImageBox{
+        width: 100%;
+        height: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        /* transform: translateX(-50%);
+        margin-top: 40%; */
+    }
+
+    .overlayImage .overlayImageBox .overlayImageSource{
+        height: fit-content;
+        width: fit-content;
+        display: block;
+        position: relative;
+        margin-top: 45%;
         
+    }
+    
+    .overlayImage .overlayImageBox .overlayImageSource img{
+        width: 100%;
+    }
     
 
 }
@@ -2027,5 +2253,8 @@ h2{
     .bar1, .bar2, .bar3{
         display: block;
     }
+
+
+
 
 }
