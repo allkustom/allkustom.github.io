@@ -940,7 +940,7 @@ p9{
 
 /* Allwork PAge Style------------------------------------------------------------------------------- */
 
-#motionTag, #imageTag, #codeTag, #physicalTag {
+#motionTag, #imageTag, #codeTag, #physicalTag, #leatherTag {
     scroll-margin-top: 10vh;
     margin-top: 10%;
 }
@@ -2220,6 +2220,14 @@ h2{
         font-size: 16px;
         font-weight: 400;
         color: #939393;
+    }
+
+    .form1Grid .form1Text a{
+        padding: 8px 10px;
+        border-radius: 5px;
+    }
+    .form1Grid .form1Text a p10{
+        font-size: 15px;
     }
 
     .form2Grid{
