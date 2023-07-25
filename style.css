@@ -994,8 +994,41 @@ p9{
 }
 
 /* Artwork detail pages style---------------------------------------------------------------------------------------------------- */
+.formConnectLine{
+    background-color: #ededed;
+    width: 1px;
+    height: 20vh;
+    margin: 6vh auto 6vh auto;
+}
+
+.formFullSize{
+    margin: 0;
+}
+
+.formFullSize img{
+    width: 100%;
+}
+
+.scrollRight{
+    display: none;
+    margin: 0 0 2% 5%;
+}
+
+.scrollRight p12{
+    font-size: 14px;
+    color: #939393;
+    font-weight: 400;
+}
+
+
+
+.emptyMargin{
+    height: 5px;
+    width: 100%;
+}
+
 .form0Grid{
-    margin: 24vh 12vw 0 12vw;
+    margin: 0vh 12vw 0 12vw;
 }
 .form0Grid iframe{
     width: 100%;
@@ -1003,8 +1036,6 @@ p9{
 .form0Grid .form1MainImage{
     width: 100%;
 }
-
-
 
 .form1Grid{
     margin: 24vh 12vw 0 12vw;
@@ -1027,7 +1058,7 @@ p9{
 
 .overlayImage .overlayImageBox{
     width: fit-content;
-    height: 90%;
+    height: 95%;
     display: flex;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -1149,6 +1180,10 @@ p9{
     width: 600px;
     height: 450px;
 }
+.form1ContentP5Replace{
+    display: none;
+}
+
 
 
 .form1Grid .form1Text{
@@ -1206,23 +1241,33 @@ h2{
 
 
 .form2Grid{
-    margin: 12vh 12vw 0 12vw;
+    margin: 0vh 12vw 0 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     /* height: 100vh; */
 }
+
+.form2GridInside{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    /* height: 100vh; */
+}
+
+
 .form2Grid iframe{
     width: 100%;
     height: 500px;
 }
-.form2Grid .form2MainImage{
+.form2MainImage{
     width: 100%;
     /* height: 40vh; */
     overflow: hidden;
 }
 
-.form2Grid .form2MainImage img{
+.form2MainImage img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1296,10 +1341,10 @@ h2{
 
 
 .form4Grid{
-    margin: 24vh 12vw 0 12vw;
+    margin: 0vh 12vw 0 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1%;
+    gap: 5px
     /* height: 100vh; */
 }
 .form4Grid iframe{
@@ -1336,6 +1381,47 @@ h2{
 .form4Grid p12{
     color: #939393;
 }
+
+.form5Grid{
+    margin: 6vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2%;
+    /* height: 100vh; */
+}
+.form5Grid iframe{
+    width: 100%;
+    height: 500px;
+}
+/* .form5Grid .form5MainImage{
+    width: 100%;
+    overflow: hidden;
+}
+
+.form5Grid .form2MainImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  */
+.form5Grid h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ededed;
+}
+
+
+.form5Grid p10, .form5Grid p11, .form5Grid p12{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ededed;
+}
+.form5Grid p10{
+    font-weight: 400;
+}
+.form5Grid p12{
+    color: #939393;
+}
+
 
 /* Bio Page Contents------------------------------------------------------------------------------------------------------ */
 .bioFirst{
@@ -2024,8 +2110,12 @@ h2{
     }
 
 
+    .formConnectLine{
+        display: none;
+    }
+    
     .form0Grid{
-        margin: 30% 5% 0 5%;
+        margin: 20% 5% 0 5%;
         display: block;
     }
 
@@ -2033,6 +2123,19 @@ h2{
         width: 100%;
         height: 30vh;
     }
+
+    .formFullSize{
+        margin: 20% 5% 0 5%;
+        overflow-x: scroll;
+    }
+    .formFullSize img{
+        height: 20%;
+        width: 500%;
+    }
+    .scrollRight{
+        display: block;
+    }
+    
 
 
     .form1Grid{
@@ -2081,7 +2184,13 @@ h2{
         width: 100%;
         height: 30vh;
     }
-
+    .form1Grid .form1ContentP5 iframe{
+        display: none;
+    }
+    .form1ContentP5Replace{
+        display: block;
+    }
+    
 
     h2{
         font-size: 30px;
@@ -2114,13 +2223,21 @@ h2{
     }
 
     .form2Grid{
-        margin: 10% 5% 0 5%;
-        display: block;
-        gap: 5%;
+        margin: 20% 5% 0 5%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+
+    .form2Grid .form1Content iframe{
+        width: 100%;
+        height: 30vh;
     }
 
+
     .form3Grid{
-        margin: 10% 5% 0 5%;
+        margin: 20% 5% 0 5%;
         display: block;
         gap: 5%;
     }
@@ -2130,6 +2247,43 @@ h2{
         margin-bottom: 5%;
     }
 
+    .form4Grid{
+        margin: 20% 5% 0 5%;
+        display: block;
+        gap: 5%;
+        /* height: 100vh; */
+    }
+    
+
+    
+    .form5Grid{
+        margin: 20% 5% 0 5%;
+        display: block;
+        /* height: 100vh; */
+    }
+    .form5Grid iframe{
+        width: 100%;
+        height: 30vh;
+    }
+    .form5Grid h2{
+        font-size: 30px;
+        font-weight: 500;
+        color: #ededed;
+    }
+    
+    
+    .form5Grid p10, .form5Grid p11, .form5Grid p12{
+        font-size: 16px;
+        font-weight: 400;
+        color: #ededed;
+    }
+    .form5Grid p10{
+        font-weight: 400;
+    }
+    .form5Grid p12{
+        color: #939393;
+    }
+    
     
 
 
@@ -2163,12 +2317,7 @@ h2{
         margin-top: 10%;
     }
 
-    .bioConnectorLine{
-        background-color: #ededed;
-        width: 1px;
-        height: 10vh;
-        margin: 6vh auto 6vh auto;
-    }
+
 
 
 
@@ -2317,7 +2466,7 @@ h2{
         width: fit-content;
         display: block;
         position: relative;
-        margin-top: 45%;
+        margin-top: 12vh;
         
     }
     

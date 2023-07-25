@@ -79,7 +79,7 @@ function MenuOn(x){
     //Scenes control with media query
     //Targeting Media Query 
     let query = window.matchMedia("(max-width: 700px)");
-    let query2 = window.matchMedia("(max-width: 1380px)");
+    let query2 = window.matchMedia("(max-width: 1200px)");
 
     if (query.matches) {
         //if the page is narrower than 700px

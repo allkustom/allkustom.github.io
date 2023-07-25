@@ -15,6 +15,7 @@ const imageTag = document.querySelector("#imageTag");
 const codeTag = document.querySelector("#codeTag");
 const physicalTag = document.querySelector("#physicalTag");
 
+let mobileClick;
 
 let menuCheck = false;function MenuOn(x){
     mobileMenu.classList.toggle("change");
@@ -122,18 +123,29 @@ let menuCheck = false;function MenuOn(x){
     const overlayImage = overlayImageSouceBox.querySelector('img');
 
     const pageBackDiv = document.querySelector('.pageBackDiv');
+
+
     function ImgZoom(){
+        if(mediaBool == true){
         addImg.src = form1MainImage.src;
         overlayImageSouceBox.appendChild(addImg);
         overlayDiv.style.display = "block"; 
         pageBackDiv.style.display = "none";
         body.style.overflow = "hidden";
         htmlDiv.style.overflow = "hidden";
+        }
+    }
+    if(mediaBool == true){
+        form1MainImageDiv.style.cursor = 'pointer';
+    }else{
+        form1MainImageDiv.style.cursor = 'default';
     }
 
     function ImgZoomClose(){
+        if(mediaBool == true){
         overlayDiv.style.display = "none"; 
         pageBackDiv.style.display = "block";
         body.style.overflow = "";
         htmlDiv.style.overflow = "";
+        }
     }
