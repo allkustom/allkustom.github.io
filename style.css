@@ -10,7 +10,7 @@
     outline: none;
     border: none;
     text-decoration: none;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 html {
@@ -994,6 +994,18 @@ p9{
 }
 
 /* Artwork detail pages style---------------------------------------------------------------------------------------------------- */
+.form0Grid{
+    margin: 24vh 12vw 0 12vw;
+}
+.form0Grid iframe{
+    width: 100%;
+}
+.form0Grid .form1MainImage{
+    width: 100%;
+}
+
+
+
 .form1Grid{
     margin: 24vh 12vw 0 12vw;
     display: grid;
@@ -1129,10 +1141,15 @@ p9{
 
 
 
-.form1Grid iframe{
+.form1Grid  iframe{
     width: 100%;
     height: 500px;
 }
+.form1Grid .form1ContentP5 iframe{
+    width: 600px;
+    height: 450px;
+}
+
 
 .form1Grid .form1Text{
     margin-bottom: 10%;
@@ -1192,7 +1209,7 @@ h2{
     margin: 12vh 12vw 0 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2%;
+    gap: 5px;
     /* height: 100vh; */
 }
 .form2Grid iframe{
@@ -1201,11 +1218,14 @@ h2{
 }
 .form2Grid .form2MainImage{
     width: 100%;
-    cursor: pointer;
+    /* height: 40vh; */
+    overflow: hidden;
 }
 
 .form2Grid .form2MainImage img{
-    width: 100%;    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 } 
 .form2Grid h2{
     font-size: 25px;
@@ -1244,7 +1264,7 @@ h2{
 }
 .form3Grid .form3MainImage{
     width: 100%;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .form3Grid .form3MainImage img{
@@ -1270,6 +1290,50 @@ h2{
     font-weight: 400;
 }
 .form3Grid p12{
+    color: #939393;
+}
+
+
+
+.form4Grid{
+    margin: 24vh 12vw 0 12vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1%;
+    /* height: 100vh; */
+}
+.form4Grid iframe{
+    width: 100%;
+    height: 500px;
+}
+.form4Grid .form4MainImage{
+    width: 100%;
+    /* cursor: pointer; */
+}
+
+.form4Grid .form4MainImage img{
+    width: 100%;    
+} 
+
+.form4Text{
+    text-align: left;
+}
+
+.form4Grid h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ededed;
+}
+
+.form4Grid p10, .form4Grid p11, .form4Grid p12{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ededed;
+}
+.form4Grid p10{
+    font-weight: 400;
+}
+.form4Grid p12{
     color: #939393;
 }
 
@@ -1960,7 +2024,16 @@ h2{
     }
 
 
-    
+    .form0Grid{
+        margin: 30% 5% 0 5%;
+        display: block;
+    }
+
+    .form0Grid  iframe{
+        width: 100%;
+        height: 30vh;
+    }
+
 
     .form1Grid{
         margin: 30% 5% 0 5%;
@@ -2009,6 +2082,7 @@ h2{
         height: 30vh;
     }
 
+
     h2{
         font-size: 30px;
         font-weight: 500;
@@ -2038,6 +2112,24 @@ h2{
         font-weight: 400;
         color: #939393;
     }
+
+    .form2Grid{
+        margin: 10% 5% 0 5%;
+        display: block;
+        gap: 5%;
+    }
+
+    .form3Grid{
+        margin: 10% 5% 0 5%;
+        display: block;
+        gap: 5%;
+    }
+
+    .form3Grid .form3Text{
+        text-align: left;
+        margin-bottom: 5%;
+    }
+
     
 
 
@@ -2242,7 +2334,11 @@ h2{
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
-@media (max-width: 1380px) {
+@media (max-width: 1200px) {
+    #homeTag {
+        scroll-margin-top: -730vh;
+    }
+    
     header ul {
         display: none;
     }
