@@ -111,6 +111,11 @@ let menuCheck = false;function MenuOn(x){
         
     }
     
+
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+        loader.style.display = "none";
+    })
     // const form1Grid = document.querySelector('.form1Grid');
     const form1MainImageDiv = document.querySelector('.form1MainImage');
     const form1MainImage = form1MainImageDiv.querySelector('img');
@@ -149,3 +154,4 @@ let menuCheck = false;function MenuOn(x){
         htmlDiv.style.overflow = "";
         }
     }
+

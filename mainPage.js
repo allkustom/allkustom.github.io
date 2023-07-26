@@ -153,6 +153,10 @@ function MenuOn(x){
         
     }
     
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+        loader.style.display = "none";
+    })
 
     //0. Mobile intro image Section ----------------------------------------------------------------------------------------------------
 

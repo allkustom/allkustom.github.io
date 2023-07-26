@@ -35,6 +35,14 @@ body {
     overflow-x: hidden;
 }
 
+#preloader{
+    background: #000 url(assets/loading\ animation.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10010;
+}
 
 header {
     top: 0;
@@ -940,7 +948,7 @@ p9{
 
 /* Allwork PAge Style------------------------------------------------------------------------------- */
 
-#motionTag, #imageTag, #codeTag, #physicalTag {
+#motionTag, #imageTag, #codeTag, #physicalTag, #leatherTag {
     scroll-margin-top: 10vh;
     margin-top: 10%;
 }
@@ -997,8 +1005,8 @@ p9{
 .formConnectLine{
     background-color: #ededed;
     width: 1px;
-    height: 20vh;
-    margin: 6vh auto 6vh auto;
+    height: 35vh;
+    margin: 12vh auto 12vh auto;
 }
 
 .formFullSize{
@@ -1745,6 +1753,12 @@ h2{
 /* Media Control------------------------------------------------------------------------------------------------------------ */
 /* Media Control------------------------------------------------------------------------------------------------------------ */
 @media (max-width: 700px) {
+
+    #preloader{
+        background-size: 50%;
+    }
+    
+
     header {
         padding: 3vh 6vw 2vh 6vw;
     }
@@ -2220,6 +2234,14 @@ h2{
         font-size: 16px;
         font-weight: 400;
         color: #939393;
+    }
+
+    .form1Grid .form1Text a{
+        padding: 8px 10px;
+        border-radius: 5px;
+    }
+    .form1Grid .form1Text a p10{
+        font-size: 15px;
     }
 
     .form2Grid{
