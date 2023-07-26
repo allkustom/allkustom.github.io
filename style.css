@@ -20,6 +20,7 @@ html {
     background-color: #0c0c0c;
 }
 
+
 .turnOff {
     overflow-y: hidden;
 }
@@ -33,6 +34,7 @@ html {
 body {
     background-color: #0c0c0c;
     overflow-x: hidden;
+    /* overflow-y: hidden; */
 }
 
 #preloader{
@@ -41,6 +43,7 @@ body {
     height: 100vh;
     width: 100%;
     position: fixed;
+    /* overflow-y: hidden; */
     z-index: 10010;
 }
 
@@ -325,8 +328,9 @@ br {
 /* Section1--------------------------------------------------------------------------------------------- */
 
 #homeTag {
-    scroll-margin-top: -620vh;
+    scroll-margin-top: -6000px;
 }
+
 
 
 
@@ -442,7 +446,7 @@ p4 {
 
 #selectedWorkTag {
     scroll-margin-top: 10vh;
-    margin-top: 10%;
+    margin-top: 10vh;
 }
 
 #selectedWork {
@@ -1803,7 +1807,7 @@ h2{
 
 
     #homeTag {
-        scroll-margin-top: -140vh;
+        scroll-margin-top: -1200px;
     }
     
     .section1 {
@@ -2506,9 +2510,9 @@ h2{
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 /* Media Tablet Control------------------------------------------------------------------------------------------------------------ */
 @media (max-width: 1380px) {
-    #homeTag {
-        scroll-margin-top: -730vh;
-    }
+    /* #homeTag {
+        scroll-margin-top: 0vh;
+    } */
     
     header ul {
         display: none;
