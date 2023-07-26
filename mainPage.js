@@ -154,8 +154,10 @@ function MenuOn(x){
     }
     
     var loader = document.getElementById("preloader");
+    htmlDiv.style.overflowY = "hidden";
     window.addEventListener("load", function(){
         loader.style.display = "none";
+        htmlDiv.style.overflowY = "auto";
     })
 
     //0. Mobile intro image Section ----------------------------------------------------------------------------------------------------
