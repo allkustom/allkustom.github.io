@@ -2525,6 +2525,12 @@ h2{
         display: block;
     }
 
+    .overlayImage .overlayImageBox{
+        height: 85%;
+        margin-top: 10vh;
+    }
+    
+
 
 
 
