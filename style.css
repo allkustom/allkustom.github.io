@@ -899,31 +899,31 @@ p9{
 .contactSection .contactSocial .contactSocialBox .contactSocialTopBox{
     /* width: 100%; */
     width: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20%;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr;
+    gap: 0%; */
 }
 
 .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube{
     width: fit-content;
 }
     .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube img{
-        height: 50px;
+        height: 35px;
     }
 
 .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram{
     width: fit-content;
-    /* margin-left: 10%; */
+    margin-left: 10%;
 }
     .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram img{
-        height: 50px;
+        height: 38px;
     }
 .contactSection .contactSocial .contactSocialBox .contactLinktree{
     width: fit-content;
     /* margin-left: 10%; */
 }
     .contactSection .contactSocial .contactSocialBox .contactLinktree img{        
-        height: 40px;
+        height: 30px;
     }
 
 .contactSection .contactSocial .contactSocialBox .contactResume {
@@ -2102,10 +2102,10 @@ h2{
 
 
     .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactYoutube img{
-        height: 30px;
+        height: 25px;
     }
     .contactSection .contactSocial .contactSocialBox .contactSocialTopBox .contactInstagram img{
-        height: 30px;
+        height: 27px;
     }
     .contactSection .contactSocial .contactSocialBox .contactLinktree img{        
         height: 20px;
@@ -2122,12 +2122,12 @@ h2{
     
     .contactSection .contactSocial .contactSocialBox .contactResume a{
         background-color: #ededed;
-        padding: 5px 10px;
+        padding: 2px 5px;
         border-radius: 5px;
     }
     
     .contactSection .contactSocial .contactSocialBox .contactResume a p10{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .allworkTitleDiv {
