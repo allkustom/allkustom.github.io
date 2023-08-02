@@ -890,7 +890,7 @@ p9{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 10%;
+    gap: 5%;
     margin: 100% 0% 0% 0%;
     opacity: 0;
     width: 100%;
@@ -932,8 +932,8 @@ p9{
 
 .contactSection .contactSocial .contactSocialBox .contactResume a{
     background-color: #939393;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 2px;
     transition: 0.3s ease-in-out;
 }
 
@@ -1220,8 +1220,8 @@ p9{
 
 .form1Grid .form1Text a{
     background-color: #939393;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 5px 10px;
+    border-radius: 2px;
     transition: 0.3s ease-in-out;
 }
 .form1Grid .form1Text a p10{
