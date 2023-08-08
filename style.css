@@ -55,7 +55,7 @@ body {
 
 #preloader{
     background: #0c0c0c url(assets/loading\ animation.gif) no-repeat center center;
-    background-size: 10%;
+    background-size: 8%;
     height: 100vh;
     width: 100%;
     position: fixed;
