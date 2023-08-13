@@ -579,7 +579,7 @@ p4 {
 
 #allWorkTag {
     scroll-margin-top: 0vh;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 .allWorkSection {
@@ -790,10 +790,12 @@ p4 {
 }
 
 
-#contactTag{
-    scroll-margin-top: 0vh;
-    margin-top: 0%;
+
+.handmade{
+    margin: 0 12vw 0 12vw;
 }
+
+
 
 .contactSection{
     overflow: hidden;
@@ -861,6 +863,16 @@ p4 {
     overflow: hidden;
     opacity: 0;
     margin: 0% 0% 0% 0%;
+}
+
+.text3 .text3Box a{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease-in-out;
+}
+
+.text3 .text3Box a:hover{
+    color: #ededed;
 }
 
 p7{
