@@ -59,7 +59,6 @@ body {
     height: 100vh;
     width: 100%;
     position: fixed;
-    /* overflow-y: hidden; */
     z-index: 10010;
 }
 
@@ -1306,12 +1305,25 @@ h2{
     /* height: 40vh; */
     overflow: hidden;
 }
+.form2MainImageVer{
+    width: 100%;
+    /* height: 40vh; */
+    overflow: hidden;
+}
 
 .form2MainImage img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 } 
+
+.form2MainImageVer img{
+    /* height: 600px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+
 .form2Grid h2{
     font-size: 25px;
     font-weight: 500;
