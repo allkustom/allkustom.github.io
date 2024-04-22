@@ -114,10 +114,13 @@ let menuCheck = false;function MenuOn(x){
 
     var loader = document.getElementById("preloader");
     htmlDiv.style.overflowY = "hidden";
+    
     window.addEventListener("load", function(){
         loader.style.display = "none";
         htmlDiv.style.overflowY = "auto";
     })
+
+
     // const form1Grid = document.querySelector('.form1Grid');
     const form1MainImageDiv = document.querySelector('.form1MainImage');
     const form1MainImage = form1MainImageDiv.querySelector('img');
