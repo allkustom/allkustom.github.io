@@ -55,4 +55,3 @@ target="_blank"
    style ="margin-bottom: 10vh;
    ">Download Resume</a>
 
-</div>

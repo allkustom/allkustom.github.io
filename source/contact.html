@@ -3,33 +3,21 @@ layout: base.html
 title: Contact
 permalink: /contact/
 ---
-{%- assign resumeDoc = nil -%}
-{%- assign contactDoc = nil -%}
 
-
-{%- for doc in collections.informations -%}
-  {%- if doc.fileSlug == "resume" -%}
-    {%- assign resumeDoc = doc -%}
-  {%- elsif doc.fileSlug == "contact" -%}
-    {%- assign contactDoc = doc -%}
-  {%- endif -%}
-{%- endfor -%}
+{%- assign resumeDoc = nil -%} {%- assign contactDoc = nil -%} {%- for doc in
+collections.informations -%} {%- if doc.fileSlug == "resume" -%} {%- assign
+resumeDoc = doc -%} {%- elsif doc.fileSlug == "contact" -%} {%- assign
+contactDoc = doc -%} {%- endif -%} {%- endfor -%}
 
 <div class="mainBox">
-<div class="mainContent">
-  <div class="contactBox">
-
-
-  <div class="contentBox">
-    {%- if contactDoc -%}
-      {{ contactDoc.content }}
-    {%- endif -%}
-  <div class="contentBox double">
-    {%- if resumeDoc -%}
-      {{ resumeDoc.content }}
-    {%- endif -%}
+  <div class="mainContent">
+    <div class="contactBox">
+      <div class="contentBox">
+        {%- if contactDoc -%} {{ contactDoc.content }} {%- endif -%}
+        <div class="contentBox double">
+          {%- if resumeDoc -%} {{ resumeDoc.content }} {%- endif -%}
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
-</div>
 </div>
