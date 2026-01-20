@@ -5,8 +5,9 @@ Find '1 collections' folder in the source path
 source/1 collections/...
 ```
 Add a new folder with a correct label
-
 **Make sure to add layout json and matching the contents**
+
+
 ```
 source/1 collections/
     0 creativeTech
