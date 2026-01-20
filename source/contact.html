@@ -14,9 +14,9 @@ contactDoc = doc -%} {%- endif -%} {%- endfor -%}
     <div class="contactBox">
       <div class="contentBox">
         {%- if contactDoc -%} {{ contactDoc.content }} {%- endif -%}
-        <div class="contentBox double">
-          {%- if resumeDoc -%} {{ resumeDoc.content }} {%- endif -%}
-        </div>
+      </div>
+      <div class="contentBox double">
+        {%- if resumeDoc -%} {{ resumeDoc.content }} {%- endif -%}
       </div>
     </div>
   </div>
