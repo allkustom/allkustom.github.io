@@ -437,7 +437,7 @@ body.personalOpen .personal {
   margin-left: var(--sidePanelWidth);
   width: calc(100% - var(--sidePanelWidth));
   padding: 17.5vh 12.5vw;
-  /* margin-bottom: 20vh; */
+  padding-bottom: 5vh;
 }
 
 /* -------------------------------------------------------- */
@@ -839,6 +839,7 @@ body.personalOpen .personal {
     margin-left: 0;
     width: 100%;
     padding: 14vh 5vw;
+    padding-bottom: 3vh;
   }
   .workSection {
     font-size: 2em;
