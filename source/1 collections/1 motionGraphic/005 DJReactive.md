@@ -16,7 +16,9 @@ projectDate:
 size:
   - 29000*1200 px
   - 120m 0s
-type: Personal Project
+type: 
+  - Company Project 
+  - Motion Design Lead
 linkText: 
 link: 
 
