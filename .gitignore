@@ -1,0 +1,9 @@
+# This is a .gitignore file. This is a list of files and folders that don't need
+# to be in your repository because they'll be automatically created.
+
+# This is created by `npm install` and contains dependencies
+node_modules
+
+# This is created by `npm run serve` and contains your generated Eleventy site
+_site
+.DS_Store

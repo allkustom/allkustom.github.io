@@ -1,0 +1,78 @@
+---
+layout: base.html
+---
+
+<div class="previewBox">
+  <div class="previewThumbnail">
+    {% if video %}
+    <iframe
+      src="{{ video }}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    >
+    </iframe>
+    {% else %}
+    <img src="{{ photo }}" alt="{{title}}" />
+    {% endif %}
+  </div>
+  <div class="previewInfo">
+    <div class="previewTitle">{% if title %} {{ title}} {% endif %}</div>
+    <div class="previewDetailBox">
+        {% if mediumTech %}
+      <div class="previewDetails">
+        <h1>Medium / Tech</h1>
+        <p>{{ mediumTech | join: " / " }}</p>
+      </div>
+        {% endif %}
+        {% if projectDate %}
+      <div class="previewDetails">
+        <h1>Project Date</h1>
+        <p>{{ projectDate | join: " - " }}</p>
+      </div>
+        {% endif %}
+        {% if size %}
+      <div class="previewDetails">
+        <h1>Size / Duration</h1>
+        <p>{{ size | join: "<br>" }}</p>
+      </div>
+        {% endif %}
+        {% if type %}
+      <div class="previewDetails">
+        <h1>Type</h1>
+        <p>{{ type | join: ",<br>" }}</p>
+      </div>
+        {% endif %}
+    </div>
+    {% if link %}
+    <a
+      href="{{link}}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="linkBox"
+      style="
+        border: solid var(--strokeThin) var(--whiteSecond);
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px 15px;
+      "
+      >{{ linkText }}</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="mainBox">
+  {% if page.excerpt and page.excerpt != "" %}
+  <div class="spacer"></div>
+  <div class="descriptionBox">
+    <h1>Project Description</h1>
+    {{ page.excerpt | md }}
+  </div>
+{% endif %}
+
+  <div class="mainContent">{{content | stripExcerpt: page.excerpt}}</div>
+    <div class="spacer"></div>
+
+</div>

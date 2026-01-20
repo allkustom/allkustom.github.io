@@ -1,0 +1,86 @@
+---
+title: Works
+permalink: /works/
+---
+
+{% for g in collections.workGroups %} {% assign first = g.items | first %} {%
+assign groupDowncase = first.data.group | downcase %} {% if groupDowncase !=
+"leather crafting" and groupDowncase != "personal artwork" %}
+
+<h1 id="{{ g.anchor }}" class="workSection">{{ first.data.group }}</h1>
+
+<div class="workPreviewCollection">
+  {% assign worksReversed = g.items | reverse %} {% for work in worksReversed %}
+  <a href="{{ work.url }}">
+    <div class="previewImgBox">
+      {% assign media = work.data.photo | default: "" | downcase %}
+      {% if media contains ".mp4"%}
+      <video autoplay muted loop playsinline preload="metadata" class="thumb">
+        <source
+          src="{{ work.data.photo }}"
+          type="video/mp4"
+        />
+      </video>
+      {% elsif work.data.photo %}
+      <img src="{{ work.data.photo }}" alt="{{ work.data.title}}" />
+      {% endif %}
+    </div>
+    <div class="previewTextBox">
+      {% if work.data.title %}
+      <h1>{{ work.data.title }}</h1>
+      {% endif %} {% if work.data.subTitle %}
+      <p>{{ work.data.subTitle}}</p>
+      {% endif %} {% if work.data.tag %}
+      <p class="tagLine">[ {{work.data.tag | join: " / " }} ]</p>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %} {% endfor %}
+
+<a
+  href="#"
+  rel="noopener noreferrer"
+  class="linkBox"
+  id="personalButton"
+  style="
+    border: solid var(--strokeThin) var(--whiteSecond);
+    margin: auto;
+    margin-top: -15vh;
+    margin-bottom: 5vh;
+    width: fit-content;
+    padding: 15px;
+    font-size: 1em;
+  "
+  >Open Personal Archive</a
+>
+
+{% for g in collections.workGroups %} {% assign first = g.items | first %} {%
+assign groupDowncase = first.data.group | downcase %} {% if groupDowncase ==
+"leather crafting" or groupDowncase == "personal artwork" %}
+<h1 id="{{ g.anchor }}" class="workSection personalWrapper">
+  {{ first.data.group }}
+</h1>
+
+<div class="workPreviewCollection personal">
+  {% assign worksReversed = g.items | reverse %} {% for work in worksReversed %}
+  <a href="{{ work.url }}">
+    <div class="previewImgBox">
+      {% if work.data.photo %}
+      <img src="{{ work.data.photo }}" alt="{{ work.data.title }}" />
+      {% endif %}
+    </div>
+    <div class="previewTextBox">
+      {% if work.data.title %}
+      <h1>{{ work.data.title }}</h1>
+      {% endif %} {% if work.data.subTitle %}
+      <p>{{ work.data.subTitle}}</p>
+      {% endif %} {% if work.data.tag %}
+      <p class="tagLine">[ {{work.data.tag | join: " / " }} ]</p>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %} {% endfor %}

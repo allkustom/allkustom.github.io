@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>allkustom / Minkyu Kim's Portfolio</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/x-icon" href="/0 assets/basic/favicon.png" />
+  </head>
+  <body>
+    <button
+      class="menuToggle"
+      id="menuToggle"
+      type="button"
+      aria-controls="sidePanel"
+      aria-expanded="false"
+    >
+      <span class="menuIcon" aria-hidden="true"></span>
+      <span class="srOnly">Menu</span>
+    </button>
+
+    <div class="menuOverlay" id="menuOverlay" hidden></div>
+
+    <div class="sidePanel" id="sidePanel">
+      <div class="sideTop">
+        <div class="logo">
+          <a href="/">
+            <img src="/0 assets/basic/allkustom shape logo.png" alt="" />
+            <div class="logoDetails">allkustom</div>
+          </a>
+        </div>
+
+        <div class="navBox">
+          <a href="/works/">
+            <img src="/0 assets/basic/icon_Projects.png" alt="" />
+            <div class="navDetails">Projects</div>
+          </a>
+          <a href="/about/">
+            <img src="/0 assets/basic/icon_About.png" alt="" />
+            <div class="navDetails">ABOUT</div>
+          </a>
+          <a href="/contact/">
+            <img src="/0 assets/basic/icon_Contact.png" alt="" />
+            <div class="navDetails">CONTACT</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="sideBot">
+        {%- assign groupKey = page.inputPath | groupKeyFromInputPath -%} {%-
+        assign items = collections.worksByGroup[groupKey] -%} {%- if items and
+        items.size > 0 -%} {%- assign prevItem = items | prevByUrl: page.url -%}
+        {%- assign nextItem = items | nextByUrl: page.url -%} {%- assign first =
+        items | first -%}
+
+        <div class="paginationBox">
+          <div class="navDetails sectionIndicator">
+            {%- if first and first.data.group -%} {{ first.data.group }} {%-
+            else -%} {{ groupKey | groupLabel }} {%- endif -%}
+          </div>
+
+          <a class="bottom" href="/works/#{{ groupKey | groupAnchor }}">
+            <img src="/0 assets/basic/icon_Exit.png" alt="Close" />
+          </a>
+
+          {%- if prevItem -%}
+          <a class="bottom" href="{{ prevItem.url }}">
+            <img src="/0 assets/basic/icon_Previous.png" alt="Previous" />
+          </a>
+          {%- endif -%} {%- if nextItem -%}
+          <a class="bottom" href="{{ nextItem.url }}">
+            <img src="/0 assets/basic/icon_Next.png" alt="Next" />
+          </a>
+          {%- endif -%}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="contentWrapper">
+      {{ content }}
+      <div class="footer">
+        <p><strong>allkustom</strong></p>       
+        <p>Minkyu Kim</p>
+      </div>
+    </div>
+
+    <div class="imgModal" id="imgModal" aria-hidden="true">
+      <div class="imgModal__backdrop" data-close></div>
+
+      <figure
+        class="imgModal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Image preview"
+      >
+        <button
+          class="imgModal__close"
+          type="button"
+          aria-label="Close"
+          data-close
+        >
+          ×
+        </button>
+        <img class="imgModal__img" id="imgModalImg" alt="" />
+      </figure>
+    </div>
+
+    <div id="loadingOverlay" class="loadingOverlay" aria-hidden="true">
+      <img src="/0 assets/basic/loading animation.gif" alt="Loading" />
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

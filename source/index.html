@@ -1,0 +1,82 @@
+---
+permalink: /
+---
+
+<div class="homeIntro">
+  <div class="homeIntroFirst">
+    <h1>
+      allkustom
+    </h1>
+    <h2>
+      <strong>all</strong>
+      ideas should be      
+    </h2>
+    <h2>
+      <strong>kustom</strong>
+      -ized for their purpose 
+    </h2>
+  </div>
+    <div class="homeIntroSecond">
+      <p>
+        <strong> Minkyu Kim </strong>
+      </p>
+      <p>
+        Creative Technologiest
+      </p>
+      <p></br></p>
+      <p>
+        Interested in 
+        </br>
+        Physical Computing / Interactive Experiences / Motion Graphics
+      </p>
+      <!-- <p>Physical Computing / 2D Motion Graphics</p> -->
+    </div>
+</div>
+
+{% assign selectedList = selectedWorks.selectedWorksPaths %}
+
+<div class="selectedWorks">
+  <h1 class="workSection">Selected Projects</h1>
+
+  {%- assign selectedWorks = "" | split: "," -%} {%- for selected in
+  selectedList -%} {%- assign found = nil -%} {%- for g in
+  collections.workGroups -%} {%- for work in g.items -%} {%- assign rel =
+  work.inputPath | workRelPath -%} {%- if rel == selected -%} {%- assign found =
+  work -%} {%- break -%} {%- endif -%} {%- endfor -%} {%- if found -%}{%- break
+  -%}{%- endif -%} {%- endfor -%} {%- if found -%} {%- assign selectedWorks =
+  selectedWorks | push: found -%} {%- endif -%} {%- endfor -%}
+
+  <div class="workPreviewCollection onIndex">
+    {%- for work in selectedWorks -%}
+  <a href="{{ work.url }}">
+    <div class="previewImgBox">
+      {% assign media = work.data.photo | default: "" | downcase %}
+      {% if media contains ".mp4"%}
+      <video autoplay muted loop playsinline preload="metadata" class="thumb">
+        <source
+          src="{{ work.data.photo }}"
+          type="video/mp4"
+        />
+      </video>
+      {% elsif work.data.photo %}
+      <img src="{{ work.data.photo }}" alt="{{ work.data.title}}" />
+      {% endif %}
+    </div>
+    <div class="previewTextBox">
+      {% if work.data.title %}
+      <h1>{{ work.data.title }}</h1>
+      {% endif %} {% if work.data.subTitle %}
+      <p>{{ work.data.subTitle}}</p>
+      {% endif %} {% if work.data.tag %}
+      <p class="tagLine">[ {{work.data.tag | join: " / " }} ]</p>
+      {% endif %}
+    </div>
+  </a>
+    {%- endfor -%}
+  </div>
+  <div class="moreWorks">
+    <a href="/works/">
+      <p>More Projects</p>
+    </a>
+  </div>
+</div>

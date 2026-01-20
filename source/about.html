@@ -1,0 +1,28 @@
+---
+layout: base.html
+title: About
+permalink: /about/
+---
+{%- assign bioDoc = nil -%}
+{%- assign valueDoc = nil -%}
+
+
+{%- for doc in collections.informations -%}
+  {%- if doc.fileSlug == "bio" -%}
+    {%- assign bioDoc = doc -%}
+  {%- elsif doc.fileSlug == "value" -%}
+    {%- assign valueDoc = doc -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="mainBox">
+<div class="mainContent">
+{%- if bioDoc -%}
+      {{ bioDoc.content }}
+    {%- endif -%}
+
+    {%- if valueDoc -%}
+      {{ valueDoc.content }}
+    {%- endif -%}
+</div>
+</div>
