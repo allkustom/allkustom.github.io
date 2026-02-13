@@ -52,8 +52,8 @@
       <div class="sideBot">
         {%- assign groupKey = page.inputPath | groupKeyFromInputPath -%} {%-
         assign items = collections.worksByGroup[groupKey] -%} {%- if items and
-        items.size > 0 -%} {%- assign prevItem = items | prevByUrl: page.url -%}
-        {%- assign nextItem = items | nextByUrl: page.url -%} {%- assign first =
+        items.size > 0 -%} {%- assign prevItem = items | nextByUrl: page.url -%}
+        {%- assign nextItem = items | prevByUrl: page.url -%} {%- assign first =
         items | first -%}
 
         <div class="paginationBox">

@@ -764,8 +764,9 @@ body.personalOpen .personal {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 120vh;
-  margin-bottom: -10vh;
+  height: 200vh;
+  top: -50vh;
+  /* margin-bottom: 0vh; */
   z-index: 9999;
   display: flex;
   justify-content: center;
