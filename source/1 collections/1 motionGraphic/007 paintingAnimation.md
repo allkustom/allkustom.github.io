@@ -18,7 +18,9 @@ projectDate:
 size:
   - 11310*1200 px
   - Total - 5m 43s
-type: Client Project
+type:
+  - Company Project
+  - Projector Village
 linkText: 
 link: 
 ---

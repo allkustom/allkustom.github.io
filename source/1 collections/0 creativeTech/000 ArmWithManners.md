@@ -19,7 +19,10 @@ size:
   - 4min 17sec
 type: 
   - Team Project
+role:
   - Director
+  - Main Actor
+  - Programmer
 linkText: 
 link:
 ---

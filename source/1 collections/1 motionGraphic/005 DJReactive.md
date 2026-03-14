@@ -18,6 +18,8 @@ size:
   - 120m 0s
 type: 
   - Company Project 
+  - Raum Art Center
+role:
   - Motion Design Lead
 linkText: 
 link: 

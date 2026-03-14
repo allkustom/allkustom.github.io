@@ -27,12 +27,12 @@ layout: base.html
         <p>{{ mediumTech | join: " / " }}</p>
       </div>
         {% endif %}
-        {% if projectDate %}
+      {% if projectDate %}
       <div class="previewDetails">
         <h1>Project Date</h1>
         <p>{{ projectDate | join: " - " }}</p>
       </div>
-        {% endif %}
+      {% endif %}
         {% if size %}
       <div class="previewDetails">
         <h1>Size / Duration</h1>
@@ -43,7 +43,14 @@ layout: base.html
       <div class="previewDetails">
         <h1>Type</h1>
         <p>{{ type | join: ",<br>" }}</p>
+        <!-- <p>{{ type  }}</p> -->
       </div>
+      {% if role %}
+      <div class="previewDetails">
+        <h1>Role</h1>
+        <p>{{ role | join: "<br>" }}</p>
+      </div>
+      {% endif %}
         {% endif %}
     </div>
     {% if link %}

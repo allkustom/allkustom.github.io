@@ -16,7 +16,10 @@ projectDate:
 size:
   - Scale
   - Duration
-type: Personal Project or Team Project, role
+type:
+  - Personal Project or Company Project
+role:
+  - Positions
 linkText: Relative Link Text
 link: Actual Link
 ---

@@ -18,6 +18,8 @@ size:
   - 70min
 type: 
   - Company Project 
+  - Raum Art Center
+role:
   - Motion Design Lead
 linkText: 
 link: 
