@@ -32,7 +32,7 @@ permalink: false
   padding: 0px;
   ">
 
-<a href="https://www.instagram.com/allkustom_minkyu/"
+<a href="https://www.instagram.com/allkustom_/"
 target="_blank"
    rel="noopener noreferrer"
    class = "linkBox " >Instagram</a>

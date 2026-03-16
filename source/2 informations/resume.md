@@ -20,7 +20,7 @@ On-Going, since Dec 2025
 
 <br>
 
-Participating in the satellite tracking station project. **Assisting the station fabrication** with Fusion 360 CAD and prototypes using 3D printing and Arduino.
+Participating in the satellite tracking station project. **Assisting the station fabrication** with Fusion 360 CAD, 3D printing, and Arduino.
 
 
 <br>

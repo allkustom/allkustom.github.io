@@ -565,6 +565,7 @@ body.personalOpen .personal {
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5em;
+  text-decoration: underline;
   /* color: var(--whiteSecond); */
 }
 

@@ -18,6 +18,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("source/**/*.pdf");
   eleventyConfig.addPassthroughCopy("source/**/*.mp4");
   eleventyConfig.addPassthroughCopy("source/**/*.mov");
+  eleventyConfig.addPassthroughCopy("source/**/*.MOV");
 
   // global layout
   eleventyConfig.addGlobalData("layout", "base.html");
