@@ -24,6 +24,9 @@
 body {
   display: flex;
 }
+body.is-scroll-locked {
+  overflow: hidden;
+}
 
 ::-webkit-scrollbar {
   width: 15px;

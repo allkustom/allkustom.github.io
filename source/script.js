@@ -5,22 +5,30 @@
   const modalImg = document.getElementById("imgModalImg");
   if (!modal || !modalImg) return;
 
+  const updateScrollLock = () => {
+    const shouldLock =
+      modal.classList.contains("is-open") ||
+      document.body.classList.contains("is-loading") ||
+      document.body.classList.contains("menuOpen");
+
+    document.body.classList.toggle("is-scroll-locked", shouldLock);
+  };
+
   function openModal(src, alt) {
     modalImg.src = src;
     modalImg.alt = alt || "";
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    updateScrollLock();
   }
 
   function closeModal() {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     modalImg.src = "";
-    document.body.style.overflow = "";
+    updateScrollLock();
   }
 
-  // 여러 컨테이너를 한번에 순회
   const containers = document.querySelectorAll(containerSelector);
   containers.forEach((container) => {
     container.querySelectorAll("img").forEach((img) => {
@@ -49,20 +57,48 @@
       closeModal();
     }
   });
+
+  window.__updateGlobalScrollLock = updateScrollLock;
 })();
 
 (function () {
   const overlay = document.getElementById("loadingOverlay");
   if (!overlay) return;
 
-  const show = () => overlay.classList.add("is-visible");
-  const hide = () => overlay.classList.remove("is-visible");
+  let isHidden = false;
+  let timeoutId = null;
+
+  const updateScrollLock = window.__updateGlobalScrollLock || (() => {});
+
+  const show = () => {
+    isHidden = false;
+    overlay.classList.add("is-visible");
+    document.body.classList.add("is-loading");
+    updateScrollLock();
+
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      hide();
+    }, 5000);
+  };
+
+  const hide = () => {
+    if (isHidden) return;
+    isHidden = true;
+
+    overlay.classList.remove("is-visible");
+    document.body.classList.remove("is-loading");
+    updateScrollLock();
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+      timeoutId = null;
+    }
+  };
 
   show();
 
-  window.addEventListener("load", () => {
-    hide();
-  });
+  window.addEventListener("load", hide);
 
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a");
@@ -73,7 +109,6 @@
 
     if (a.target === "_blank") return;
     if (a.hasAttribute("download")) return;
-
     if (href.startsWith("#")) return;
 
     if (/^https?:\/\//i.test(href)) {
@@ -105,16 +140,20 @@
 
   if (!btn || !panel || !overlay) return;
 
+  const updateScrollLock = window.__updateGlobalScrollLock || (() => {});
+
   const openMenu = () => {
     document.body.classList.add("menuOpen");
     overlay.hidden = false;
     btn.setAttribute("aria-expanded", "true");
+    updateScrollLock();
   };
 
   const closeMenu = () => {
     document.body.classList.remove("menuOpen");
     overlay.hidden = true;
     btn.setAttribute("aria-expanded", "false");
+    updateScrollLock();
   };
 
   const toggleMenu = () => {
@@ -132,7 +171,6 @@
   panel.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
-
     closeMenu();
   });
 
@@ -142,8 +180,6 @@
   });
 })();
 
-
-// "Open Personal Archive" Button control + localstorage state memory
 (function () {
   const btn = document.getElementById("personalButton");
   if (!btn) return;
