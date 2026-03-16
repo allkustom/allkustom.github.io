@@ -78,7 +78,7 @@ Begining likely as early 9th century in the Middle East, the **handshake represe
 **More than 50%** have started using handshake in situations where they are **'business' or 'formal.'**
 
 
-<a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://theharrispoll.com/wp-content/uploads/2025/03/INT_COVID-19-5-Years-Later_Core-Demos-Profile_Ban.pdf?utm_source=chatgpt.com"
+<a href="https://theharrispoll.com/wp-content/uploads/2025/03/INT_COVID-19-5-Years-Later_Core-Demos-Profile_Ban.pdf?utm_source=chatgpt.com"
 target="\_blank"
 rel="noopener noreferrer"
 class = "linkBox " style ="border: solid var(--strokeThin) var(--whiteSecond); width:100%; padding:10px 15px; margin-top:10px;">Research Source</a>

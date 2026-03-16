@@ -1,6 +1,6 @@
 ---
-title: Satellite Tracking Station (On-Going)
-subTitle: Tracking 3D Coordinate
+title: Satellite Tracking Station
+subTitle: (Ongoing Project) Tracking 3D Coordinate
 photo: /1 collections/0 creativeTech/assets/006 SatelliteTrackingStation/satelliteTrackingStation_Thumbnail.png
 video: 
 tag:
@@ -14,7 +14,7 @@ mediumTech:
 
 projectDate:
   - 12/27/2025
-  - On-Going
+  - Ongoing
 size:
   - 200*100*150 mm
 type: 
@@ -26,7 +26,7 @@ linkText: Github Link
 link: https://github.com/allkustom/Satellite-Tracking-Station
 ---
 
-This project is **on-going** since Dec 27th, 2025. Atending project as **a research assistant.**
+This project is **ongoing** since Dec 27th, 2025. Atending project as **a research assistant.**
 Instructor: [Thiago Hersan](https://thiagohersan.com/)
 <br>
 
