@@ -577,6 +577,11 @@ body.personalOpen .personal {
   color: var(--white);
 }
 
+.mainBox em{
+  font-style: italic;
+  color: var(--whiteSecond)
+}
+
 .mainBox li {
   margin-left: 25px;
   color: var(--whiteSecond);

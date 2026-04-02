@@ -25,7 +25,7 @@ linkText:
 link: 
 
 ---
-A social networking party planned and hosted by [Raum Art Center](https://www.theraum.co.kr/)(Click Link). The primary attendees were business owners, startup founders, and influencers, so securing a DJ for the networking session as the event highlight was essential to deliver a social club vibe. However, Raum Art Center strongly maintains a medieval castle visual/structure, which made it difficult to present the modern, youth-oriented visuals the audience expected. To bridge this gap, we used a beam projector to turn the large space into a canvas for real-time reactive visuals. This approach **overcame the venue’s built-in limitations** and created a new, more contemporary experience.
+A social networking party planned and hosted by [Raum Art Center](https://www.theraum.co.kr/). The primary attendees were business owners, startup founders, and influencers, so securing a DJ for the networking session as the event highlight was essential to deliver a social club vibe. However, Raum Art Center strongly maintains a medieval castle visual/structure, which made it difficult to present the modern, youth-oriented visuals the audience expected. To bridge this gap, we used a beam projector to turn the large space into a canvas for real-time reactive visuals. This approach **overcame the venue’s built-in limitations** and created a new, more contemporary experience.
 
 <!--desc-->
 <div class="spacer"></div>

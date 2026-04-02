@@ -14,16 +14,18 @@ mediumTech:
   - Unity
 
 projectDate:
+  - 02/05/2026
   - 02/23/2026
 size:
   - 40*170 mm
 type: 
   - Team Project
 role:
-  - Project Manager
+  - Project Lead
   - Creative Technologist
-  - Product Designer
-  - Programmer
+  - Hardware Fabrication
+  - Web Developer
+
 linkText: Github Link
 link: https://github.com/allkustom/Coalesce
 ---
@@ -390,7 +392,7 @@ Imagine, just asking for handshakes without actual social interaction.
 
 <div class="spacer"></div>
 
-# Contribution
+# Personal Contribution
 
 
 

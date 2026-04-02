@@ -11,15 +11,13 @@ assign groupDowncase = first.data.group | downcase %} {% if groupDowncase !=
 
 <div class="workPreviewCollection">
   {% assign worksReversed = g.items | reverse %} {% for work in worksReversed %}
+  {% if work.data.visible != "No" %}
   <a href="{{ work.url }}">
     <div class="previewImgBox">
-      {% assign media = work.data.photo | default: "" | downcase %}
-      {% if media contains ".mp4"%}
+      {% assign media = work.data.photo | default: "" | downcase %} {% if media
+      contains ".mp4"%}
       <video autoplay muted loop playsinline preload="metadata" class="thumb">
-        <source
-          src="{{ work.data.photo }}"
-          type="video/mp4"
-        />
+        <source src="{{ work.data.photo }}" type="video/mp4" />
       </video>
       {% elsif work.data.photo %}
       <img src="{{ work.data.photo }}" alt="{{ work.data.title}}" />
@@ -35,7 +33,7 @@ assign groupDowncase = first.data.group | downcase %} {% if groupDowncase !=
       {% endif %}
     </div>
   </a>
-  {% endfor %}
+  {% endif %} {% endfor %}
 </div>
 {% endif %} {% endfor %}
 
