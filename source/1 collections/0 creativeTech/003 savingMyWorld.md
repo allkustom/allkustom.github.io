@@ -6,7 +6,7 @@ photo: /1 collections/0 creativeTech/assets/003 savingMyWorld_assets/savingmywor
 video: 
 tag:
   - XR
-  - Custom controller mount
+  - Custom Controller Mount
 
 
 mediumTech:
@@ -350,7 +350,7 @@ The space of the Central System was designed to show a larger area than a regula
 # Role
 <div class="contentBox two border mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Minkyu Kim
@@ -365,7 +365,7 @@ The space of the Central System was designed to show a larger area than a regula
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Roslyn Choi
@@ -375,7 +375,7 @@ The space of the Central System was designed to show a larger area than a regula
 - Graphic Designer
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Kari Ergmann
@@ -385,7 +385,7 @@ The space of the Central System was designed to show a larger area than a regula
 - Storytelling Assist
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Bella Dekoker
@@ -406,7 +406,7 @@ The space of the Central System was designed to show a larger area than a regula
 
 <div class="contentBox two mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Project Management
@@ -420,7 +420,7 @@ The space of the Central System was designed to show a larger area than a regula
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Prototyping
@@ -435,7 +435,7 @@ The space of the Central System was designed to show a larger area than a regula
 </div>
 
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Unity
@@ -447,7 +447,7 @@ The space of the Central System was designed to show a larger area than a regula
 - Map rotating system 
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Blender, 3D Object/Space Design

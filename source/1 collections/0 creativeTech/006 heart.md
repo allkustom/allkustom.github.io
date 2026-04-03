@@ -4,7 +4,7 @@ subTitle: Hear the heart, between two sounds
 photo: /1 collections/0 creativeTech/assets/006 heart_assets/hear_thumbnail.png
 video: 
 tag:
-  - Game
+  - Physical Game
   - Medical
   - Pen Plotter
 
@@ -28,16 +28,71 @@ type:
 role:
   - Project Lead
   - Creative Technologist
+  - Hardware Fabrication
+  - Unity Developer
+  - Touchdesigner Developer
+  - Motion Graphics Designer
+  - Data Com System Design
+  - Video Editor
   - 
 linkText: Github Link
-link: https://github.com/allkustom/Coalesce
+link: https://github.com/allkustom/HearT
 ---
+
+
+
+<div class="contentBox border">
+
+**Hear the heart, between two sounds**
+</div>
+
+<br>
+
+The player uses **a digital stethoscope** as a controller to listen to **heart murmurs** and diagnose the type and location of the symptoms. It also offers a new experience about the standards of information and accessibility in medical diagnosis by using both real heart murmurs and converted heart murmurs.
+
+<!--desc-->
 
 <div class="spacer"></div>
 
 
 
-# Project Description
+# Description Video
+
+<div class="contentBox two twoRatioSec mobileOne">
+
+<iframe src="https://www.youtube.com/embed/OBqHutUxT3Y"
+title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+<div class="contentBox">
+
+
+**Jess Marcotte** describes *Queering Control(ler) as reorienting the standards of standardized control(ler) and looking at existing systems and standards from a new perspective.*
+
+<br>
+
+Based on this idea, we built our own definition of queering controller.
+**Rearranging the standard by which the power/authority to collect and interpret information are distributed.**
+</div>
+
+</div>
+
+
+<div class="spacer"></div>
+
+# Full Gameplay
+
+<iframe src="https://www.youtube.com/embed/e9sfo1vt9lQ"
+title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<div class="spacer"></div>
+
+
+
+
+# Tech Process
 
 <div class="contentBox two twoRatioSec mobileOne">
 
@@ -48,182 +103,55 @@ link: https://github.com/allkustom/Coalesce
   playsinline
   preload="metadata">
   <source src="
-  /1 collections/0 creativeTech/assets/005 Coalesce_assets/handshake_1.mp4
+  /1 collections/0 creativeTech/assets/006 heart_assets/02 leapmotion to unity.mp4
   " type="video/mp4" />
 </video>
 
 <div class="contentBox">
 
+### Leapmotion 2, TD, Unity
 
-**A handshake** can be used in a new way through this device.
-
-**Enhance professional networking sessions**, making it easier to connect without having stop and share your data
-</div>
+I used Leapmotion 2 for hand tracking, and the data was managed in TouchDesigner. With Python, created a plane using 4 coordinate points as vertices and identified where the current hand position exists on that plane. The coordinate values were then sent to Unity through **UDP** and used for the movement of the player object.
 
 </div>
 
 
+</div>
+
+<img src="
+/1 collections/0 creativeTech/assets/006 heart_assets/TD capture_1.png
+" alt="" />
 
 
-
-
-<div class="spacer"></div>
-
-
-# About Handshake
-<div class="contentBox two mobileOne">
+<br>
+<br>
 
 <div class="contentBox noPad">
 
-Begining likely as early 9th century in the Middle East, the **handshake represents symbolizes** a form of peace, trust, and back then, that the dominant hand was weapon free.
-
-<br>
-
-**But after the pandemic**, the meaning of handshake has begun to change.
-**More than 50%** have started using handshake in situations where they are **'business' or 'formal.'**
-
-
-<a href="https://theharrispoll.com/wp-content/uploads/2025/03/INT_COVID-19-5-Years-Later_Core-Demos-Profile_Ban.pdf?utm_source=chatgpt.com"
-target="\_blank"
-rel="noopener noreferrer"
-class = "linkBox " style ="border: solid var(--strokeThin) var(--whiteSecond); width:100%; padding:10px 15px; margin-top:10px;">Research Source</a>
-</div>
-
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/handshake_research.png
+/1 collections/0 creativeTech/assets/006 heart_assets/TD capture_2.png
 " alt="" />
 
-</div>
-
-
-
-<div class="spacer"></div>
-
-
-<div class="contentBox two mobileOne">
-
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/networking image.png
-" alt="" />
-
-<div class="contentBox one">
-
-<div class="contentBox">
-
-## Why
-
-We aim to give the handshake **new purpose** for participants. Make **a wearable device** that gives participants the ability to share socials and information when shaking hands
-
-Our intention is to make participants to consider, who do they want to shake hands with, why, and what does that symbolize about the handshake in modern times?
-</div>
-<div class="contentBox">
-
-## Where & Who
-
-**Networking Event**
-
-Where the event participants have the purpose of 'networking' in common.
-</div>
-
-
-</div>
-
-
-</div>
-
-<div class="spacer"></div>
-
-
-<div class="contentBox three">
-
-<div class="contentBox">
-
-This device is intended to be worn by participants in networking events. Because of this, **the clear guidelines** were needed for how to wear and use the device properly. We wanted to communicate this information through an infographic manual.
-</div>
-<div class="contentBox one">
-
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/infographic.png
-" alt="" />
-
-Infographics by [Jaden Mathews](https://www.linkedin.com/in/jaden-mathews-450baa2b1/)
-
-</div>
-<div class="contentBox">
-
-Through this, users can take part in the **onboarding process by themselves**. And because they attach the device on their own, their trust in using it may also become higher. In addition, during this process, guidance to the webpage can be introduced naturally through scanning a QR code.
-</div>
-
-
-</div>
-
-
-<div class="spacer"></div>
-
-# Handshake to Data
-<div class="contentBox two mobileOne">
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/final image.JPG
-" alt="" />
-
-<div class="contentBox">
-
-### RX/TX with Conductive Plates
-
-The first challenge of this project was **how to detect a handshake and identify who the other person is.** To identify the other person, we decided that using **RX/TX communication** would be the most efficient method. 2 conductive plates connected to RX/TX are attached to the palm. When a handshake happens in this state, the plates connect with the other person’s RX/TX, completing the circuit. At that moment, the devices **transmit their assigned client IDs** to each other. The received client ID is then sent to the DB to update each other’s client information.
-<br>
-
-We used **MPU6050** to detect the act of handshaking. By sensing a sudden change in vertical acceleration, it determines that a handshake has occurred. After that, it updates the handshake count in the DB.
-
-</div>
-</div>
-
-
-<div class="spacer"></div>
-
-# Webpage & Database
-<div class="contentBox two mobileOne">
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/webpage_image.jpeg
-" alt="" />
-
-<div class="contentBox">
-
-Participants should be able to see the updated status. Using Firebase Datastore, the information who they handshake with and the number of handshakes are **continuously updated and shown** through the webpage. Through this, participants can see how many people are currently at the event, who they have met, and how many handshakes they have made.
-
-<br>
-
-We also created a feature that unlocks the other person’s **information based on the number of handshakes.** After the first handshake, that person is added to the connection list. Then, each time they shake hands again, more information that the other person registered becomes unlocked and available to visit. Up to this point, the device is used as 'a tool'. However, it can also be used as 'a goal', such as the Google Calendar dinner schedule invite that is unlocked after 10 straight handshakes. We expect this can work as a fun experience.
-</div>
+Sound engineered by *Mick Griffin* & Structure refined by *Minkyu Kim*
 </div>
 
 <br>
 
-## Webpage User Sequence
-<div class="contentBox three">
-<div class="contentBox noPad">
 
-### 1. User Verification
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/webpage_1.png
-" alt="" />
-</div>
-<div class="contentBox noPad">
 
-### 2. Submit User Info
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/webpage_2.png
-" alt="" />
-</div>
-<div class="contentBox noPad">
+### Heart Beat Sound Network
 
-### 3. Personal Page, Check Connections
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/webpage_3.png
-" alt="" />
-</div>
+To create the heart sounds in Touchdesigner, we first needed to understand the structure of heart sounds. Heart sounds are made up of **S1, S2, S3, and S4**. S1 and S2 form the main structure of a normal heartbeat. When there is a problem in the heart, a murmur appears between S1 and S2, or at points such as S3 and S4. We designed the system to **send out a pulse in 8 beats and cross** the assigned murmur sound according to the detected symptom. When the player object in Unity gets close to a symptom object, Unity sends the type of symptom and the distance to Touchdesigner through UDP, which determines **which symptom sound should be played and how strong it should be.**
 
-</div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -233,31 +161,87 @@ We also created a feature that unlocks the other person’s **information based 
 
 # Prototype & Playtest
 
-## 1st Prototype
+## 1st Prototype & Playtest
 <div class="contentBox two">
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/1st prototype_1.png
+/1 collections/0 creativeTech/assets/006 heart_assets/playtest_1_1.png
 " alt="" />
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/1st prototype_2.png
+/1 collections/0 creativeTech/assets/006 heart_assets/playtest_1_2.png
 " alt="" />
 </div>
 
-<br>
+
+<div class="spacer"></div>
+
+
+## Final Prototype
+
+<div class="contentBox two">
+<img src="
+/1 collections/0 creativeTech/assets/006 heart_assets/stethoscope photo_1.JPG
+" alt="" />
+<img src="
+/1 collections/0 creativeTech/assets/006 heart_assets/stethoscope photo_3.JPG
+" alt="" />
+<img src="
+/1 collections/0 creativeTech/assets/006 heart_assets/circuit photo_1.JPG
+" alt="" />
+<img src="
+/1 collections/0 creativeTech/assets/006 heart_assets/circuit photo_2.JPG
+" alt="" />
+
+</div>
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/006 heart_assets/05 pen plotter.mp4
+  " type="video/mp4" />
+</video>
+
+
+
 <br>
 
-## 2nd Prototype
+<div class="contentBox two mobileOne">
 
-<div class="contentBox three">
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/2nd prototype_3.JPG
-" alt="" />
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/2nd prototype_2.JPG
-" alt="" />
-<img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/2nd prototype_1.JPG
-" alt="" />
+
+<div class="contentBox noPad">
+
+### Stethoscope, CAD
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/006 heart_assets/CAD_stethoscope.mp4
+  " type="video/mp4" />
+</video>
+</div>
+<div class="contentBox noPad">
+
+### Pen plotter, CAD
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/006 heart_assets/CAD_plotter.mp4
+  " type="video/mp4" />
+</video>
+</div>
+
 </div>
 
 <br>
@@ -272,18 +256,21 @@ We also created a feature that unlocks the other person’s **information based 
 </div>
 <div class="contentBox nopad">
 
-**ESP32 S3 Zero** *1
+**ESP32 Devkit C3** *2
 </div>
 </div>
 
 <div class="contentBox two  ">
 <div class="contentBox">
 
-### Sensor
+### Sensor & Output
 </div>
 <div class="contentBox">
 
 **MPU6050** *1
+**Joystick Moduel** *1
+**8ohm Speaker** *2
+**MAX98357 I2S Amp** *1
 </div>
 </div>
 <div class="contentBox two  ">
@@ -293,7 +280,7 @@ We also created a feature that unlocks the other person’s **information based 
 </div>
 <div class="contentBox">
 
-**3.7V Li-Po Battery** *1
+**3.7V Li-Po Battery 400maAh** *1
 **DWEII 5V 2A Step-up Charging Converter** *1
 </div>
 </div>
@@ -303,16 +290,16 @@ We also created a feature that unlocks the other person’s **information based 
 <br>
 
 
-## 2nd Prototype's Playtest
+## Final Playtest
 <div class="contentBox three">
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/playtest_1.JPG
+/1 collections/0 creativeTech/assets/006 heart_assets/playtest_1.png
 " alt="" />
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/playtest_2.JPG
+/1 collections/0 creativeTech/assets/006 heart_assets/playtest_2.png
 " alt="" />
 <img src="
-/1 collections/0 creativeTech/assets/005 Coalesce_assets/playtest_3.JPG
+/1 collections/0 creativeTech/assets/006 heart_assets/playtest_3.png
 " alt="" />
 </div>
 
@@ -320,74 +307,92 @@ We also created a feature that unlocks the other person’s **information based 
 
 ## Received Feedback
 
-The concept of exchanging information through the device received a positive response. However, there were also two negative reactions.
+The most positive feedback we received was, **“I want to play it one more time.”** When we were preparing the project, we expected that it would only support one time play because the educational message was quite strong. However, most players felt that the game itself was fun to play.
+
 <br>
 
-**First, concern about sharing personal information.** A participant may be willing to share their information with some people but not with others, which raised the question of how the device could be controlled in that situation. This could be solved by adding a function that allows the user to limit or control the device with **a micro gesture or action** which wouldn't be noticeable to the other person.
+At the same time, we also received feedback that the onboarding process definitely needs improvement. **Too much information was given at once,** and this became something that interrupted the player’s immersion. At the very beginning, the tutorial had 19 pages, and we reduced it to 6 pages by keeping only the core content. However, the amount of information on each page was still more than necessary.
+
 <br>
 
-**Second, expect physical feedback on handshake detection.** If the RX/TX conductive plates couldn't make proper contact, the device won't work. In that state, even if a handshake happens, it is difficult to expect the intended result. This could be solved by **adding a haptic feedback** that responds when the RX/TX connection is detected.
+We also received feedback that **the converted sound was not intuitive enough**. It was supposed to help players understand heart murmurs more easily, but we believe that the cause of each symptom and the sound were not connected clearly enough. In the first prototype, we provided four example sounds for each symptom so that players could choose by themselves. However, we decided to provide randomly selected converted sounds because we thought the tutorial stage became too long. Since the player’s understanding is the real standard for how intuitive the sound is, it **seems necessary to add the example sound feature again.**
 
 <div class="spacer"></div>
 
 # Possible Improvements
 
-1. Consider **other ways of greeting**
-Ex. hug, fist bump, etc
-2. When the participant **doesn't want to shake hands**, possibility of unwelcoming from others.
-3. When the participant wants to shake hands, but **doesn't want their information to be shared.**
-4. When the handshake **becomes the purpose, not the tool**
-Imagine, just asking for handshakes without actual social interaction.
+1. **Simplifying the technical setup**
+The technical preparation required to start the game is too complex and takes long
+<br>
+
+2. **Improving hand tracking**
+Overload in Leapmotion 2, the hand tracking stops working after few rounds. This is critical problem for the experience. 
+<br>
+
+
+3. **Improving the converted sound design**
+The current converted sound doesn’t immediately make the player think, ‘Oh, this must be this symptom.’ More refined sound design is needed
+<br>
+
+
+4. **Refining the tutorial process**
+Too much informaton is concentrated in the tutorial stage. The onboarding process would be smoother if the game used more separated levels or stages.
 
 <div class="spacer short"></div>
 
 # Role
 <div class="contentBox two border mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Minkyu Kim
 </div>
 <div class="contentBox nopad">
 
-- **Project Manager**
+- **Project Lead**
 - Creative Technologist
-- Product Designer
-- Programmer
+- Hardware Fabrication
+- Unity Developer
+- Touchdesigner Developer
+- Motion Graphics Designer
+- Data Com System Design
+- Video Editor
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
-### Jaden Mathews
+### Mick Griffin
 </div>
 <div class="contentBox">
 
+- Creative Technologist
+- Touchdesigner Sound Engineer
 - Graphic Designer
-- Creative Technologist
-- Video Director
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
-### Chloe Jiang
-</div>
-<div class="contentBox">
-
-- Unity Programmer
-</div>
-</div>
-<div class="contentBox two  ">
-<div class="contentBox">
-
-### Milly Zhang
+### Russell Ge
 </div>
 <div class="contentBox">
 
-- Unity Programmer
+- Unity Developer
+- Playtesting Documentation
+</div>
+</div>
+<div class="contentBox two  twoRatio">
+<div class="contentBox">
+
+### Brian Ba La
+</div>
+<div class="contentBox">
+
+- Unity UI/UX Assistant
+- Playtesting Documentation
 </div>
 </div>
 
@@ -401,7 +406,7 @@ Imagine, just asking for handshakes without actual social interaction.
 
 <div class="contentBox two mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Project Management
@@ -411,11 +416,12 @@ Imagine, just asking for handshakes without actual social interaction.
 - Core idea & logic development
 - Built the project timeline
 - Assigned team roles
+- Documentation via Figma
 
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Prototyping
@@ -424,34 +430,49 @@ Imagine, just asking for handshakes without actual social interaction.
 
 - Designed circuits
 - Fabricated hardware prototypes
-- Implemented DB access & real time information updates
-- Improved the handshake detection logic
+- Built a custom pen plotter
 
 
 </div>
 </div>
 
 
-<div class="contentBox two  ">
+<div class="contentBox two twoRatio ">
 <div class="contentBox">
 
-### Backend
-</div>
-<div class="contentBox">
-
-- Set up & integrated the Firestore database
-</div>
-</div>
-<div class="contentBox two  ">
-<div class="contentBox">
-
-### Frontend
+### Unity
 </div>
 <div class="contentBox">
 
-- Developed a real time webpage using React.js
+- SPP serial communication structure
+- Tutorial & Game UI/UX
 </div>
 </div>
+<div class="contentBox two  twoRatio">
+<div class="contentBox">
+
+### Touchdesigner
+</div>
+<div class="contentBox">
+
+- Leapmotion 2 hand tracking
+- UDP communication structure
+- Supported heart beat sound network
+</div>
+</div>
+
+<div class="contentBox two  twoRatio">
+<div class="contentBox">
+
+### Graphic Design
+</div>
+<div class="contentBox">
+
+- Tutorial animations for Unity
+- Edited the video documentation
+</div>
+</div>
+
 
 </div>
 

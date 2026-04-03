@@ -331,8 +331,16 @@ The concept of exchanging information through the device received a positive res
 
 1. Consider **other ways of greeting**
 Ex. hug, fist bump, etc
+<br>
+
+
 2. When the participant **doesn't want to shake hands**, possibility of unwelcoming from others.
+<br>
+
+
 3. When the participant wants to shake hands, but **doesn't want their information to be shared.**
+<br>
+
 4. When the handshake **becomes the purpose, not the tool**
 Imagine, just asking for handshakes without actual social interaction.
 
@@ -341,21 +349,21 @@ Imagine, just asking for handshakes without actual social interaction.
 # Role
 <div class="contentBox two border mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Minkyu Kim
 </div>
 <div class="contentBox nopad">
 
-- **Project Manager**
+- **Project Lead**
 - Creative Technologist
 - Product Designer
 - Programmer
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Jaden Mathews
@@ -367,24 +375,24 @@ Imagine, just asking for handshakes without actual social interaction.
 - Video Director
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Chloe Jiang
 </div>
 <div class="contentBox">
 
-- Unity Programmer
+- Unity Developer
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two twoRatio ">
 <div class="contentBox">
 
 ### Milly Zhang
 </div>
 <div class="contentBox">
 
-- Unity Programmer
+- Unity Developer
 </div>
 </div>
 
@@ -398,7 +406,7 @@ Imagine, just asking for handshakes without actual social interaction.
 
 <div class="contentBox two mobileOne">
 
-<div class="contentBox two ">
+<div class="contentBox two twoRatio">
 <div class="contentBox">
 
 ### Project Management
@@ -412,7 +420,7 @@ Imagine, just asking for handshakes without actual social interaction.
 </div>
 </div>
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Prototyping
@@ -429,7 +437,7 @@ Imagine, just asking for handshakes without actual social interaction.
 </div>
 
 
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Backend
@@ -439,7 +447,7 @@ Imagine, just asking for handshakes without actual social interaction.
 - Set up & integrated the Firestore database
 </div>
 </div>
-<div class="contentBox two  ">
+<div class="contentBox two  twoRatio">
 <div class="contentBox">
 
 ### Frontend
