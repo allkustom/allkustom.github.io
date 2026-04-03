@@ -42,10 +42,10 @@ target="_blank"
    rel="noopener noreferrer"
    class = "linkBox " >Youtube</a>
 
-<a href="https://linktr.ee/allkustom"
+<a href="https://www.linkedin.com/in/minkyu-kim-253210286/"
 target="_blank"
    rel="noopener noreferrer"
-   class = "linkBox " >LinkTree</a>
+   class = "linkBox " >LinkedIn</a>
 
 </div>
 <a  href="/0 assets/basic/Minkyu Kim_Resume_2026.pdf" download
