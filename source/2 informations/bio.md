@@ -12,6 +12,10 @@ permalink: false
 
 <h1 >Minkyu Kim</h1>
 
+Based on **NY, NJ**
+
+<br>
+
 As a **Creative Technologist**, I connect art and technology.
 <br>
 

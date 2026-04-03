@@ -769,13 +769,12 @@ body.personalOpen .personal {
 /* -------------------------------------------------- */
 
 /* Loading screen style */
-.loadingOverlay {
+/* .loadingOverlay {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 200vh;
   top: -50vh;
-  /* margin-bottom: 0vh; */
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -783,7 +782,23 @@ body.personalOpen .personal {
   background: var(--black);
   opacity: 0;
   pointer-events: none;
-  /* transition: opacity 200ms ease; */
+}*/
+
+
+.loadingOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  opacity: 0;
+  pointer-events: none;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .loadingOverlay.is-visible {
