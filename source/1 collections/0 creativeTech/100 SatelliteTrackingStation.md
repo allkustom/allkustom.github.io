@@ -21,7 +21,8 @@ type:
   - Team Project
 role:
   - Research Assistant
-  - Hardware & Software Developer
+  - Hardware Fabrication
+  - Tracking Function Developer
 linkText: Github Link
 link: https://github.com/allkustom/Satellite-Tracking-Station
 ---
