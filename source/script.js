@@ -79,7 +79,7 @@
     if (timeoutId) clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       hide();
-    }, 5000);
+    }, 8000);
   };
 
   const hide = () => {
