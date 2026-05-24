@@ -1,10 +1,10 @@
 ---
 title: Satellite Tracking Station
-subTitle: (Ongoing Project) Tracking 3D Coordinate
-photo: /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/satelliteTrackingStation_Thumbnail.png
+subTitle: (Ongoing) Tracking 3D Coordinate
+photo: /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/0 thumbnail.JPG
 video: 
 tag:
-  - Wrist Differential
+  - Robotics
 
 mediumTech:
   - Arduino
@@ -18,7 +18,7 @@ projectDate:
 size:
   - 200*100*150 mm
 type: 
-  - Team Project
+  - Research Project
 role:
   - Research Assistant
   - Hardware Fabrication
@@ -40,14 +40,11 @@ It is designed to **accurately target 3D coordinates** with a wrist differential
 
 
 
-# Mar 14th, Current Progress & Demo
-<div class="contentBox two mobileOne">
-<iframe src="https://www.youtube.com/embed/aIBnEimhELs" 
-title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/HPvqUUPxvX4" 
+# May 23rd, 3rd Prototype
+<div class="contentBox">
+<iframe src="https://www.youtube.com/embed/5paCRZDbIPQ" 
 title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-
 
 <div class="spacer short"></div>
 
@@ -145,99 +142,7 @@ The head part was designed in a modular with antenna installation in mind. In th
 
 
 
-# Feb 26th, Optimization & Coordinate Tracking
-
-<video class="mediaAuto"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata">
-  <source src="
-  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/2nd prototype_first coord tracking.mp4
-  " type="video/mp4" />
-</video>
-
-
-<div class="contentBox two mobileOne">
-<div class="contentBox">
-
-### 3D Coordinate Input and Tracking
-
-
-**Succeeded in tracking coordinates within a hemispherical range** based on the tracking station. During this process, there were 2 important conditions.
-
-First, when moving toward a target coordinate, the system needed to **calculate the shortest path** and rotate in the proper direction. In the early stage of development, used atan() to calculate angles. However, atan() couldn't fully determine which quadrant the coordinate was in and which direction it should move from its current position. After learning about **atan2(), was able to determine the optimal direction of movement when calculating angles.**
-</div>
-<div class="contentBox">
-
-Second, when moving from point to point, the z-axis and x-axis needed to rotate at the same time so the tracking station could reach the destination without extra motion. Because of the wrist differential structure, the rotation of the L and R motors affects both axis at the same time. In the early stage of development, controlled the rotation direction and number of revolution of each motor, so diagonal movement was limited. To solve this, I calculated the final combined revolution value whenever a target point was selected. As a result, I was **able to create smooth motion** through simultaneous 2 axis operation.
-</div>
-
-
-</div>
-
-
-
-<div class="spacer"></div>
-
-
-# Mar 4th, With GUI & Leap Motion 2
-
-<div class="contentBox three">
-
-
-<video class="mediaAuto"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata">
-  <source src="
-  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/TD GUI.mp4
-  " type="video/mp4" />
-</video>
-
-
-<div class="contentBox">
-
-I don't think it is good UX to turn on the Arduino IDE and Serial Monitor for the operation. The final goal is to control it through a separate web interface or app, but as an intermediate step, I created **a GUI using TouchDesigner.**
-
-The system works by applying coordinates with sliders. In addition, to expand the possibilities of the project, I also experimented **with hand tracking using Leap Motion 2.**
-</div>
-
-<video class="mediaAuto"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata">
-  <source src="
-  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/Leapmotion tracking.mp4
-  " type="video/mp4" />
-</video>
-
-</div>
-
-
-<div class="spacer"></div>
-
-# Mar 14th, Enhance Hand Tracking
-<div class="contentBox one">
-<iframe src="https://www.youtube.com/embed/HPvqUUPxvX4" 
-title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-<div class="contentBox one">
-
-Modified the system to **repeatedly track the position of the hand** within certain intervals. This was part of an optimization process for the original goal, continuous satellite coordinate tracking. Through this process, I confirmed that the tracking interval needs to be improved with consideration for the motor rotation time.
-
-</div>
-
-<div class="spacer"></div>
-
-
-# Component List
+# 2nd Prototype's Component List
 <div class="contentBox two border mobileOne">
 
 <div class="contentBox two ">
@@ -291,6 +196,295 @@ Modified the system to **repeatedly track the position of the hand** within cert
 </div>
 
 </div>
+
+
+<div class="spacer"></div>
+
+
+
+# Feb 26th, Optimization & Coordinate Tracking
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/2nd prototype_first coord tracking.mp4
+  " type="video/mp4" />
+</video>
+
+
+<div class="contentBox two mobileOne">
+<div class="contentBox">
+
+## 3D Coordinate Input and Tracking
+
+
+**Succeeded in tracking coordinates within a hemispherical range** based on the tracking station. During this process, there were 2 important conditions.
+
+First, when moving toward a target coordinate, the system needed to **calculate the shortest path** and rotate in the proper direction. In the early stage of development, used atan() to calculate angles. However, atan() couldn't fully determine which quadrant the coordinate was in and which direction it should move from its current position. After learning about **atan2(), was able to determine the optimal direction of movement when calculating angles.**
+</div>
+<div class="contentBox">
+
+Second, when moving from point to point, the z-axis and x-axis needed to rotate at the same time so the tracking station could reach the destination without extra motion. Because of the wrist differential structure, the rotation of the L and R motors affects both axis at the same time. In the early stage of development, controlled the rotation direction and number of revolution of each motor, so diagonal movement was limited. To solve this, I calculated the final combined revolution value whenever a target point was selected. As a result, I was **able to create smooth motion** through simultaneous 2 axis operation.
+</div>
+
+
+</div>
+
+
+
+<div class="spacer"></div>
+
+
+
+
+<div class="contentBox three">
+
+
+<iframe src="https://www.youtube.com/embed/aIBnEimhELs" 
+title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+<div class="contentBox">
+
+## GUI & Leap Motion 2
+
+I don't think it is good UX to turn on the Arduino IDE and Serial Monitor for the operation. The final goal is to control it through a separate web interface or app, but as an intermediate step, I created **a GUI using TouchDesigner.**
+
+The system works by applying coordinates with sliders. In addition, to expand the possibilities of the project, I also experimented **with hand tracking using Leap Motion 2.**
+</div>
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/Leapmotion tracking.mp4
+  " type="video/mp4" />
+</video>
+
+</div>
+
+
+<div class="spacer"></div>
+
+# Mar 14th, Enhance Hand Tracking
+<div class="contentBox one">
+<iframe src="https://www.youtube.com/embed/HPvqUUPxvX4" 
+title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="contentBox one">
+
+Modified the system to **repeatedly track the position of the hand** within certain intervals. This was part of an optimization process for the original goal, continuous satellite coordinate tracking. Through this process, I confirmed that the tracking interval needs to be improved with consideration for the motor rotation time.
+
+</div>
+
+<div class="spacer mid"></div>
+
+
+
+
+# May 23rd, 3rd Prototype
+
+<iframe src="https://www.youtube.com/embed/5paCRZDbIPQ" 
+title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="contentBox three mobileOne">
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/0 thumbnail.JPG
+" alt="" />
+
+
+<div class="contentBox ">
+
+## Hardware rebuild
+
+**Improving the trackable angle range** was the main goal. The 2nd prototype was able to track a hemispherical range, but only half of that range was being used. Therefore, I revised the structure to minimize the wasted trackable angle range. As a result, the system became capable of tracking all angles except the lower 45 degrees. This means that, based on a spherical shape, **able to track 85.5% of the total angular range.**
+
+<br>
+
+Also, Fusion 360 design structure got improved. Every part was **managed under assembly design.** This improved timeline management, specification control, and the speed of design modifications.
+
+</div>
+
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/differential.JPG
+" alt="" />
+
+
+</div>
+
+<div class="contentBox two">
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/fusion_1.png
+" alt="" />
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/fusion_2.png
+" alt="" />
+
+
+</div>
+
+<div class="spacer"></div>
+
+
+<div class="contentBox two mobileOne">
+
+<div class="contentBox">
+
+## Limit Switch Homing
+
+The process of manually setting the zero point should be avoided. Therefore, limit switches were added to hit the highest and lowest positions, allowing the system to consistently return to the same zero point. Since external factors can cause step loss or angular misalignment, it performs automatic calibration in a certain interval.
+
+A closed-loop system was also considered, but it could negatively affect the project’s accessibility and cost.
+
+
+</div>
+
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/limit switch homing_video.mp4
+  " type="video/mp4" />
+</video>
+
+</div>
+
+
+<div class="spacer"></div>
+
+
+
+<div class="contentBox two mobileOne twoRatio">
+
+<div class="contentBox">
+
+## Power Cable & Infinite Rotation
+
+This project is designed with long-term tracking in mind. It is important that there shouldn't be any limitation on the rotation. For that, I used 12V 10A slip ring and buck converter for the power structure. As a result, it was revised to allow **infinite rotation.**
+
+
+</div>
+
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/endless rotate_video.mp4
+  " type="video/mp4" />
+</video>
+
+</div>
+
+
+<div class="spacer"></div>
+
+
+
+<div class="contentBox two mobileOne">
+<div class="contentBox">
+
+## Rear Circuit Board
+
+A detachable circuit plate was placed on the rear side so that users can choose one of three options.
+
+<br>
+
+First, users can use a 3D-printed mount with a prototyping board. In this option, the user directly solders the circuit onto the prototyping board and attaches it as shown in the image.
+
+<br>
+
+
+Second, a PCB with only wiring and pin headers can be used. This option leaves room for users to directly plug in and manage their own boards and modules.
+
+<br>
+
+Third, a custom PCB like an Arduino shield. This option integrates all components except the Arduino Uno Q, allowing the circuit system to be managed as a single integrated unit.
+
+</div>
+
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/circuit_1.jpg
+" alt="" />
+
+
+
+</div>
+
+
+
+<div class="spacer"></div>
+
+
+
+<div class="contentBox two mobileOne twoRatio">
+
+
+
+<div class="contentBox">
+
+## Heavier Load with Cycloidal Gearbox
+
+To collect data during satellite tracking, the installation of **an antenna** is being considered. A 20:1 cycloidal gearbox, which can provide **higher torque**, was tested so that it can be added as an optional component.
+
+<br>
+
+The gears were stacked in three layers to **cancel out most of the vibration generated during rotation.**
+
+
+</div>
+
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/cycloidal_fusion_video.mp4
+  " type="video/mp4" />
+</video>
+
+</div>
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/cycloidal apply_video.mp4
+  " type="video/mp4" />
+</video>
+
+
+
+
+
+
+
 
 
 
@@ -383,7 +577,7 @@ Gear Ratio - 1:4
 
 <div class="contentBox one">
 
-### Feb 16th, Cycloidal Gearbox
+### Feb 16th, First Cycloidal Gearbox
 
 Gear Ratio - 1:20
 
@@ -423,5 +617,51 @@ Gear Ratio - 1:20
 </div>
 
 </div>
+
+
+
+<br>
+<br>
+
+
+
+<div class="contentBox one">
+
+### May 23rd, Improved Cycloidal Gearbox with Magnetic Encoder
+
+Even with a homing function via limit switches, the use of magnetic encoders had to be considered for accurate control. In addition, the previously used A4988 drivers were replaced with **TMC2209** drivers to detect abnormal stepper motor behavior or changes in current.
+
+A system was also built based on an **ESP32** to manage each motor individually, with the possibility of **closed-loop-like operation** in mind. At the current stage of the project, this is clearly over-engineering, but the main purpose of the test was to determine what is feasible and what is not.
+
+<br>
+
+
+
+<div class="contentBox two">
+
+<video class="mediaAuto"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">
+  <source src="
+  /1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/closed loop test_video.mp4
+  " type="video/mp4" />
+</video>
+
+
+
+<img src="
+/1 collections/0 creativeTech/assets/100 SatelliteTrackingStation/3rd prototype/closed loop_1.JPG
+" alt="" />
+
+
+</div>
+
+</div>
+
+
+
 
 
