@@ -5,13 +5,40 @@
   const modalImg = document.getElementById("imgModalImg");
   if (!modal || !modalImg) return;
 
+  let scrollYBeforeLock = 0;
+  let isScrollLocked = false;
+
+  const lockScroll = () => {
+    if (isScrollLocked) return;
+
+    scrollYBeforeLock = window.scrollY || window.pageYOffset || 0;
+    isScrollLocked = true;
+
+    document.documentElement.classList.add("is-scroll-locked");
+    document.body.classList.add("is-scroll-locked");
+    document.body.style.top = `-${scrollYBeforeLock}px`;
+  };
+
+  const unlockScroll = () => {
+    if (!isScrollLocked) return;
+
+    isScrollLocked = false;
+
+    document.documentElement.classList.remove("is-scroll-locked");
+    document.body.classList.remove("is-scroll-locked");
+    document.body.style.top = "";
+
+    window.scrollTo(0, scrollYBeforeLock);
+  };
+
   const updateScrollLock = () => {
     const shouldLock =
       modal.classList.contains("is-open") ||
       document.body.classList.contains("is-loading") ||
       document.body.classList.contains("menuOpen");
 
-    document.body.classList.toggle("is-scroll-locked", shouldLock);
+    if (shouldLock) lockScroll();
+    else unlockScroll();
   };
 
   function openModal(src, alt) {
@@ -70,9 +97,16 @@
 
   const updateScrollLock = window.__updateGlobalScrollLock || (() => {});
 
+  const preventTouchMoveWhileLoading = (e) => {
+    if (document.body.classList.contains("is-loading")) {
+      e.preventDefault();
+    }
+  };
+
   const show = () => {
     isHidden = false;
     overlay.classList.add("is-visible");
+    overlay.setAttribute("aria-hidden", "false");
     document.body.classList.add("is-loading");
     updateScrollLock();
 
@@ -87,6 +121,7 @@
     isHidden = true;
 
     overlay.classList.remove("is-visible");
+    overlay.setAttribute("aria-hidden", "true");
     document.body.classList.remove("is-loading");
     updateScrollLock();
 
@@ -95,6 +130,10 @@
       timeoutId = null;
     }
   };
+
+  document.addEventListener("touchmove", preventTouchMoveWhileLoading, {
+    passive: false,
+  });
 
   show();
 

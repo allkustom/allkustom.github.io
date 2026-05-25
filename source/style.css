@@ -24,8 +24,20 @@
 body {
   display: flex;
 }
+/* body.is-scroll-locked {
+  overflow: hidden;
+} */
+
+html.is-scroll-locked,
 body.is-scroll-locked {
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+body.is-scroll-locked {
+  position: fixed;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -769,23 +781,8 @@ body.personalOpen .personal {
 /* -------------------------------------------------- */
 
 /* Loading screen style */
+
 /* .loadingOverlay {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 200vh;
-  top: -50vh;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--black);
-  opacity: 0;
-  pointer-events: none;
-}*/
-
-
-.loadingOverlay {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -799,6 +796,36 @@ body.personalOpen .personal {
   opacity: 0;
   pointer-events: none;
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+.loadingOverlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+.loadingOverlay {
+  position: fixed;
+
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+
+  width: 100vw;
+  min-height: calc(100dvh + 200px);
+
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--black);
+  opacity: 0;
+  pointer-events: none;
+
+  padding-bottom: env(safe-area-inset-bottom);
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 .loadingOverlay.is-visible {
