@@ -105,6 +105,25 @@ a {
   height: 30vh;
 }
 
+/* Keep desktop spacer distances from growing beyond their FHD size. */
+@media only screen and (min-width: 901px) {
+  .spacer {
+    padding: min(8vh, 86.4px);
+  }
+
+  .spacer.short::before {
+    height: min(10vh, 108px);
+  }
+
+  .spacer.mid::before {
+    height: min(20vh, 216px);
+  }
+
+  .spacer.long::before {
+    height: min(30vh, 324px);
+  }
+}
+
 /* Side Panel */
 .sidePanel {
   width: var(--sidePanelWidth);
