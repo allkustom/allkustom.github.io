@@ -8,7 +8,13 @@
   --whiteSecond: #949494;
   --strokeThick: 1px;
   --strokeThin: 0.25px;
-  --sidePanelWidth: 65px;
+  /* Keep the desktop sidebar proportional from FHD up to 4K. */
+  --sidePanelWidth: clamp(65px, min(3.385vw, 6.019vh), 130px);
+  --sideControlPadding: clamp(10px, min(0.521vw, 0.926vh), 20px);
+  --sideControlPaddingCompact: clamp(5px, min(0.26vw, 0.463vh), 10px);
+  --sidePaginationPadding: clamp(20px, min(1.042vw, 1.852vh), 40px);
+  --sidePaginationPaddingHover: clamp(15px, min(0.781vw, 1.389vh), 30px);
+  --pageMaxWidth: 1375px;
   --topRightBorderRadius: 0px;
   --gridGap: 10px;
   --gridGapHalf: 5px;
@@ -103,6 +109,7 @@ a {
 .sidePanel {
   width: var(--sidePanelWidth);
   height: 100%;
+  font-size: clamp(16px, min(0.833vw, 1.481vh), 32px);
   position: fixed;
   border-right: solid var(--strokeThin) var(--whiteSecond);
   background-color: var(--black);
@@ -125,7 +132,7 @@ a {
   width: 100%;
   height: var(--sidePanelWidth);
   /* aspect-ratio: 1 / 1; */
-  padding: 10px;
+  padding: var(--sideControlPadding);
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -136,7 +143,7 @@ a {
 }
 .logo a:hover {
   height: fit-content;
-  padding: 5px;
+  padding: var(--sideControlPaddingCompact);
 }
 .logo a img {
   width: 100%;
@@ -153,10 +160,10 @@ a {
   display: none;
   font-family: "Jost", sans-serif;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
   font-size: 1.3em;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 0.625em;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform-origin: 50% 50%;
@@ -174,7 +181,7 @@ a {
   width: 100%;
   height: var(--sidePanelWidth);
   /* aspect-ratio: 1 / 1; */
-  padding: 10px;
+  padding: var(--sideControlPadding);
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -185,13 +192,13 @@ a {
   overflow-y: hidden;
 }
 .navBox a:hover {
-  padding: 5px;
+  padding: var(--sideControlPaddingCompact);
   height: fit-content;
   border-bottom: solid var(--strokeThick) var(--whiteSecond);
 }
 .navBox a img {
   width: 100%;
-  padding: 5px;
+  padding: var(--sideControlPaddingCompact);
   background-color: var(--black);
 }
 
@@ -201,9 +208,9 @@ a {
 
 .navDetails {
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   font-size: 1em;
-  margin-top: 10px;
+  margin-top: 0.625em;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform-origin: 50% 50%;
@@ -215,7 +222,7 @@ a {
   font-size: 1em;
   font-weight: bold;
   color: var(--white);
-  margin-bottom: 30px;
+  margin-bottom: 1.875em;
 }
 
 .sideBot {
@@ -231,7 +238,7 @@ a {
   width: 100%;
   height: var(--sidePanelWidth);
   /* aspect-ratio: 1 / 1; */
-  padding: 20px;
+  padding: var(--sidePaginationPadding);
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -241,11 +248,11 @@ a {
   overflow-y: hidden;
 }
 .paginationBox a:hover {
-  padding: 15px;
+  padding: var(--sidePaginationPaddingHover);
 }
 .paginationBox a img {
   width: 100%;
-  padding: 5px;
+  padding: var(--sideControlPaddingCompact);
   background-color: var(--black);
 }
 .paginationBox a.bottom {
@@ -258,8 +265,8 @@ a {
 /* Index styles */
 .homeIntro {
   width: 100%;
-  margin-top: 35vh;
-  margin-bottom: 10vh;
+  margin-top: clamp(240px, 35vh, 380px);
+  margin-bottom: clamp(80px, 10vh, 120px);
 }
 .homeIntroGrid {
   display: grid;
@@ -323,8 +330,8 @@ a {
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 20vh;
-  padding-bottom: 10vh;
+  margin-bottom: clamp(150px, 20vh, 240px);
+  padding-bottom: clamp(80px, 10vh, 120px);
   /* border-bottom: solid var(--strokeThin) var(--whiteSecond); */
   gap: var(--gridGap);
   /* gap: 16px; */
@@ -451,8 +458,12 @@ body.personalOpen .personal {
 .contentWrapper {
   margin-left: var(--sidePanelWidth);
   width: calc(100% - var(--sidePanelWidth));
-  padding: 17.5vh 12.5vw;
-  padding-bottom: 5vh;
+  padding: clamp(120px, 17.5vh, 190px) 0 clamp(40px, 5vh, 80px);
+}
+
+.pageFrame {
+  width: min(calc(100% - 25vw), var(--pageMaxWidth));
+  margin-inline: auto;
 }
 
 /* -------------------------------------------------------- */
@@ -462,7 +473,7 @@ body.personalOpen .personal {
 .footer {
   width: 100%;
   height: 50px;
-  margin-top: 15vh;
+  margin-top: clamp(120px, 15vh, 180px);
   display: flex;
   justify-content: space-between;
 }
@@ -656,6 +667,7 @@ body.personalOpen .personal {
   gap: var(--gridGap);
   margin: var(--gridGap) 0;
   grid-template-columns: repeat(1, 1fr);
+  align-content: start;
   padding: 0px;
 }
 .two {
@@ -834,7 +846,7 @@ body.personalOpen .personal {
 }
 
 .loadingOverlay img {
-  width: 120px;
+  width: clamp(120px, min(6.25vw, 11.111vh), 240px);
   height: auto;
   display: block;
 }
@@ -866,6 +878,14 @@ body.personalOpen .personal {
 }
 
 @media only screen and (max-width: 900px) {
+  :root {
+    --sidePanelWidth: 65px;
+  }
+
+  .loadingOverlay img {
+    width: 120px;
+  }
+
   .homeIntroFirst h1 {
     font-size: 4em;
   }
@@ -893,6 +913,9 @@ body.personalOpen .personal {
     width: 100%;
     padding: 14vh 5vw;
     padding-bottom: 3vh;
+  }
+  .pageFrame {
+    width: 100%;
   }
   .workSection {
     font-size: 2em;
@@ -1016,6 +1039,7 @@ body.personalOpen .personal {
   }
 
   .sidePanel {
+    font-size: 16px;
     z-index: 10002;
     /* width: min(82vw, 360px); */
     width: 100%;
