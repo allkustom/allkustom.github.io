@@ -1,5 +1,5 @@
 ---
-visible: 
+visible: No
 title: Saving My Wolrd
 subTitle: Walkable Immersive Experience
 photo: /1 collections/0 creativeTech/assets/003 savingMyWorld_assets/savingmyworld_thumbnail.png

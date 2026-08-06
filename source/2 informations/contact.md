@@ -10,7 +10,7 @@ permalink: false
 
 ### Email
 
-[allkustom@gmail.com](allkustom@gmail.com)
+[allkustom97@gmail.com](allkustom97@gmail.com)
 
 </div>
 
@@ -18,8 +18,8 @@ permalink: false
 
 ### Phone
 
-**US:** 201)313-6297
-**KOR:** 010-2327-2175
+**US:** 201) 313-6297
+**KOR:** 010) 2327-2175
 
 </div>
 </div>
@@ -53,5 +53,4 @@ target="_blank"
    rel="noopener noreferrer"
    class = "linkBox border"
    style ="margin-bottom: 10vh;
-   ">Download Resume</a>
-
+   ">Resume</a>

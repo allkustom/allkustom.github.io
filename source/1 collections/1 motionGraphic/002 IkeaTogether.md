@@ -4,7 +4,7 @@ subTitle: Personal Study Brand Film
 photo: /1 collections/1 motionGraphic/assets/002 IkeaTogether_assets/ikea_thumbnail_video.mp4
 video: https://www.youtube.com/embed/XU3jwFbg79w
 tag:
-  - 350k view
+  - 355k view
   - Seamless Transition
   - Character Rigging
 mediumTech:
