@@ -493,6 +493,7 @@ body.personalOpen .personal {
   width: 100%;
   height: 50px;
   margin-top: clamp(120px, 15vh, 180px);
+  padding: 0 10%;
   display: flex;
   justify-content: space-between;
 }
