@@ -20,7 +20,7 @@ link:
 <div class="contentBox two mobileOne">
 
 <img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_2.jpg" alt="" />
-<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_4.jpg" alt="" />
+<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_4.JPG" alt="" />
 
 </div> 
 
@@ -31,8 +31,7 @@ link:
 
 
 <div class="contentBox two mobileOne">
-<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_3.jpg" alt="" />
-<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_5.jpg" alt="" />
+<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_3.JPG" alt="" />
+<img src="/1 collections/2 leatherCrafting/assets/010 cardWallet_assets/wallet_5.JPG" alt="" />
 </div> 
-
 

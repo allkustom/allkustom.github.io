@@ -39,7 +39,7 @@
         }
       });
     },
-    { rootMargin: "300px 0px" }
+    { rootMargin: "600px 0px" }
   );
 
   lazyVideos.forEach((video) => observer.observe(video));
