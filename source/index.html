@@ -52,14 +52,16 @@ permalink: /
     <div class="previewImgBox">
       {% assign media = work.data.photo | default: "" | downcase %}
       {% if media contains ".mp4"%}
-      <video autoplay muted loop playsinline preload="metadata" class="thumb">
+      <video autoplay muted loop playsinline class="thumb" data-lazy-video
+        preload="none" poster="{{ work.data.photo | thumbnailPoster }}">
         <source
-          src="{{ work.data.photo }}"
+          src="{{ work.data.photo | thumbnailVideo }}"
           type="video/mp4"
         />
       </video>
       {% elsif work.data.photo %}
-      <img src="{{ work.data.photo }}" alt="{{ work.data.title}}" />
+      <img src="{{ work.data.photo | thumbnailImage }}"
+        alt="{{ work.data.title}}" {% if forloop.first %}data-eager fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %} />
       {% endif %}
     </div>
     <div class="previewTextBox">

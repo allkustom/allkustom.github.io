@@ -16,11 +16,13 @@ assign groupDowncase = first.data.group | downcase %} {% if groupDowncase !=
     <div class="previewImgBox">
       {% assign media = work.data.photo | default: "" | downcase %} {% if media
       contains ".mp4"%}
-      <video autoplay muted loop playsinline preload="metadata" class="thumb">
-        <source src="{{ work.data.photo }}" type="video/mp4" />
+      <video autoplay muted loop playsinline preload="none" class="thumb"
+        data-lazy-video poster="{{ work.data.photo | thumbnailPoster }}">
+        <source src="{{ work.data.photo | thumbnailVideo }}" type="video/mp4" />
       </video>
       {% elsif work.data.photo %}
-      <img src="{{ work.data.photo }}" alt="{{ work.data.title}}" />
+      <img src="{{ work.data.photo | thumbnailImage }}"
+        loading="lazy" decoding="async" alt="{{ work.data.title}}" />
       {% endif %}
     </div>
     <div class="previewTextBox">
@@ -66,7 +68,8 @@ assign groupDowncase = first.data.group | downcase %} {% if groupDowncase ==
   <a href="{{ work.url }}">
     <div class="previewImgBox">
       {% if work.data.photo %}
-      <img src="{{ work.data.photo }}" alt="{{ work.data.title }}" />
+      <img src="{{ work.data.photo | thumbnailImage }}"
+        loading="lazy" decoding="async" alt="{{ work.data.title }}" />
       {% endif %}
     </div>
     <div class="previewTextBox">

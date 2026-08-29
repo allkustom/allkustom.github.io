@@ -1,8 +1,7 @@
 ---
 title: Wine Festa
 subTitle: Advertisement for sponsored wine product/brand
-photo: /1 collections/1 motionGraphic/assets/006
- WineFesta_assets/winePromotion_thumbnail.png
+photo: /1 collections/1 motionGraphic/assets/006 WineFesta_assets/winePromotion_thumbnail.png
 video: 
 tag:
   - Brand Commercial

@@ -38,6 +38,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Install NPM Dependencies
         run: npm install
       - 

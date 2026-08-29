@@ -1,4 +1,51 @@
 (function () {
+  const lazyVideos = document.querySelectorAll("video[data-lazy-video]");
+  if (!lazyVideos.length) return;
+
+  const loadVideo = (video) => {
+    if (video.dataset.loaded === "true") return;
+
+    video.querySelectorAll("source[data-src]").forEach((source) => {
+      source.src = source.dataset.src;
+      source.removeAttribute("data-src");
+    });
+
+    if (video.dataset.src) {
+      video.src = video.dataset.src;
+      video.removeAttribute("data-src");
+    }
+
+    video.dataset.loaded = "true";
+    video.load();
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    lazyVideos.forEach((video) => {
+      loadVideo(video);
+      video.play().catch(() => {});
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          loadVideo(video);
+          video.play().catch(() => {});
+        } else if (video.dataset.loaded === "true") {
+          video.pause();
+        }
+      });
+    },
+    { rootMargin: "300px 0px" }
+  );
+
+  lazyVideos.forEach((video) => observer.observe(video));
+})();
+
+(function () {
   const containerSelector = ".mainContent, .previewThumbnail";
 
   const modal = document.getElementById("imgModal");

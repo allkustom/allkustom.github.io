@@ -2,11 +2,9 @@ import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
 
 export default function (eleventyConfig) {
-  // input directory
   eleventyConfig.setInputDirectory("source");
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
-  // passthrough
   eleventyConfig.addPassthroughCopy("source/**/*.png");
   eleventyConfig.addPassthroughCopy("source/**/*.jpg");
   eleventyConfig.addPassthroughCopy("source/**/*.jpeg");
@@ -19,59 +17,91 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("source/**/*.mp4");
   eleventyConfig.addPassthroughCopy("source/**/*.mov");
   eleventyConfig.addPassthroughCopy("source/**/*.MOV");
+  eleventyConfig.addPassthroughCopy("source/**/*.webp");
 
-  // global layout
   eleventyConfig.addGlobalData("layout", "base.html");
 
-  // HTML allow for keeping HTML in Markdown files
   const md = markdownIt({ html: true, breaks: true, linkify: true });
   eleventyConfig.setLibrary("md", md);
 
-  // excerpt를 템플릿에서 HTML로 렌더링하기 위한 필터
   eleventyConfig.addFilter("md", (str = "") => md.render(str));
 
-  // ✅ Excerpt 활성화: <!--desc--> 앞을 description(excerpt)로 사용
+  const derivedMediaUrl = (url = "", suffix = ".thumb.jpg") =>
+    String(url).replace(/\.[^./]+$/, suffix);
+
+  eleventyConfig.addFilter("thumbnailImage", (url = "") =>
+    derivedMediaUrl(url, ".thumb.jpg")
+  );
+  eleventyConfig.addFilter("thumbnailVideo", (url = "") =>
+    derivedMediaUrl(url, ".thumb.mp4")
+  );
+  eleventyConfig.addFilter("thumbnailPoster", (url = "") =>
+    derivedMediaUrl(url, ".poster.jpg")
+  );
+
+  eleventyConfig.addTransform("defer-page-media", function (content) {
+    if (
+      typeof this.page.outputPath !== "string" ||
+      !this.page.outputPath.endsWith(".html")
+    ) {
+      return content;
+    }
+
+    let transformed = content.replace(/<img\b[^>]*>/gi, (tag) => {
+      if (/\b(?:loading|data-eager)=/i.test(tag) || /id="imgModalImg"/i.test(tag)) {
+        return tag;
+      }
+      return tag.replace("<img", '<img loading="lazy" decoding="async"');
+    });
+
+    transformed = transformed.replace(/<iframe\b[^>]*>/gi, (tag) => {
+      if (/\bloading=/i.test(tag)) return tag;
+      return tag.replace("<iframe", '<iframe loading="lazy"');
+    });
+
+    transformed = transformed.replace(/<video\b[\s\S]*?<\/video>/gi, (block) => {
+      let video = block.replace(/\s+preload=("[^"]*"|'[^']*')/gi, "");
+      video = video.replace(/<video\b/i, (tag) =>
+        `${tag}${/\bdata-lazy-video\b/i.test(video) ? "" : " data-lazy-video"} preload="none"`
+      );
+      video = video.replace(/(?<!data-)src=("[^"]*"|'[^']*')/gi, "data-$&");
+      return video;
+    });
+
+    return transformed;
+  });
+
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: "<!--desc-->",
   });
 
-  // ✅ content에서 excerpt(=page.excerpt) 부분을 제거해서 main만 남기기
   eleventyConfig.addFilter("stripExcerpt", (html = "", excerptMd = "") => {
     const excerptHtml = md.render(excerptMd).trim();
     if (!excerptHtml) return html;
-    return html.replace(excerptHtml, "").trim(); // 첫 1회 제거
+    return html.replace(excerptHtml, "").trim();
   });
 
-  // ============================================================
-  // ✅ 그룹 컬렉션: source/1 collections/{GROUP}/...md
-  //   GROUP 예: "0 code", "1 leather"
-  //   각 GROUP 안에서 파일명 앞 숫자로 정렬
-  // ============================================================
   function normPath(p = "") {
-    return String(p).replace(/\\/g, "/"); // windows 대비
+    return String(p).replace(/\\/g, "/");
   }
-  // work.inputPath에서 "source/1 collections/" prefix를 제거한 상대경로 반환
-  // 예: "source/1 collections/0 code/000 BMD.md" -> "0 code/000 BMD.md"
   eleventyConfig.addFilter("workRelPath", (inputPath = "") => {
     const p = normPath(inputPath);
 
-    // "1 collections/" 기준으로 자르기 (앞에 ./source 가 있어도 안전)
     const marker = "/1 collections/";
     const idx = p.indexOf(marker);
     if (idx === -1) return p;
 
-    return p.slice(idx + marker.length); // "0 code/000 BMD.md" 형태
+    return p.slice(idx + marker.length);
   });
   
   function getFilePrefixNumberFromInputPath(inputPath) {
     const p = normPath(inputPath);
     const filename = (p.split("/").pop() || "").trim();
-    const m = filename.match(/^(\d+)/); // 파일명 맨 앞 연속 숫자
-    return m ? Number(m[1]) : Number.POSITIVE_INFINITY; // 숫자 없으면 뒤로
+    const m = filename.match(/^(\d+)/);
+    return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
   }
 
-  // inputPath에서 그룹 폴더명 추출
   function getGroupFromInputPath(inputPath) {
     const parts = normPath(inputPath).split("/").filter(Boolean);
     const idx = parts.indexOf("1 collections");
@@ -79,13 +109,11 @@ export default function (eleventyConfig) {
     return parts[idx + 1] || "";
   }
 
-  // 그룹 키에서 정렬용 숫자(폴더명 앞 숫자) 추출: "0 code" -> 0
   function groupOrderFromKey(groupKey = "") {
     const m = String(groupKey).trim().match(/^(\d+)/);
     return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
   }
 
-  // "0 code" -> "0-code"
   function slugify(str = "") {
     return String(str)
       .trim()
@@ -94,7 +122,6 @@ export default function (eleventyConfig) {
       .replace(/^-+|-+$/g, "");
   }
 
-  // "leather goods" -> "Leather Goods"
   function titleCase(str = "") {
     return String(str)
       .trim()
@@ -102,12 +129,10 @@ export default function (eleventyConfig) {
       .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : ""))
       .join(" ");
   }
-// About(Bio/Value) / Contact(Resume, Contact Infos) targeting
 eleventyConfig.addCollection("informations", (collectionApi) => {
   return collectionApi.getFilteredByGlob("source/2 informations/*.md");
 });
 
-  // ✅ source/1 collections 아래의 모든 md를 그룹별로 묶어서 반환 (기존 유지)
   eleventyConfig.addCollection("worksByGroup", (collectionApi) => {
     const all = collectionApi.getFilteredByGlob("source/1 collections/**/*.md");
 
@@ -120,7 +145,6 @@ eleventyConfig.addCollection("informations", (collectionApi) => {
       grouped[key].push(item);
     }
 
-    // 그룹 내부 정렬(파일명 숫자 기준)
     for (const key of Object.keys(grouped)) {
       grouped[key].sort(
         (a, b) =>
@@ -129,27 +153,22 @@ eleventyConfig.addCollection("informations", (collectionApi) => {
       );
     }
 
-    return grouped; // Liquid: collections.worksByGroup["0 code"]
+    return grouped;
   });
 
-  // ✅ 템플릿에서 현재 페이지 그룹키 얻기
   eleventyConfig.addFilter("groupKeyFromInputPath", (inputPath = "") => {
     return getGroupFromInputPath(inputPath);
   });
 
-  // ✅ 템플릿: groupKey -> 표시용 라벨 ("0 code" => "Code")
   eleventyConfig.addFilter("groupLabel", (groupKey = "") => {
-    const raw = String(groupKey).replace(/^\d+\s*/, ""); // 앞 숫자 제거
+    const raw = String(groupKey).replace(/^\d+\s*/, "");
     return titleCase(raw);
   });
 
-  // ✅ 템플릿: groupKey -> 앵커 id ("0 code" => "group-0-code")
   eleventyConfig.addFilter("groupAnchor", (groupKey = "") => {
     return `group-${slugify(groupKey)}`;
   });
 
-  // ✅ (추가) workCollection 페이지에서 그룹을 하드코딩하지 않도록
-  // collections.workGroups = [{ key, label, anchor, items }, ...]
   eleventyConfig.addCollection("workGroups", (collectionApi) => {
     const all = collectionApi.getFilteredByGlob("source/1 collections/**/*.md");
 
@@ -180,9 +199,6 @@ eleventyConfig.addCollection("informations", (collectionApi) => {
       }));
   });
 
-  // ============================================================
-  // ✅ prev/next (랩어라운드) 필터
-  // ============================================================
   eleventyConfig.addFilter("prevByUrl", (items, currentUrl) => {
     if (!Array.isArray(items) || !items.length) return null;
 
@@ -203,7 +219,6 @@ eleventyConfig.addCollection("informations", (collectionApi) => {
     return items[nextIndex];
   });
 
-  // Active Liquid inside Markdown
   return {
     markdownTemplateEngine: "liquid",
   };

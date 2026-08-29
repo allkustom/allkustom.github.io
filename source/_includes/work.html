@@ -15,7 +15,8 @@ layout: base.html
     >
     </iframe>
     {% else %}
-    <img src="{{ photo }}" alt="{{title}}" />
+    <img src="{{ photo | thumbnailImage }}" data-full="{{ photo | url }}"
+      data-eager fetchpriority="high" alt="{{title}}" />
     {% endif %}
   </div>
   <div class="previewInfo">

@@ -1,8 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "build": "eleventy --pathprefix=allkustom.github.io",
-    "serve": "eleventy --serve --input=source"
+    "optimize-media": "node scripts/optimize-thumbnails.mjs",
+    "build": "npm run optimize-media && eleventy --pathprefix=allkustom.github.io",
+    "serve": "npm run optimize-media && eleventy --serve --input=source"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
