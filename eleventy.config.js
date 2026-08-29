@@ -48,15 +48,23 @@ export default function (eleventyConfig) {
     }
 
     let transformed = content.replace(/<img\b[^>]*>/gi, (tag) => {
-      if (/\b(?:loading|data-eager)=/i.test(tag) || /id="imgModalImg"/i.test(tag)) {
+      if (/\bdata-eager=/i.test(tag) || /id="imgModalImg"/i.test(tag)) {
         return tag;
       }
-      return tag.replace("<img", '<img loading="lazy" decoding="async"');
+
+      let image = tag;
+      if (!/\bloading=/i.test(image)) {
+        image = image.replace("<img", '<img loading="lazy" decoding="async"');
+      }
+      return image.replace(/(?<!data-)src=("[^"]*"|'[^']*')/i, "data-$&");
     });
 
     transformed = transformed.replace(/<iframe\b[^>]*>/gi, (tag) => {
-      if (/\bloading=/i.test(tag)) return tag;
-      return tag.replace("<iframe", '<iframe loading="lazy"');
+      let iframe = tag;
+      if (!/\bloading=/i.test(iframe)) {
+        iframe = iframe.replace("<iframe", '<iframe loading="lazy"');
+      }
+      return iframe.replace(/(?<!data-)src=("[^"]*"|'[^']*')/i, "data-$&");
     });
 
     transformed = transformed.replace(/<video\b[\s\S]*?<\/video>/gi, (block) => {
@@ -64,6 +72,7 @@ export default function (eleventyConfig) {
       video = video.replace(/<video\b/i, (tag) =>
         `${tag}${/\bdata-lazy-video\b/i.test(video) ? "" : " data-lazy-video"} preload="none"`
       );
+      video = video.replace(/(?<!data-)poster=("[^"]*"|'[^']*')/gi, "data-$&");
       video = video.replace(/(?<!data-)src=("[^"]*"|'[^']*')/gi, "data-$&");
       return video;
     });

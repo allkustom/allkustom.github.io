@@ -1,9 +1,15 @@
 (function () {
-  const lazyVideos = document.querySelectorAll("video[data-lazy-video]");
-  if (!lazyVideos.length) return;
+  const deferredVideos = document.querySelectorAll("video[data-lazy-video]");
 
   const loadVideo = (video) => {
     if (video.dataset.loaded === "true") return;
+
+    video.preload = "auto";
+
+    if (video.dataset.poster) {
+      video.poster = video.dataset.poster;
+      video.removeAttribute("data-poster");
+    }
 
     video.querySelectorAll("source[data-src]").forEach((source) => {
       source.src = source.dataset.src;
@@ -17,32 +23,37 @@
 
     video.dataset.loaded = "true";
     video.load();
+
+    if (video.dataset.inPlaybackRange === "true") {
+      video.play().catch(() => {});
+    }
   };
 
   if (!("IntersectionObserver" in window)) {
-    lazyVideos.forEach((video) => {
-      loadVideo(video);
-      video.play().catch(() => {});
+    deferredVideos.forEach((video) => {
+      video.dataset.inPlaybackRange = "true";
     });
-    return;
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          video.dataset.inPlaybackRange = String(entry.isIntersecting);
+
+          if (entry.isIntersecting && video.dataset.loaded === "true") {
+            video.play().catch(() => {});
+          } else if (video.dataset.loaded === "true") {
+            video.pause();
+          }
+        });
+      },
+      { rootMargin: "600px 0px" }
+    );
+
+    deferredVideos.forEach((video) => observer.observe(video));
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          loadVideo(video);
-          video.play().catch(() => {});
-        } else if (video.dataset.loaded === "true") {
-          video.pause();
-        }
-      });
-    },
-    { rootMargin: "600px 0px" }
-  );
-
-  lazyVideos.forEach((video) => observer.observe(video));
+  window.__loadDeferredVideo = loadVideo;
 })();
 
 (function () {
@@ -141,8 +152,10 @@
 
   let isHidden = false;
   let timeoutId = null;
+  let initialLoadingFinished = false;
 
   const updateScrollLock = window.__updateGlobalScrollLock || (() => {});
+  const loadDeferredVideo = window.__loadDeferredVideo || (() => {});
 
   const preventTouchMoveWhileLoading = (e) => {
     if (document.body.classList.contains("is-loading")) {
@@ -150,7 +163,7 @@
     }
   };
 
-  const show = () => {
+  const show = (useFallback = false) => {
     isHidden = false;
     overlay.classList.add("is-visible");
     overlay.setAttribute("aria-hidden", "false");
@@ -158,9 +171,11 @@
     updateScrollLock();
 
     if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      hide();
-    }, 8000);
+    if (useFallback) {
+      timeoutId = setTimeout(() => {
+        hide();
+      }, 8000);
+    }
   };
 
   const hide = () => {
@@ -178,13 +193,125 @@
     }
   };
 
+  const waitForImage = (img, priority = "high") => {
+    img.fetchPriority = priority;
+    img.loading = "eager";
+
+    const deferredSrc = img.dataset.src;
+    if (!deferredSrc && img.complete) {
+      return typeof img.decode === "function"
+        ? img.decode().catch(() => {})
+        : Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+      const finish = () => {
+        if (typeof img.decode === "function" && img.naturalWidth > 0) {
+          img.decode().catch(() => {}).finally(resolve);
+        } else {
+          resolve();
+        }
+      };
+
+      img.addEventListener("load", finish, { once: true });
+      img.addEventListener("error", resolve, { once: true });
+
+      if (deferredSrc) {
+        img.src = deferredSrc;
+        img.removeAttribute("data-src");
+      }
+    });
+  };
+
+  const waitForIframe = (iframe) => {
+    iframe.loading = "eager";
+    const deferredSrc = iframe.dataset.src;
+
+    if (!deferredSrc) {
+      try {
+        if (iframe.contentDocument?.readyState === "complete") {
+          return Promise.resolve();
+        }
+      } catch {}
+    }
+
+    return new Promise((resolve) => {
+      iframe.addEventListener("load", resolve, { once: true });
+      iframe.addEventListener("error", resolve, { once: true });
+
+      if (deferredSrc) {
+        iframe.src = deferredSrc;
+        iframe.removeAttribute("data-src");
+      }
+    });
+  };
+
+  const waitForVideo = (video) => {
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      return Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+      video.addEventListener("loadeddata", resolve, { once: true });
+      video.addEventListener("error", resolve, { once: true });
+      loadDeferredVideo(video);
+    });
+  };
+
+  const waitForMedia = (media, priority = "high") => {
+    if (media instanceof HTMLImageElement) return waitForImage(media, priority);
+    if (media instanceof HTMLIFrameElement) return waitForIframe(media);
+    if (media instanceof HTMLVideoElement) return waitForVideo(media);
+    return Promise.resolve();
+  };
+
+  const loadRemainingMedia = async () => {
+    const mediaElements = document.querySelectorAll(
+      "img[data-src], iframe[data-src], video[data-lazy-video]"
+    );
+
+    for (const media of mediaElements) {
+      if (
+        media instanceof HTMLVideoElement &&
+        media.dataset.loaded === "true"
+      ) {
+        continue;
+      }
+
+      await waitForMedia(media, "low");
+    }
+  };
+
+  const loadInitialContent = async () => {
+    const initialBottom =
+      (window.scrollY || window.pageYOffset || 0) + window.innerHeight * 3;
+    const mediaElements = document.querySelectorAll("img, iframe, video");
+
+    for (const media of mediaElements) {
+      if (media.getClientRects().length === 0) continue;
+
+      const mediaTop =
+        media.getBoundingClientRect().top +
+        (window.scrollY || window.pageYOffset || 0);
+      if (mediaTop > initialBottom) continue;
+
+      await waitForMedia(media);
+    }
+  };
+
+  const finishInitialLoading = () => {
+    if (initialLoadingFinished) return;
+    initialLoadingFinished = true;
+    hide();
+    loadRemainingMedia();
+  };
+
   document.addEventListener("touchmove", preventTouchMoveWhileLoading, {
     passive: false,
   });
 
   show();
-
-  window.addEventListener("load", hide);
+  loadInitialContent().then(finishInitialLoading, finishInitialLoading);
 
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a");
@@ -211,11 +338,14 @@
       if (dest.href === window.location.href) return;
     } catch {}
 
-    show();
+    show(true);
   });
 
   window.addEventListener("pageshow", (e) => {
-    if (e.persisted) hide();
+    if (e.persisted) {
+      hide();
+      loadRemainingMedia();
+    }
   });
 })();
 
