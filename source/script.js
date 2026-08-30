@@ -29,6 +29,19 @@
     }
   };
 
+  deferredVideos.forEach((video) => {
+    video.style.aspectRatio = "16 / 9";
+    video.addEventListener(
+      "loadedmetadata",
+      () => {
+        if (video.videoWidth > 0 && video.videoHeight > 0) {
+          video.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`;
+        }
+      },
+      { once: true }
+    );
+  });
+
   if (!("IntersectionObserver" in window)) {
     deferredVideos.forEach((video) => {
       video.dataset.inPlaybackRange = "true";
@@ -154,6 +167,9 @@
   let timeoutId = null;
   let initialLoadingFinished = false;
 
+  const INITIAL_MEDIA_TIMEOUT = 10000;
+  const BACKGROUND_MEDIA_TIMEOUT = 4000;
+
   const updateScrollLock = window.__updateGlobalScrollLock || (() => {});
   const loadDeferredVideo = window.__loadDeferredVideo || (() => {});
 
@@ -247,22 +263,36 @@
   };
 
   const waitForVideo = (video) => {
-    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
       return Promise.resolve();
     }
 
     return new Promise((resolve) => {
-      video.addEventListener("loadeddata", resolve, { once: true });
+      video.addEventListener("loadedmetadata", resolve, { once: true });
       video.addEventListener("error", resolve, { once: true });
       loadDeferredVideo(video);
     });
   };
 
-  const waitForMedia = (media, priority = "high") => {
-    if (media instanceof HTMLImageElement) return waitForImage(media, priority);
-    if (media instanceof HTMLIFrameElement) return waitForIframe(media);
-    if (media instanceof HTMLVideoElement) return waitForVideo(media);
-    return Promise.resolve();
+  const waitForMedia = (media, priority = "high", timeout = 0) => {
+    let loading;
+
+    if (media instanceof HTMLImageElement) {
+      loading = waitForImage(media, priority);
+    } else if (media instanceof HTMLIFrameElement) {
+      loading = waitForIframe(media);
+    } else if (media instanceof HTMLVideoElement) {
+      loading = waitForVideo(media);
+    } else {
+      loading = Promise.resolve();
+    }
+
+    if (!timeout) return loading;
+
+    return Promise.race([
+      loading,
+      new Promise((resolve) => setTimeout(resolve, timeout)),
+    ]);
   };
 
   const loadRemainingMedia = async () => {
@@ -278,25 +308,29 @@
         continue;
       }
 
-      await waitForMedia(media, "low");
+      await waitForMedia(media, "low", BACKGROUND_MEDIA_TIMEOUT);
     }
   };
 
   const loadInitialContent = async () => {
     const initialBottom =
       (window.scrollY || window.pageYOffset || 0) + window.innerHeight * 3;
-    const mediaElements = document.querySelectorAll("img, iframe, video");
-
-    for (const media of mediaElements) {
-      if (media.getClientRects().length === 0) continue;
+    const mediaElements = Array.from(
+      document.querySelectorAll("img, iframe, video")
+    ).filter((media) => {
+      if (media.getClientRects().length === 0) return false;
 
       const mediaTop =
         media.getBoundingClientRect().top +
         (window.scrollY || window.pageYOffset || 0);
-      if (mediaTop > initialBottom) continue;
+      return mediaTop <= initialBottom;
+    });
 
-      await waitForMedia(media);
-    }
+    await Promise.all(
+      mediaElements.map((media) =>
+        waitForMedia(media, "high", INITIAL_MEDIA_TIMEOUT)
+      )
+    );
   };
 
   const finishInitialLoading = () => {

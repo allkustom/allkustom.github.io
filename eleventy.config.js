@@ -1,5 +1,164 @@
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from "markdown-it";
+import { closeSync, existsSync, openSync, readSync } from "node:fs";
+import { extname, resolve, sep } from "node:path";
+
+const sourceRoot = resolve(process.cwd(), "source");
+const imageDimensionCache = new Map();
+
+function readImageHeader(filePath, length = 524288) {
+  const descriptor = openSync(filePath, "r");
+  const buffer = Buffer.allocUnsafe(length);
+
+  try {
+    const bytesRead = readSync(descriptor, buffer, 0, length, 0);
+    return buffer.subarray(0, bytesRead);
+  } finally {
+    closeSync(descriptor);
+  }
+}
+
+function getJpegDimensions(buffer) {
+  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) {
+    return null;
+  }
+
+  const frameMarkers = new Set([
+    0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7,
+    0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf,
+  ]);
+  let offset = 2;
+
+  while (offset + 8 < buffer.length) {
+    if (buffer[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = buffer[offset + 1];
+    if (marker === 0xd8 || marker === 0x01) {
+      offset += 2;
+      continue;
+    }
+    if (marker === 0xd9 || marker === 0xda) break;
+
+    const segmentLength = buffer.readUInt16BE(offset + 2);
+    if (segmentLength < 2) break;
+
+    if (frameMarkers.has(marker)) {
+      return {
+        width: buffer.readUInt16BE(offset + 7),
+        height: buffer.readUInt16BE(offset + 5),
+      };
+    }
+
+    offset += segmentLength + 2;
+  }
+
+  return null;
+}
+
+function getWebpDimensions(buffer) {
+  if (
+    buffer.length < 30 ||
+    buffer.toString("ascii", 0, 4) !== "RIFF" ||
+    buffer.toString("ascii", 8, 12) !== "WEBP"
+  ) {
+    return null;
+  }
+
+  const format = buffer.toString("ascii", 12, 16);
+  if (format === "VP8X") {
+    return {
+      width: buffer.readUIntLE(24, 3) + 1,
+      height: buffer.readUIntLE(27, 3) + 1,
+    };
+  }
+
+  if (format === "VP8L" && buffer[20] === 0x2f) {
+    const bits = buffer.readUInt32LE(21);
+    return {
+      width: (bits & 0x3fff) + 1,
+      height: ((bits >>> 14) & 0x3fff) + 1,
+    };
+  }
+
+  if (
+    format === "VP8 " &&
+    buffer[23] === 0x9d &&
+    buffer[24] === 0x01 &&
+    buffer[25] === 0x2a
+  ) {
+    return {
+      width: buffer.readUInt16LE(26) & 0x3fff,
+      height: buffer.readUInt16LE(28) & 0x3fff,
+    };
+  }
+
+  return null;
+}
+
+function getImageDimensions(url = "") {
+  let pathname = String(url).trim().split(/[?#]/, 1)[0];
+  if (!pathname || /^(?:https?:|data:|\/\/)/i.test(pathname)) return null;
+
+  try {
+    pathname = decodeURIComponent(pathname);
+  } catch {}
+
+  pathname = pathname.replace(/^\/+/, "");
+  if (pathname.startsWith("allkustom.github.io/")) {
+    pathname = pathname.slice("allkustom.github.io/".length);
+  }
+
+  const filePath = resolve(sourceRoot, pathname);
+  if (!filePath.startsWith(`${sourceRoot}${sep}`) || !existsSync(filePath)) {
+    return null;
+  }
+
+  if (imageDimensionCache.has(filePath)) {
+    return imageDimensionCache.get(filePath);
+  }
+
+  let dimensions = null;
+
+  try {
+    const buffer = readImageHeader(filePath);
+    const extension = extname(filePath).toLowerCase();
+
+    if (extension === ".png" && buffer.length >= 24) {
+      dimensions = {
+        width: buffer.readUInt32BE(16),
+        height: buffer.readUInt32BE(20),
+      };
+    } else if (extension === ".gif" && buffer.length >= 10) {
+      dimensions = {
+        width: buffer.readUInt16LE(6),
+        height: buffer.readUInt16LE(8),
+      };
+    } else if (extension === ".jpg" || extension === ".jpeg") {
+      dimensions = getJpegDimensions(buffer);
+    } else if (extension === ".webp") {
+      dimensions = getWebpDimensions(buffer);
+    }
+  } catch {}
+
+  imageDimensionCache.set(filePath, dimensions);
+  return dimensions;
+}
+
+function addImageDimensions(tag) {
+  const source = tag.match(/\bsrc=(?:"([^"]*)"|'([^']*)')/i);
+  const dimensions = getImageDimensions(source?.[1] ?? source?.[2] ?? "");
+  if (!dimensions) return tag;
+
+  const attributes = [];
+  if (!/\swidth=/i.test(tag)) attributes.push(`width="${dimensions.width}"`);
+  if (!/\sheight=/i.test(tag)) attributes.push(`height="${dimensions.height}"`);
+  if (!attributes.length) return tag;
+
+  return tag.replace(/<img\b/i, (opening) => `${opening} ${attributes.join(" ")}`);
+}
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("source");
@@ -48,11 +207,12 @@ export default function (eleventyConfig) {
     }
 
     let transformed = content.replace(/<img\b[^>]*>/gi, (tag) => {
-      if (/\bdata-eager=/i.test(tag) || /id="imgModalImg"/i.test(tag)) {
-        return tag;
+      let image = addImageDimensions(tag);
+
+      if (/\bdata-eager=/i.test(image) || /id="imgModalImg"/i.test(image)) {
+        return image;
       }
 
-      let image = tag;
       if (!/\bloading=/i.test(image)) {
         image = image.replace("<img", '<img loading="lazy" decoding="async"');
       }

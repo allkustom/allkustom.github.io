@@ -166,6 +166,7 @@ a {
 }
 .logo a img {
   width: 100%;
+  height: auto;
   /* padding: 5px; */
   background-color: transparent;
 }
@@ -217,6 +218,7 @@ a {
 }
 .navBox a img {
   width: 100%;
+  height: auto;
   padding: var(--sideControlPaddingCompact);
   background-color: var(--black);
 }
@@ -271,6 +273,7 @@ a {
 }
 .paginationBox a img {
   width: 100%;
+  height: auto;
   padding: var(--sideControlPaddingCompact);
   background-color: var(--black);
 }

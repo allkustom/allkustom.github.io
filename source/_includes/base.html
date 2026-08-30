@@ -9,8 +9,9 @@
     <title>allkustom / Minkyu Kim's Portfolio</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="icon" type="image/x-icon" href="/0 assets/basic/favicon.png" />
+    <noscript><style>.loadingOverlay { display: none !important; }</style></noscript>
   </head>
-  <body>
+  <body class="is-loading">
     <button
       class="menuToggle"
       id="menuToggle"
@@ -28,22 +29,22 @@
       <div class="sideTop">
         <div class="logo">
           <a href="/">
-            <img src="/0 assets/basic/allkustom shape logo.png" alt="" />
+            <img src="/0 assets/basic/allkustom shape logo.png" data-eager alt="" />
             <div class="logoDetails">allkustom</div>
           </a>
         </div>
 
         <div class="navBox">
           <a href="/works/">
-            <img src="/0 assets/basic/icon_Projects.png" alt="" />
+            <img src="/0 assets/basic/icon_Projects.png" data-eager alt="" />
             <div class="navDetails">Projects</div>
           </a>
           <a href="/about/">
-            <img src="/0 assets/basic/icon_About.png" alt="" />
+            <img src="/0 assets/basic/icon_About.png" data-eager alt="" />
             <div class="navDetails">ABOUT</div>
           </a>
           <a href="/contact/">
-            <img src="/0 assets/basic/icon_Contact.png" alt="" />
+            <img src="/0 assets/basic/icon_Contact.png" data-eager alt="" />
             <div class="navDetails">CONTACT</div>
           </a>
         </div>
@@ -63,16 +64,16 @@
           </div>
 
           <a class="bottom" href="/works/#{{ groupKey | groupAnchor }}">
-            <img src="/0 assets/basic/icon_Exit.png" alt="Close" />
+            <img src="/0 assets/basic/icon_Exit.png" data-eager alt="Close" />
           </a>
 
           {%- if prevItem -%}
           <a class="bottom" href="{{ prevItem.url }}">
-            <img src="/0 assets/basic/icon_Previous.png" alt="Previous" />
+            <img src="/0 assets/basic/icon_Previous.png" data-eager alt="Previous" />
           </a>
           {%- endif -%} {%- if nextItem -%}
           <a class="bottom" href="{{ nextItem.url }}">
-            <img src="/0 assets/basic/icon_Next.png" alt="Next" />
+            <img src="/0 assets/basic/icon_Next.png" data-eager alt="Next" />
           </a>
           {%- endif -%}
         </div>
@@ -111,7 +112,7 @@
       </figure>
     </div>
 
-    <div id="loadingOverlay" class="loadingOverlay" aria-hidden="true">
+    <div id="loadingOverlay" class="loadingOverlay is-visible" aria-hidden="false">
       <img src="/0 assets/basic/loading animation.gif" data-eager alt="Loading" />
     </div>
     <script src="/script.js"></script>
